@@ -20,8 +20,7 @@ export function applyGlobalStyle() {
       min-height: 100vh;
       text-rendering: optimizeSpeed;
       line-height: 1.5;
-      background: #010101;
-      background-image: linear-gradient(rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.05));
+      background: #fff;
     }
     a:not([class]) {
       text-decoration-skip-ink: auto;
