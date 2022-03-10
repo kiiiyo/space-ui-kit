@@ -1,5 +1,5 @@
 import React, { FC } from 'react'
-import { css, Theme } from '@emotion/react'
+//import { css, Theme } from '@emotion/react'
 //
 
 // Interface
@@ -12,12 +12,6 @@ export type TGeneralTemplateProps = {
 
 // Style
 
-const headerBarStyle = (theme: Theme) =>
-  css({
-    position: 'fixed',
-    zIndex: theme.zIndex.drawer + 1
-  })
-
 export const GeneralTemplate: FC<TGeneralTemplateProps> = ({
   children,
   headerBar,
@@ -25,7 +19,7 @@ export const GeneralTemplate: FC<TGeneralTemplateProps> = ({
 }) => {
   return (
     <>
-      {headerBar && <div css={headerBarStyle}>{headerBar}</div>}
+      {headerBar && <>{headerBar}</>}
       <main>{children}</main>
       {footer && <>{footer}</>}
     </>

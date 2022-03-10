@@ -1,3 +1,3 @@
-import * as ColorModeContext from './ColorModeContext'
+import * as AppContext from './AppContext'
 
-export { ColorModeContext }
+export { AppContext }

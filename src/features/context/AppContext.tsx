@@ -10,14 +10,14 @@ export type Actions = {
   handleToggleColorMode: () => void
 }
 
-export type TColorModeContextValue = {
+export type TAppContextValue = {
   state: State
   actions: Actions
 }
 
 // Context
 
-const initContextValue: TColorModeContextValue = {
+const initContextValue: TAppContextValue = {
   state: {
     colorMode: 'light'
   },
@@ -28,7 +28,7 @@ const initContextValue: TColorModeContextValue = {
 
 // Hooks
 
-export const useColorModeContext = (): TColorModeContextValue => {
+export const useAppContext = (): TAppContextValue => {
   const [mode, setMode] = useState<'light' | 'dark'>('light')
 
   const handleToggleColorMode = useCallback(() => {
@@ -45,12 +45,12 @@ export const useColorModeContext = (): TColorModeContextValue => {
 
 // Context
 
-export const Context = createContext<TColorModeContextValue>(initContextValue)
+export const Context = createContext<TAppContextValue>(initContextValue)
 
 // Provider
 
 export const Provider: FC = ({ children }) => {
-  const { state, actions } = useColorModeContext()
+  const { state, actions } = useAppContext()
   return (
     <Context.Provider value={{ state, actions }}>{children}</Context.Provider>
   )

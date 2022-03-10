@@ -1,3 +1,3 @@
-import * as ColorMode from './colorMode'
+import * as App from './app'
 
-export { ColorMode }
+export { App }

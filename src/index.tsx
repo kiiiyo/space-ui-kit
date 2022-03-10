@@ -13,9 +13,9 @@ applyGlobalStyle()
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
-      <Context.ColorModeContext.Provider>
+      <Context.AppContext.Provider>
         <App />
-      </Context.ColorModeContext.Provider>
+      </Context.AppContext.Provider>
     </BrowserRouter>
   </React.StrictMode>,
   document.getElementById('root')

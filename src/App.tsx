@@ -9,7 +9,7 @@ import { createCustomTheme, getDesignTokens } from '@/styles'
 function App() {
   const {
     state: { colorMode }
-  } = Hooks.ColorMode.useColorMode()
+  } = Hooks.App.useApp()
 
   const [theme, setTheme] = useState(
     createCustomTheme(getDesignTokens(colorMode))
