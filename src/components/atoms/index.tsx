@@ -27,5 +27,7 @@ export {
 } from '@mui/material'
 
 import SpaceContainer from './SpaceContainer'
+import BrandLogo from './BrandLogo'
+import Copyright from './Copyright'
 
-export { SpaceContainer }
+export { SpaceContainer, BrandLogo, Copyright }

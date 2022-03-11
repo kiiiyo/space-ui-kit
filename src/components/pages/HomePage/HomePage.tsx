@@ -8,7 +8,10 @@ import { Template, Organisms } from '@/components'
 
 export const HomePage: FC = () => {
   return (
-    <Template.GeneralTemplate headerBar={<Organisms.GeneralHeaderBar />}>
+    <Template.GeneralTemplate
+      headerBar={<Organisms.GeneralHeaderBar />}
+      footer={<Organisms.GeneralFooter />}
+    >
       <Organisms.HomeHero
         state={{
           title: 'title',

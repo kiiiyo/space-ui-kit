@@ -1,11 +1,10 @@
 import { FC } from 'react'
 import { css, Theme } from '@emotion/react'
 //
+import { Constant } from '@/configs'
 import { Atoms } from '@/components'
 
 // Presenter
-
-// Style
 
 //  Style
 const appBarStyle = (theme: Theme) =>
@@ -16,28 +15,26 @@ const appBarStyle = (theme: Theme) =>
       theme.palette.mode === 'dark' ? theme.palette.background.default : '#fff'
   })
 
-const appBarEmojiStyle = (theme: Theme) =>
+const innerStyle = () =>
   css({
-    fontSize: '1.75rem',
-    marginRight: theme.spacing(1)
+    display: 'flex',
+    flexDirection: 'row',
+    alignItems: 'center',
+    minHeight: 64
   })
 
 export const GeneralHeaderBarPresenter: FC = () => {
   return (
     <Atoms.AppBar css={appBarStyle} position="static">
       <Atoms.Container>
-        <Atoms.Toolbar>
-          <Atoms.Typography css={appBarEmojiStyle} component="div">
-            <span>🚀</span>
-          </Atoms.Typography>
-          <Atoms.Typography
-            variant="h6"
-            sx={{ fontWeight: 'bold' }}
-            component="div"
-          >
-            Space UI Kit
-          </Atoms.Typography>
-        </Atoms.Toolbar>
+        <Atoms.Box css={innerStyle}>
+          <Atoms.BrandLogo
+            state={{
+              symbol: Constant.BRAND_SYMBOL,
+              typography: Constant.BRAND_TYPOGRAPHY
+            }}
+          />
+        </Atoms.Box>
       </Atoms.Container>
     </Atoms.AppBar>
   )
