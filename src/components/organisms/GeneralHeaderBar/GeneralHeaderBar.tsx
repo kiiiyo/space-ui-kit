@@ -1,10 +1,16 @@
-import { FC } from 'react'
+import { FC, useCallback } from 'react'
+import { useNavigate } from 'react-router-dom'
 import { css, Theme } from '@emotion/react'
 //
 import { Constant } from '@/configs'
 import { Atoms } from '@/components'
 
-// Presenter
+//
+export type TGeneralHeaderBarPresenterProps = {
+  actions: {
+    onSignInClick: () => void
+  }
+}
 
 //  Style
 const appBarStyle = (theme: Theme) =>
@@ -23,7 +29,21 @@ const innerStyle = () =>
     minHeight: 64
   })
 
-export const GeneralHeaderBarPresenter: FC = () => {
+const actionStyle = () =>
+  css({
+    marginLeft: 'auto'
+  })
+
+const buttonStyle = () =>
+  css({
+    textTransform: 'none'
+  })
+
+// Presenter
+
+export const GeneralHeaderBarPresenter: FC<TGeneralHeaderBarPresenterProps> = ({
+  actions: { onSignInClick }
+}) => {
   return (
     <Atoms.AppBar css={appBarStyle} position="static">
       <Atoms.Container>
@@ -34,6 +54,18 @@ export const GeneralHeaderBarPresenter: FC = () => {
               typography: Constant.BRAND_TYPOGRAPHY
             }}
           />
+
+          <Atoms.Box css={actionStyle}>
+            <Atoms.Button
+              variant="contained"
+              endIcon={<Atoms.LoginIcon />}
+              size="large"
+              css={buttonStyle}
+              onClick={onSignInClick}
+            >
+              Sign in
+            </Atoms.Button>
+          </Atoms.Box>
         </Atoms.Box>
       </Atoms.Container>
     </Atoms.AppBar>
@@ -42,5 +74,11 @@ export const GeneralHeaderBarPresenter: FC = () => {
 
 // Container
 export const GeneralHeaderBar: FC = () => {
-  return <GeneralHeaderBarPresenter />
+  const navigate = useNavigate()
+
+  const onSignInClick = useCallback(() => {
+    navigate('/auth/login')
+  }, [navigate])
+
+  return <GeneralHeaderBarPresenter actions={{ onSignInClick }} />
 }

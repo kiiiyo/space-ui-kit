@@ -1,11 +1,17 @@
-import { FC } from 'react'
+import { FC, useCallback } from 'react'
 import { css, Theme } from '@emotion/react'
 //import { grey } from '@mui/material/colors'
 //
-//import { Constant } from '@/configs'
+import { Hooks } from '@/features'
 import { Atoms } from '@/components'
 
 // Interface
+
+export type SignInSectionPresenterProps = {
+  actions: {
+    onSignInButtonClick: () => void
+  }
+}
 
 //  Style
 
@@ -47,7 +53,9 @@ const buttonStyle = (theme: Theme) =>
 
 // Presenter
 
-export const SignInSectionPresenter: FC = () => {
+export const SignInSectionPresenter: FC<SignInSectionPresenterProps> = ({
+  actions: { onSignInButtonClick }
+}) => {
   return (
     <Atoms.Paper css={containerStyle} elevation={0}>
       <Atoms.Box css={innerStyle}>
@@ -59,6 +67,7 @@ export const SignInSectionPresenter: FC = () => {
           endIcon={<Atoms.LoginIcon />}
           size="large"
           css={buttonStyle}
+          onClick={onSignInButtonClick}
         >
           Sign in
         </Atoms.Button>
@@ -69,5 +78,13 @@ export const SignInSectionPresenter: FC = () => {
 
 // Container
 export const SignInSection: FC = () => {
-  return <SignInSectionPresenter />
+  const {
+    actions: { loginWithRedirect }
+  } = Hooks.Auth.useAuth()
+
+  const onSignInButtonClick = useCallback(() => {
+    loginWithRedirect({ ui_locales: 'ja' })
+  }, [loginWithRedirect])
+
+  return <SignInSectionPresenter actions={{ onSignInButtonClick }} />
 }
