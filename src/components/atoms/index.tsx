@@ -26,8 +26,16 @@ export {
   MenuItem
 } from '@mui/material'
 
+import { Login as LoginIcon } from '@mui/icons-material'
+
 import SpaceContainer from './SpaceContainer'
 import BrandLogo from './BrandLogo'
 import Copyright from './Copyright'
 
-export { SpaceContainer, BrandLogo, Copyright }
+export {
+  SpaceContainer,
+  BrandLogo,
+  Copyright,
+  // Icon
+  LoginIcon
+}
