@@ -1,5 +1,6 @@
 import { FC } from 'react'
 import { css, Theme } from '@emotion/react'
+import { grey } from '@mui/material/colors'
 //
 import { Constant } from '@/configs'
 import { Atoms } from '@/components'
@@ -62,14 +63,26 @@ const footerMenuLinkStyle = (theme: Theme) =>
     fontWeight: 400,
     fontSize: '0.875rem',
     lineHeight: 1.5,
-    display: 'block'
+    display: 'block',
+    '&:link': {
+      color: grey['700']
+    },
+    '&:visited': {
+      color: grey['700']
+    },
+    '&:hover': {
+      color: grey['600']
+    },
+    '&:active': {
+      color: grey['800']
+    }
   })
 
 // Presenter
 
 export const GeneralFooterPresenter: FC = () => {
   return (
-    <Atoms.Box>
+    <Atoms.Paper elevation={0}>
       <Atoms.Container>
         <Atoms.Box css={innerStyle}>
           <Atoms.Grid container spacing={2}>
@@ -194,7 +207,7 @@ export const GeneralFooterPresenter: FC = () => {
           <Atoms.Copyright />
         </Atoms.Box>
       </Atoms.Container>
-    </Atoms.Box>
+    </Atoms.Paper>
   )
 }
 

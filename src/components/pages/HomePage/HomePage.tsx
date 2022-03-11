@@ -14,8 +14,8 @@ export const HomePage: FC = () => {
     >
       <Organisms.HomeHero
         state={{
-          title: 'title',
-          description: 'adaffasd'
+          title:
+            'The React UI Template Kit your next Material-UI dashboard or app.'
         }}
       />
     </Template.GeneralTemplate>
