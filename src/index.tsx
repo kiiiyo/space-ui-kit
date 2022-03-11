@@ -1,8 +1,10 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import { BrowserRouter } from 'react-router-dom'
+import { Auth0Provider } from '@auth0/auth0-react'
 //
 import App from './App'
+import { Auth0 } from '@/configs'
 import { Context } from '@/features'
 import { applyGlobalStyle } from '@/styles'
 
@@ -13,9 +15,15 @@ applyGlobalStyle()
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
-      <Context.AppContext.Provider>
-        <App />
-      </Context.AppContext.Provider>
+      <Auth0Provider
+        domain={Auth0.auth0Config.domain}
+        clientId={Auth0.auth0Config.clientId}
+        redirectUri={window.location.origin}
+      >
+        <Context.AppContext.Provider>
+          <App />
+        </Context.AppContext.Provider>
+      </Auth0Provider>
     </BrowserRouter>
   </React.StrictMode>,
   document.getElementById('root')
