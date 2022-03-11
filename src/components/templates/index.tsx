@@ -1,3 +1,4 @@
 import GeneralTemplate from './GeneralTemplate'
+import CentralTemplate from './CentralTemplate'
 
-export { GeneralTemplate }
+export { GeneralTemplate, CentralTemplate }

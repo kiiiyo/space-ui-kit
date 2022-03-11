@@ -6,7 +6,7 @@ import { Atoms } from '@/components'
 // Interface
 export type State = {
   symbol?: ReactNode | string
-  typography: string
+  typography: ReactNode | string
 }
 
 export type TBrandLogoProps = {
