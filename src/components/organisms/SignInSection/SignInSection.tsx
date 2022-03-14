@@ -1,17 +1,10 @@
-import { FC, useCallback } from 'react'
+import { FC } from 'react'
 import { css, Theme } from '@emotion/react'
 //import { grey } from '@mui/material/colors'
 //
-import { Hooks } from '@/features'
 import { Atoms } from '@/components'
 
 // Interface
-
-export type SignInSectionPresenterProps = {
-  actions: {
-    onSignInButtonClick: () => void
-  }
-}
 
 //  Style
 
@@ -43,34 +36,15 @@ const titleStyle = (theme: Theme) =>
     }
   })
 
-const buttonStyle = (theme: Theme) =>
-  css({
-    width: '100%',
-    textTransform: 'none',
-    paddingTop: theme.spacing(2),
-    paddingBottom: theme.spacing(2)
-  })
-
 // Presenter
 
-export const SignInSectionPresenter: FC<SignInSectionPresenterProps> = ({
-  actions: { onSignInButtonClick }
-}) => {
+export const SignInSectionPresenter: FC = () => {
   return (
     <Atoms.Paper css={containerStyle} elevation={0}>
       <Atoms.Box css={innerStyle}>
         <Atoms.Typography css={titleStyle} component="h1">
           Sign in to 🚀 Space UI Kit
         </Atoms.Typography>
-        <Atoms.Button
-          variant="contained"
-          endIcon={<Atoms.LoginIcon />}
-          size="large"
-          css={buttonStyle}
-          onClick={onSignInButtonClick}
-        >
-          Sign in
-        </Atoms.Button>
       </Atoms.Box>
     </Atoms.Paper>
   )
@@ -78,13 +52,5 @@ export const SignInSectionPresenter: FC<SignInSectionPresenterProps> = ({
 
 // Container
 export const SignInSection: FC = () => {
-  const {
-    actions: { loginWithRedirect }
-  } = Hooks.Auth.useAuth()
-
-  const onSignInButtonClick = useCallback(() => {
-    loginWithRedirect({ ui_locales: 'ja' })
-  }, [loginWithRedirect])
-
-  return <SignInSectionPresenter actions={{ onSignInButtonClick }} />
+  return <SignInSectionPresenter />
 }

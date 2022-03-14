@@ -11,3 +11,5 @@ export const BRAND_TYPOGRAPHY = 'Space UI Kit'
 
 export const COPYRIGHT_YEAR = '2022'
 export const COPYRIGHT_OWNER_NAME = '🚀 Space UI Kit.'
+
+export const SIDEBAR_WIDTH = 240
