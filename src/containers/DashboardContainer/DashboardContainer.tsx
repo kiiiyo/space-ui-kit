@@ -1,7 +1,8 @@
 import { FC } from 'react'
 //
-//import { Page } from '@/components'
+import { Page } from '@/components'
+
 const DashboardContainer: FC = () => {
-  return <div>DashboardContainer</div>
+  return <Page.DashboardPage />
 }
 export default DashboardContainer

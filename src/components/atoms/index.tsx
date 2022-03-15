@@ -9,6 +9,7 @@ export {
   Drawer,
   Divider,
   List,
+  ListSubheader,
   ListItem,
   ListItemButton,
   ListItemIcon,
