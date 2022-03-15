@@ -38,7 +38,7 @@ export const SignInPage: FC = () => {
           />
         </Atoms.Box>
         <Atoms.Box css={innerStyle}>
-          <Organisms.SignInSection />
+          <Organisms.SignInForm />
         </Atoms.Box>
       </Template.CentralTemplate>
     </Atoms.SpaceContainer>
