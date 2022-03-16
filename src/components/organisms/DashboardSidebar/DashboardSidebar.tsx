@@ -10,13 +10,11 @@ import { Atoms } from '@/components'
 
 //  Style
 
-const DRAWER_WIDTH = 280
-
 const containerStyle = (theme: Theme) =>
   css({
-    [theme.breakpoints.up('lg')]: {
+    [theme.breakpoints.up('md')]: {
       flexShrink: 1,
-      width: DRAWER_WIDTH
+      width: Constant.DASHBOARD_SIDEBAR_WIDTH
     }
   })
 
@@ -69,7 +67,7 @@ export const DashboardSidebarPresenter: FC = () => {
         open={true}
         PaperProps={{
           sx: {
-            width: DRAWER_WIDTH,
+            width: Constant.DASHBOARD_SIDEBAR_WIDTH,
             bgcolor: 'background.default',
             borderRightStyle: 'dashed'
           }

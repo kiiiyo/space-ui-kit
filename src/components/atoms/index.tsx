@@ -28,11 +28,18 @@ export {
   TextField,
   FormGroup,
   FormControlLabel,
-  Checkbox
+  Checkbox,
+  Hidden
 } from '@mui/material'
 
-import { Login as LoginIcon } from '@mui/icons-material'
+// Icons
+import {
+  Login as LoginIcon,
+  Search as SearchIcon,
+  Menu as MenuIcon
+} from '@mui/icons-material'
 
+// Origin
 import SpaceContainer from './SpaceContainer'
 import BrandLogo from './BrandLogo'
 import Copyright from './Copyright'
@@ -42,5 +49,7 @@ export {
   BrandLogo,
   Copyright,
   // Icon
-  LoginIcon
+  LoginIcon,
+  SearchIcon,
+  MenuIcon
 }
