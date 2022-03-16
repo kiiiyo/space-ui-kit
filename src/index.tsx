@@ -1,11 +1,11 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import { BrowserRouter } from 'react-router-dom'
-import { Auth0Provider } from '@auth0/auth0-react'
 //
 import App from './App'
-import { Auth0 } from '@/configs'
 import { Context } from '@/features'
+//
+import 'simplebar/src/simplebar.css'
 import { applyGlobalStyle } from '@/styles'
 
 //import reportWebVitals from './reportWebVitals'
@@ -15,15 +15,9 @@ applyGlobalStyle()
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
-      <Auth0Provider
-        domain={Auth0.auth0Config.domain}
-        clientId={Auth0.auth0Config.clientId}
-        redirectUri={window.location.origin}
-      >
-        <Context.AppContext.Provider>
-          <App />
-        </Context.AppContext.Provider>
-      </Auth0Provider>
+      <Context.AppContext.Provider>
+        <App />
+      </Context.AppContext.Provider>
     </BrowserRouter>
   </React.StrictMode>,
   document.getElementById('root')

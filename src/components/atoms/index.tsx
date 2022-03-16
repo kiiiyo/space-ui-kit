@@ -2,6 +2,7 @@ export {
   Box,
   Button,
   AppBar,
+  Badge,
   Chip,
   IconButton,
   Toolbar,
@@ -9,6 +10,7 @@ export {
   Drawer,
   Divider,
   List,
+  ListSubheader,
   ListItem,
   ListItemButton,
   ListItemIcon,
@@ -23,11 +25,30 @@ export {
   AlertTitle,
   Tooltip,
   Menu,
-  MenuItem
+  MenuItem,
+  TextField,
+  FormGroup,
+  FormControlLabel,
+  Checkbox,
+  Hidden,
+  Input,
+  InputAdornment
 } from '@mui/material'
 
-import { Login as LoginIcon } from '@mui/icons-material'
+// Icons
+import {
+  Login as LoginIcon,
+  Search as SearchIcon,
+  Menu as MenuIcon,
+  Notifications as NotificationsIcon,
+  Person as PersonIcon,
+  Logout as LogoutIcon
+} from '@mui/icons-material'
 
+//import NotificationsIcon from '@mui/icons-material/Notifications';
+//import PersonIcon from '@mui/icons-material/Person';
+
+// Origin
 import SpaceContainer from './SpaceContainer'
 import BrandLogo from './BrandLogo'
 import Copyright from './Copyright'
@@ -37,5 +58,10 @@ export {
   BrandLogo,
   Copyright,
   // Icon
-  LoginIcon
+  LoginIcon,
+  SearchIcon,
+  MenuIcon,
+  NotificationsIcon,
+  PersonIcon,
+  LogoutIcon
 }

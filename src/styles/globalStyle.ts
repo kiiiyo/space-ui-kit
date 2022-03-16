@@ -10,6 +10,8 @@ export function applyGlobalStyle() {
       box-sizing: border-box;
     }
     html {
+      width: 100%;
+      height: 100%;
       overflow-x: hidden;
       font-family: sans-serif;
       -webkit-text-size-adjust: 100%;
@@ -17,6 +19,8 @@ export function applyGlobalStyle() {
       scroll-behavior: smooth;
     }
     body {
+      width: 100%;
+      height: 100%;
       min-height: 100vh;
       text-rendering: optimizeSpeed;
       line-height: 1.5;
@@ -70,6 +74,10 @@ export function applyGlobalStyle() {
       &:hover {
         text-decoration: underline;
       }
+    }
+    #root{
+      width: 100%;
+      height: 100%;
     }
   `
 }

@@ -1,5 +1,5 @@
 import HomeContainer from './HomeContainer'
 import SignInContainer from './SignInContainer'
-import CallbackContainer from './CallbackContainer'
+import DashboardContainer from './DashboardContainer'
 
-export { HomeContainer, SignInContainer, CallbackContainer }
+export { HomeContainer, SignInContainer, DashboardContainer }
