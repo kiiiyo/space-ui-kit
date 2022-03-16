@@ -52,7 +52,7 @@ const menuIconButtonStyle = (theme: Theme) =>
     marginRight: theme.spacing(1),
     display: 'none',
     [theme.breakpoints.down('md')]: {
-      display: 'block'
+      display: 'flex'
     }
   })
 
@@ -80,11 +80,7 @@ export const DashboardHeaderBarPresenter: FC<
           <Atoms.MenuIcon fontSize="medium" />
         </Atoms.IconButton>
 
-        <Atoms.Tooltip title="Search" placement="bottom">
-          <Atoms.IconButton size="medium">
-            <Atoms.SearchIcon fontSize="medium" />
-          </Atoms.IconButton>
-        </Atoms.Tooltip>
+        <Molecules.Searchbar />
 
         <Atoms.Box css={actionStyle}>
           {/* NotificationMenu */}
