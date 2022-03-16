@@ -1,5 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { useCallback } from 'react'
+import { useNavigate } from 'react-router-dom'
 import { useForm } from 'react-hook-form'
 import type { UseFormReturn } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup'
@@ -20,6 +21,7 @@ export type TUseSignInFormProps = {
 const REQUIRED_MESSAGE = '必須入力項目です'
 
 export const useSignInForm = () => {
+  const navigate = useNavigate()
   const validationSchema = yup.object().shape({
     id: yup.string().required(REQUIRED_MESSAGE),
     password: yup.string().required(REQUIRED_MESSAGE)
@@ -31,9 +33,9 @@ export const useSignInForm = () => {
     reValidateMode: 'onChange'
   })
 
-  const onSubmit = useCallback((data: any) => {
-    console.log(data)
-  }, [])
+  const onSubmit = useCallback(() => {
+    navigate('/dashboard')
+  }, [navigate])
 
   return {
     actions: { useFormMethods, onSubmit }

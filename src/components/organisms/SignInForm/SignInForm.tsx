@@ -111,7 +111,7 @@ export const SignInFormPresenter: FC<SignInFormPresenterProps> = ({
                   variant="contained"
                   fullWidth
                 >
-                  Login
+                  Sign in
                 </Atoms.Button>
               </Atoms.Box>
             </Atoms.Box>
