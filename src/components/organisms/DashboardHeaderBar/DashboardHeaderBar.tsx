@@ -86,17 +86,10 @@ export const DashboardHeaderBarPresenter: FC<
           </Atoms.IconButton>
         </Atoms.Tooltip>
 
-        {/*  */}
         <Atoms.Box css={actionStyle}>
-          {/*  */}
-          <Atoms.Tooltip title="Notifications" placement="bottom">
-            <Atoms.IconButton size="large">
-              <Atoms.Badge variant="dot">
-                <Atoms.NotificationsIcon />
-              </Atoms.Badge>
-            </Atoms.IconButton>
-          </Atoms.Tooltip>
-          {/*  */}
+          {/* NotificationMenu */}
+          <Molecules.NotificationMenu />
+          {/* ProfileMenu */}
           <Molecules.ProfileMenu />
         </Atoms.Box>
       </Atoms.Toolbar>
