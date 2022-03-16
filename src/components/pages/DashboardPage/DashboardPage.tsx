@@ -1,6 +1,6 @@
 import { FC } from 'react'
 //
-import { Template } from '@/components'
+import { Template, Atoms } from '@/components'
 
 // Interface
 
@@ -9,5 +9,11 @@ import { Template } from '@/components'
 // Presenter
 
 export const DashboardPage: FC = () => {
-  return <Template.DashboardTemplate>DashboardPage</Template.DashboardTemplate>
+  return (
+    <Template.DashboardTemplate>
+      <Atoms.Box sx={{ height: 960, background: '#ddd' }}>
+        DashboardPage
+      </Atoms.Box>
+    </Template.DashboardTemplate>
+  )
 }

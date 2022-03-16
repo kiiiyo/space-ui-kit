@@ -25,10 +25,21 @@ const containerStyle = (theme: Theme) =>
     }
   })
 
-const mainStyle = () =>
+const wrapperStyle = (theme: Theme) =>
   css({
-    paddingTop: 88,
-    paddingBottom: 88
+    [theme.breakpoints.up('md')]: {
+      width: 'calc(100% - 281px)'
+    }
+  })
+
+const mainStyle = (theme: Theme) =>
+  css({
+    paddingTop: 64,
+    paddingBottom: 64,
+    [theme.breakpoints.up('md')]: {
+      paddingTop: 88,
+      paddingBottom: 88
+    }
   })
 
 export const DashboardTemplatePresenter: FC<
@@ -39,7 +50,7 @@ export const DashboardTemplatePresenter: FC<
       <Organisms.DashboardHeaderBar />
       {!isMobile && <Organisms.DashboardSidebar />}
       {isMobile && <Organisms.DashboardDrawer />}
-      <Atoms.Box component="div">
+      <Atoms.Box css={wrapperStyle} component="div">
         <Atoms.Box css={mainStyle} component="main">
           <Atoms.Container>{children}</Atoms.Container>
         </Atoms.Box>

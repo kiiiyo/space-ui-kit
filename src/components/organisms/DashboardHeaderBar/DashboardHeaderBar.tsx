@@ -3,7 +3,7 @@ import { css, Theme } from '@emotion/react'
 import { alpha } from '@mui/material/styles'
 //
 import { Hooks } from '@/features'
-import { Atoms } from '@/components'
+import { Molecules, Atoms } from '@/components'
 
 // Interface
 
@@ -38,9 +38,13 @@ const containerStyle = (theme: Theme) =>
     }
   })
 
-const innerStyle = () =>
+const innerStyle = (theme: Theme) =>
   css({
-    alignItems: 'center'
+    alignItems: 'center',
+    height: 64,
+    [theme.breakpoints.up('md')]: {
+      height: 92
+    }
   })
 
 const menuIconButtonStyle = (theme: Theme) =>
@@ -50,6 +54,14 @@ const menuIconButtonStyle = (theme: Theme) =>
     [theme.breakpoints.down('md')]: {
       display: 'block'
     }
+  })
+
+const actionStyle = () =>
+  css({
+    display: 'flex',
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginLeft: 'auto'
   })
 
 // Presenter
@@ -68,9 +80,25 @@ export const DashboardHeaderBarPresenter: FC<
           <Atoms.MenuIcon fontSize="medium" />
         </Atoms.IconButton>
 
-        <Atoms.IconButton size="medium">
-          <Atoms.SearchIcon fontSize="medium" />
-        </Atoms.IconButton>
+        <Atoms.Tooltip title="Search" placement="bottom">
+          <Atoms.IconButton size="medium">
+            <Atoms.SearchIcon fontSize="medium" />
+          </Atoms.IconButton>
+        </Atoms.Tooltip>
+
+        {/*  */}
+        <Atoms.Box css={actionStyle}>
+          {/*  */}
+          <Atoms.Tooltip title="Notifications" placement="bottom">
+            <Atoms.IconButton size="large">
+              <Atoms.Badge variant="dot">
+                <Atoms.NotificationsIcon />
+              </Atoms.Badge>
+            </Atoms.IconButton>
+          </Atoms.Tooltip>
+          {/*  */}
+          <Molecules.ProfileMenu />
+        </Atoms.Box>
       </Atoms.Toolbar>
     </Atoms.Paper>
   )

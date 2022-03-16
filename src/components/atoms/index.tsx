@@ -2,6 +2,7 @@ export {
   Box,
   Button,
   AppBar,
+  Badge,
   Chip,
   IconButton,
   Toolbar,
@@ -36,8 +37,14 @@ export {
 import {
   Login as LoginIcon,
   Search as SearchIcon,
-  Menu as MenuIcon
+  Menu as MenuIcon,
+  Notifications as NotificationsIcon,
+  Person as PersonIcon,
+  Logout as LogoutIcon
 } from '@mui/icons-material'
+
+//import NotificationsIcon from '@mui/icons-material/Notifications';
+//import PersonIcon from '@mui/icons-material/Person';
 
 // Origin
 import SpaceContainer from './SpaceContainer'
@@ -51,5 +58,8 @@ export {
   // Icon
   LoginIcon,
   SearchIcon,
-  MenuIcon
+  MenuIcon,
+  NotificationsIcon,
+  PersonIcon,
+  LogoutIcon
 }
