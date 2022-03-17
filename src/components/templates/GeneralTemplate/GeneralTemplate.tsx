@@ -1,16 +1,13 @@
 import React, { FC } from 'react'
-//import { css, Theme } from '@emotion/react'
 //
+import { Organisms } from '@/components'
 
 // Interface
-
 export type TGeneralTemplateProps = {
   headerBar?: React.ReactNode
   children: React.ReactNode
   footer?: React.ReactNode
 }
-
-// Style
 
 export const GeneralTemplate: FC<TGeneralTemplateProps> = ({
   children,
@@ -20,6 +17,7 @@ export const GeneralTemplate: FC<TGeneralTemplateProps> = ({
   return (
     <>
       {headerBar && <>{headerBar}</>}
+      <Organisms.SettingPanel />
       <main>{children}</main>
       {footer && <>{footer}</>}
     </>

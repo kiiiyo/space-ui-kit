@@ -17,6 +17,7 @@ export type DashboardHeaderBarPresenterProps = {
 
 const containerStyle = (theme: Theme) =>
   css({
+    borderRadius: 0,
     backgroundImage: 'none',
     display: 'flex',
     flexDirection: 'column',
@@ -34,7 +35,7 @@ const containerStyle = (theme: Theme) =>
       'width 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, height 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms',
     [theme.breakpoints.up('md')]: {
       height: 92,
-      width: 'calc(100% - 281px)'
+      width: 'calc(100% - 280px)'
     }
   })
 

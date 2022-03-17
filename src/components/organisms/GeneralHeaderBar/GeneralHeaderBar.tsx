@@ -3,9 +3,10 @@ import { useNavigate } from 'react-router-dom'
 import { css, Theme } from '@emotion/react'
 //
 import { Constant } from '@/configs'
+import { Hooks } from '@/features'
 import { Atoms } from '@/components'
 
-//
+// Interface
 export type TGeneralHeaderBarPresenterProps = {
   actions: {
     onSignInClick: () => void
@@ -75,10 +76,13 @@ export const GeneralHeaderBarPresenter: FC<TGeneralHeaderBarPresenterProps> = ({
 // Container
 export const GeneralHeaderBar: FC = () => {
   const navigate = useNavigate()
+  const {
+    state: { locale }
+  } = Hooks.Locale.useLocale()
 
   const onSignInClick = useCallback(() => {
-    navigate('/auth/login')
-  }, [navigate])
+    navigate(`/${locale}/auth/login`)
+  }, [navigate, locale])
 
   return <GeneralHeaderBarPresenter actions={{ onSignInClick }} />
 }

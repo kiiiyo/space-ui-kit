@@ -6,6 +6,9 @@ import type { UseFormReturn } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup'
 import * as yup from 'yup'
 
+//
+import { Hooks } from '@/features'
+
 export type TSignInFormValues = {
   id: string
   password: string
@@ -22,6 +25,10 @@ const REQUIRED_MESSAGE = '必須入力項目です'
 
 export const useSignInForm = () => {
   const navigate = useNavigate()
+  const {
+    state: { locale }
+  } = Hooks.Locale.useLocale()
+
   const validationSchema = yup.object().shape({
     id: yup.string().required(REQUIRED_MESSAGE),
     password: yup.string().required(REQUIRED_MESSAGE)
@@ -34,8 +41,8 @@ export const useSignInForm = () => {
   })
 
   const onSubmit = useCallback(() => {
-    navigate('/dashboard')
-  }, [navigate])
+    navigate(`/${locale}/dashboard`)
+  }, [navigate, locale])
 
   return {
     actions: { useFormMethods, onSubmit }

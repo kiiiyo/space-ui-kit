@@ -28,7 +28,7 @@ const containerStyle = (theme: Theme) =>
 const wrapperStyle = (theme: Theme) =>
   css({
     [theme.breakpoints.up('md')]: {
-      width: 'calc(100% - 281px)'
+      width: 'calc(100% - 280px)'
     }
   })
 
@@ -50,6 +50,7 @@ export const DashboardTemplatePresenter: FC<
       <Organisms.DashboardHeaderBar />
       {!isMobile && <Organisms.DashboardSidebar />}
       {isMobile && <Organisms.DashboardDrawer />}
+      <Organisms.SettingPanel />
       <Atoms.Box css={wrapperStyle} component="div">
         <Atoms.Box css={mainStyle} component="main">
           <Atoms.Container>{children}</Atoms.Container>

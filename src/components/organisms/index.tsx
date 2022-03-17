@@ -2,6 +2,7 @@ import GeneralHeaderBar from './GeneralHeaderBar'
 import GeneralFooter from './GeneralFooter'
 import HomeHero from './HomeHero'
 import SignInForm from './SignInForm'
+import SettingPanel from './SettingPanel'
 // Dashboard
 import DashboardHeaderBar from './DashboardHeaderBar'
 import DashboardSidebar from './DashboardSidebar'
@@ -12,6 +13,8 @@ export {
   GeneralFooter,
   HomeHero,
   SignInForm,
+  //
+  SettingPanel,
   // Dashboard
   DashboardHeaderBar,
   DashboardSidebar,
