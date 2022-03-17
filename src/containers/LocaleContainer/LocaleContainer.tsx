@@ -6,14 +6,14 @@ import { Context } from '@/features'
 import { findLocale } from '@/utils/locale'
 
 const LocaleContainer: FC = () => {
-  const { local } = useParams()
+  const { locale } = useParams()
 
-  if (findLocale(local) === undefined) {
+  if (findLocale(locale) === undefined) {
     return <Navigate to="/404" replace={false} />
   }
 
   return (
-    <Context.LocaleContext.Provider value={{ locale: local as TLocale }}>
+    <Context.LocaleContext.Provider value={{ locale: locale as TLocale }}>
       <Outlet />
     </Context.LocaleContext.Provider>
   )
