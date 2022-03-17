@@ -20,6 +20,7 @@ export type State = {
 
 export type Actions = {
   handleToggleColorMode: () => void
+  handleSetColorMode: (mode: ColorMode) => void
   handleToggleDashboardDrawerDisplay: () => void
   handleSetDashboardDrawerDisplay: (mode: DisplayMode) => void
 }
@@ -43,6 +44,7 @@ const initContextValue: TAppContextValue = {
   },
   actions: {
     handleToggleColorMode: () => {},
+    handleSetColorMode: () => {},
     handleToggleDashboardDrawerDisplay: () => {},
     handleSetDashboardDrawerDisplay: () => {}
   }
@@ -51,10 +53,9 @@ const initContextValue: TAppContextValue = {
 // Hooks
 
 export const useAppContext = (): TAppContextValue => {
-  const [mode, setMode] = useState<'light' | 'dark'>('light')
-  const [dashboardDrawerDisplayMode, setDashboardDrawerDisplayMode] = useState<
-    'show' | 'hide'
-  >('hide')
+  const [mode, setMode] = useState<ColorMode>('light')
+  const [dashboardDrawerDisplayMode, setDashboardDrawerDisplayMode] =
+    useState<DisplayMode>('hide')
 
   const [screenSize, setScreenSize] = useState({
     width: 0,
@@ -64,6 +65,13 @@ export const useAppContext = (): TAppContextValue => {
   const handleToggleColorMode = useCallback(() => {
     setMode((prevMode: ColorMode) => (prevMode === 'light' ? 'light' : 'dark'))
   }, [setMode])
+
+  const handleSetColorMode = useCallback(
+    (mode: ColorMode) => {
+      setMode(mode)
+    },
+    [setMode]
+  )
 
   const handleToggleDashboardDrawerDisplay = useCallback(() => {
     setDashboardDrawerDisplayMode((prevMode: DisplayMode) =>
@@ -103,6 +111,7 @@ export const useAppContext = (): TAppContextValue => {
     },
     actions: {
       handleToggleColorMode,
+      handleSetColorMode,
       handleToggleDashboardDrawerDisplay,
       handleSetDashboardDrawerDisplay
     }

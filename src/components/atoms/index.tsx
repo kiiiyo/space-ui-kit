@@ -32,7 +32,8 @@ export {
   Checkbox,
   Hidden,
   Input,
-  InputAdornment
+  InputAdornment,
+  CardActionArea
 } from '@mui/material'
 
 // Icons
@@ -42,11 +43,13 @@ import {
   Menu as MenuIcon,
   Notifications as NotificationsIcon,
   Person as PersonIcon,
-  Logout as LogoutIcon
+  Logout as LogoutIcon,
+  Tune as TuneIcon,
+  Replay as ReplayIcon,
+  Close as CloseIcon,
+  LightMode as LightModeIcon,
+  DarkMode as DarkModeIcon
 } from '@mui/icons-material'
-
-//import NotificationsIcon from '@mui/icons-material/Notifications';
-//import PersonIcon from '@mui/icons-material/Person';
 
 // Origin
 import SpaceContainer from './SpaceContainer'
@@ -63,5 +66,10 @@ export {
   MenuIcon,
   NotificationsIcon,
   PersonIcon,
-  LogoutIcon
+  LogoutIcon,
+  TuneIcon,
+  ReplayIcon,
+  CloseIcon,
+  LightModeIcon,
+  DarkModeIcon
 }
