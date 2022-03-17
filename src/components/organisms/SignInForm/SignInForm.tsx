@@ -1,5 +1,6 @@
 import { FC } from 'react'
 import { FormProvider, Controller } from 'react-hook-form'
+import { useTranslation } from 'react-i18next'
 //
 import { Atoms } from '@/components'
 //
@@ -30,6 +31,9 @@ export const SignInFormPresenter: FC<SignInFormPresenterProps> = ({
     handleSubmit,
     formState: { errors }
   } = useFormMethods
+  const { t } = useTranslation('translation', {
+    keyPrefix: 'page.signIn'
+  })
   return (
     <FormProvider {...useFormMethods}>
       <Atoms.Paper css={containerStyle} elevation={0}>
@@ -42,10 +46,10 @@ export const SignInFormPresenter: FC<SignInFormPresenterProps> = ({
           <Atoms.Box css={innerStyle}>
             <Atoms.Box css={headerStyle}>
               <Atoms.Typography css={titleStyle} component="h1">
-                Sign in to 🚀 Space UI Kit
+                {t('title')}
               </Atoms.Typography>
               <Atoms.Typography component="p">
-                Enter your details below.
+                {t('description')}
               </Atoms.Typography>
             </Atoms.Box>
             <Atoms.Box>
@@ -94,24 +98,25 @@ export const SignInFormPresenter: FC<SignInFormPresenterProps> = ({
                 <Atoms.Box css={formConfigStyle}>
                   <Atoms.FormControlLabel
                     control={<Atoms.Checkbox defaultChecked />}
-                    label="Remember me"
+                    label={t('remember') as string}
                   />
                   <Atoms.Typography
                     component="a"
                     href="#"
                     css={forgotPasswordLinkStyle}
                   >
-                    Forgot password?
+                    {t('forgotPassword')}
                   </Atoms.Typography>
                 </Atoms.Box>
 
                 <Atoms.Button
+                  sx={{ textTransform: 'none' }}
                   type="submit"
                   size="large"
                   variant="contained"
                   fullWidth
                 >
-                  Sign in
+                  {t('signInButtonLabel')}
                 </Atoms.Button>
               </Atoms.Box>
             </Atoms.Box>

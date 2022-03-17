@@ -3,11 +3,11 @@ import { css, Theme } from '@emotion/react'
 import Fade from '@mui/material/Fade'
 import { useNavigate } from 'react-router-dom'
 //
+import { Hooks } from '@/features'
 import { Atoms } from '@/components'
 
 // Interface
-
-export type ProfileMenuPresenterProps = {
+export type TProfileMenuPresenterProps = {
   state: {
     isMenuOpen: boolean
     anchorEl: null | HTMLElement
@@ -15,12 +15,11 @@ export type ProfileMenuPresenterProps = {
   actions: {
     onShowMenuClick: (event: React.MouseEvent<HTMLElement>) => void
     onHideMenuClick: () => void
-    onLinkClick: (path: string) => void
+    onSignOutClick: () => void
   }
 }
 
 // Style
-
 const accountStyle = (theme: Theme) =>
   css({
     minWidth: 200,
@@ -45,9 +44,9 @@ const accountDescriptionStyle = (theme: Theme) =>
 
 // Presenter
 
-export const ProfileMenuPresenter: FC<ProfileMenuPresenterProps> = ({
+export const ProfileMenuPresenter: FC<TProfileMenuPresenterProps> = ({
   state: { isMenuOpen, anchorEl },
-  actions: { onShowMenuClick, onHideMenuClick, onLinkClick }
+  actions: { onShowMenuClick, onHideMenuClick, onSignOutClick }
 }) => {
   return (
     <>
@@ -77,11 +76,7 @@ export const ProfileMenuPresenter: FC<ProfileMenuPresenterProps> = ({
           </Atoms.Typography>
         </Atoms.Box>
         <Atoms.Divider />
-        <Atoms.MenuItem
-          onClick={() => {
-            onLinkClick('/')
-          }}
-        >
+        <Atoms.MenuItem onClick={onSignOutClick}>
           <Atoms.ListItemIcon>
             <Atoms.LogoutIcon fontSize="small" />
           </Atoms.ListItemIcon>
@@ -95,6 +90,10 @@ export const ProfileMenuPresenter: FC<ProfileMenuPresenterProps> = ({
 // Container
 export const ProfileMenu: FC = () => {
   const navigate = useNavigate()
+  const {
+    state: { locale }
+  } = Hooks.Locale.useLocale()
+
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null)
   const isMenuOpen = Boolean(anchorEl)
 
@@ -108,12 +107,9 @@ export const ProfileMenu: FC = () => {
     setAnchorEl(null)
   }, [setAnchorEl])
 
-  const onLinkClick = useCallback(
-    (path: string) => {
-      navigate(path)
-    },
-    [navigate]
-  )
+  const onSignOutClick = useCallback(() => {
+    navigate(`/${locale}/`)
+  }, [locale, navigate])
 
   return (
     <ProfileMenuPresenter
@@ -121,7 +117,7 @@ export const ProfileMenu: FC = () => {
       actions={{
         onShowMenuClick,
         onHideMenuClick,
-        onLinkClick
+        onSignOutClick
       }}
     />
   )
