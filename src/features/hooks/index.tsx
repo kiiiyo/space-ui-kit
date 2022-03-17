@@ -1,3 +1,4 @@
 import * as App from './app'
+import * as Locale from './locale'
 
-export { App }
+export { App, Locale }
