@@ -12,10 +12,10 @@ import {
 export const Router: FC = () => {
   return (
     <Routes>
-      <Route path="/" element={<RouteContainer redirect="/ja/" />} />
+      <Route path="/" element={<RouteContainer redirect="/en/" />} />
       <Route path="/:locale/" element={<LocaleContainer />}>
         <Route path="/:locale/" element={<HomeContainer />} />
-        <Route path="/:locale/auth/login" element={<SignInContainer />} />
+        <Route path="/:locale/auth/sign-in" element={<SignInContainer />} />
         <Route path="/:locale/dashboard" element={<DashboardContainer />} />
       </Route>
       <Route path="/404" element={<div>Not Found</div>} />

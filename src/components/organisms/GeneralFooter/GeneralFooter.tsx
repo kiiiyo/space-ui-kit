@@ -1,9 +1,19 @@
 import { FC } from 'react'
-import { css, Theme } from '@emotion/react'
-import { grey } from '@mui/material/colors'
+import { useTranslation } from 'react-i18next'
 //
 import { Constant } from '@/configs'
 import { Atoms } from '@/components'
+//
+import {
+  innerStyle,
+  footerDescriptionStyle,
+  footerMenuContainerStyle,
+  footerMenuStyle,
+  footerMenuTitleStyle,
+  footerMenuLinkStyle,
+  dividerStyle,
+  copyrightStyle
+} from './style'
 
 // Interface
 export type State = {
@@ -19,75 +29,19 @@ export type THeaderBarPresenterProps = {
   actions: Actions
 }
 
-//  Style
-const innerStyle = (theme: Theme) =>
-  css({
-    paddingTop: theme.spacing(5),
-    paddingBottom: theme.spacing(8)
-  })
-
-const footerDescriptionStyle = (theme: Theme) =>
-  css({
-    marginTop: theme.spacing(2),
-    lineHeight: 1.8
-  })
-
-const footerMenuContainerStyle = (theme: Theme) =>
-  css({
-    display: 'flex',
-    justifyContent: 'space-between',
-    [theme.breakpoints.down('md')]: {
-      display: 'block'
-    }
-  })
-
-const footerMenuStyle = (theme: Theme) =>
-  css({
-    [theme.breakpoints.down('md')]: {
-      marginTop: theme.spacing(4)
-    }
-  })
-
-const footerMenuTitleStyle = () =>
-  css({
-    margin: 0,
-    fontWeight: 700,
-    fontSize: '0.75rem',
-    lineHeight: 1.5
-  })
-
-const footerMenuLinkStyle = (theme: Theme) =>
-  css({
-    margin: 0,
-    marginTop: theme.spacing(2),
-    fontWeight: 400,
-    fontSize: '0.875rem',
-    lineHeight: 1.5,
-    display: 'block',
-    '&:link': {
-      color: grey['700']
-    },
-    '&:visited': {
-      color: grey['700']
-    },
-    '&:hover': {
-      color: grey['600']
-    },
-    '&:active': {
-      color: grey['800']
-    }
-  })
-
 // Presenter
 
 export const GeneralFooterPresenter: FC = () => {
+  const { t } = useTranslation('translation', {
+    keyPrefix: 'common.generalFooter'
+  })
   return (
     <Atoms.Paper elevation={0}>
       <Atoms.Container>
         <Atoms.Box css={innerStyle}>
           <Atoms.Grid container spacing={2}>
+            {/* Brand Start */}
             <Atoms.Grid item xs={12} md={4}>
-              {/* BrandLogo */}
               <Atoms.BrandLogo
                 state={{
                   symbol: Constant.BRAND_SYMBOL,
@@ -95,10 +49,12 @@ export const GeneralFooterPresenter: FC = () => {
                 }}
               />
               <Atoms.Typography css={footerDescriptionStyle} component="p">
-                {Constant.SITE_DESCRIPTION}
+                {t('siteDescription')}
               </Atoms.Typography>
+              {/* Brand End */}
             </Atoms.Grid>
             <Atoms.Grid item xs={12} md={6}>
+              {/* Footer Menu Start */}
               <Atoms.Box css={footerMenuContainerStyle}>
                 <Atoms.Box css={footerMenuStyle}>
                   <Atoms.Typography
@@ -106,7 +62,7 @@ export const GeneralFooterPresenter: FC = () => {
                     component="p"
                     variant="overline"
                   >
-                    メニュー
+                    {t('aboutMenu.title')}
                   </Atoms.Typography>
                   <Atoms.Typography
                     css={footerMenuLinkStyle}
@@ -114,7 +70,7 @@ export const GeneralFooterPresenter: FC = () => {
                     variant="body2"
                     href="#"
                   >
-                    テキストリンク
+                    {t('aboutMenu.aboutUs')}
                   </Atoms.Typography>
                   <Atoms.Typography
                     css={footerMenuLinkStyle}
@@ -122,7 +78,7 @@ export const GeneralFooterPresenter: FC = () => {
                     variant="body2"
                     href="#"
                   >
-                    テキストリンク
+                    {t('aboutMenu.contactUs')}
                   </Atoms.Typography>
                   <Atoms.Typography
                     css={footerMenuLinkStyle}
@@ -130,7 +86,7 @@ export const GeneralFooterPresenter: FC = () => {
                     variant="body2"
                     href="#"
                   >
-                    テキストリンク
+                    {t('aboutMenu.faq')}
                   </Atoms.Typography>
                 </Atoms.Box>
                 <Atoms.Box css={footerMenuStyle}>
@@ -139,7 +95,7 @@ export const GeneralFooterPresenter: FC = () => {
                     component="p"
                     variant="overline"
                   >
-                    メニュー
+                    {t('legalMenu.title')}
                   </Atoms.Typography>
                   <Atoms.Typography
                     css={footerMenuLinkStyle}
@@ -147,7 +103,7 @@ export const GeneralFooterPresenter: FC = () => {
                     variant="body2"
                     href="#"
                   >
-                    テキストリンク
+                    {t('legalMenu.terms')}
                   </Atoms.Typography>
                   <Atoms.Typography
                     css={footerMenuLinkStyle}
@@ -155,15 +111,7 @@ export const GeneralFooterPresenter: FC = () => {
                     variant="body2"
                     href="#"
                   >
-                    テキストリンク
-                  </Atoms.Typography>
-                  <Atoms.Typography
-                    css={footerMenuLinkStyle}
-                    component="a"
-                    variant="body2"
-                    href="#"
-                  >
-                    テキストリンク
+                    {t('legalMenu.privacyPolicy')}
                   </Atoms.Typography>
                 </Atoms.Box>
                 <Atoms.Box css={footerMenuStyle}>
@@ -172,7 +120,7 @@ export const GeneralFooterPresenter: FC = () => {
                     component="p"
                     variant="overline"
                   >
-                    メニュー
+                    {t('linksMenu.title')}
                   </Atoms.Typography>
                   <Atoms.Typography
                     css={footerMenuLinkStyle}
@@ -180,31 +128,19 @@ export const GeneralFooterPresenter: FC = () => {
                     variant="body2"
                     href="#"
                   >
-                    テキストリンク
-                  </Atoms.Typography>
-                  <Atoms.Typography
-                    css={footerMenuLinkStyle}
-                    component="a"
-                    variant="body2"
-                    href="#"
-                  >
-                    テキストリンク
-                  </Atoms.Typography>
-                  <Atoms.Typography
-                    css={footerMenuLinkStyle}
-                    component="a"
-                    variant="body2"
-                    href="#"
-                  >
-                    テキストリンク
+                    {t('linksMenu.github')}
                   </Atoms.Typography>
                 </Atoms.Box>
               </Atoms.Box>
+              {/* Footer Menu Ens */}
             </Atoms.Grid>
           </Atoms.Grid>
 
-          <Atoms.Divider sx={{ my: 4 }} />
-          <Atoms.Copyright />
+          <Atoms.Divider css={dividerStyle} />
+
+          <Atoms.Box css={copyrightStyle}>
+            <Atoms.Copyright />
+          </Atoms.Box>
         </Atoms.Box>
       </Atoms.Container>
     </Atoms.Paper>

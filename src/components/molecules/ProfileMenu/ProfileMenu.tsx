@@ -2,12 +2,13 @@ import { FC, useState, useCallback } from 'react'
 import { css, Theme } from '@emotion/react'
 import Fade from '@mui/material/Fade'
 import { useNavigate } from 'react-router-dom'
+import { useTranslation } from 'react-i18next'
 //
+import { Hooks } from '@/features'
 import { Atoms } from '@/components'
 
 // Interface
-
-export type ProfileMenuPresenterProps = {
+export type TProfileMenuPresenterProps = {
   state: {
     isMenuOpen: boolean
     anchorEl: null | HTMLElement
@@ -15,12 +16,11 @@ export type ProfileMenuPresenterProps = {
   actions: {
     onShowMenuClick: (event: React.MouseEvent<HTMLElement>) => void
     onHideMenuClick: () => void
-    onLinkClick: (path: string) => void
+    onSignOutClick: () => void
   }
 }
 
 // Style
-
 const accountStyle = (theme: Theme) =>
   css({
     minWidth: 200,
@@ -45,13 +45,16 @@ const accountDescriptionStyle = (theme: Theme) =>
 
 // Presenter
 
-export const ProfileMenuPresenter: FC<ProfileMenuPresenterProps> = ({
+export const ProfileMenuPresenter: FC<TProfileMenuPresenterProps> = ({
   state: { isMenuOpen, anchorEl },
-  actions: { onShowMenuClick, onHideMenuClick, onLinkClick }
+  actions: { onShowMenuClick, onHideMenuClick, onSignOutClick }
 }) => {
+  const { t } = useTranslation('translation', {
+    keyPrefix: 'common.dashboardHeaderBar.ProfileMenu'
+  })
   return (
     <>
-      <Atoms.Tooltip title="Profile" placement="bottom">
+      <Atoms.Tooltip title={t('tooltip') as string} placement="bottom">
         <Atoms.IconButton
           size="large"
           aria-controls={isMenuOpen ? 'fade-menu' : undefined}
@@ -77,15 +80,11 @@ export const ProfileMenuPresenter: FC<ProfileMenuPresenterProps> = ({
           </Atoms.Typography>
         </Atoms.Box>
         <Atoms.Divider />
-        <Atoms.MenuItem
-          onClick={() => {
-            onLinkClick('/')
-          }}
-        >
+        <Atoms.MenuItem onClick={onSignOutClick}>
           <Atoms.ListItemIcon>
             <Atoms.LogoutIcon fontSize="small" />
           </Atoms.ListItemIcon>
-          <Atoms.ListItemText>Sign out</Atoms.ListItemText>
+          <Atoms.ListItemText>{t('SignOut')}</Atoms.ListItemText>
         </Atoms.MenuItem>
       </Atoms.Menu>
     </>
@@ -95,6 +94,10 @@ export const ProfileMenuPresenter: FC<ProfileMenuPresenterProps> = ({
 // Container
 export const ProfileMenu: FC = () => {
   const navigate = useNavigate()
+  const {
+    state: { locale }
+  } = Hooks.Locale.useLocale()
+
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null)
   const isMenuOpen = Boolean(anchorEl)
 
@@ -108,12 +111,9 @@ export const ProfileMenu: FC = () => {
     setAnchorEl(null)
   }, [setAnchorEl])
 
-  const onLinkClick = useCallback(
-    (path: string) => {
-      navigate(path)
-    },
-    [navigate]
-  )
+  const onSignOutClick = useCallback(() => {
+    navigate(`/${locale}/`)
+  }, [locale, navigate])
 
   return (
     <ProfileMenuPresenter
@@ -121,7 +121,7 @@ export const ProfileMenu: FC = () => {
       actions={{
         onShowMenuClick,
         onHideMenuClick,
-        onLinkClick
+        onSignOutClick
       }}
     />
   )

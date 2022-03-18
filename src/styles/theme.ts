@@ -8,7 +8,7 @@ export const defaultDesignTokens: ThemeOptions = {
   breakpoints: {
     values: {
       xs: 0,
-      sm: 769,
+      sm: 426,
       md: 1025,
       lg: 1440,
       xl: 2560

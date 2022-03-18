@@ -1,6 +1,7 @@
 import { FC, useState, useCallback } from 'react'
 import { css, Theme } from '@emotion/react'
 import { alpha, ClickAwayListener, Slide } from '@mui/material'
+import { useTranslation } from 'react-i18next'
 // //
 // import { Hooks } from '@/features'
 import { Atoms } from '@/components'
@@ -53,11 +54,17 @@ export const SearchbarPresenter: FC<SearchbarPresenterProps> = ({
   state: { isSearchbarDisplay },
   actions: { handleToggleSearchbarDisplay, handleCloseSearchbarDisplay }
 }) => {
+  const { t } = useTranslation('translation', {
+    keyPrefix: 'common.dashboardHeaderBar'
+  })
   return (
     <ClickAwayListener onClickAway={handleCloseSearchbarDisplay}>
       <Atoms.Box>
         {!isSearchbarDisplay && (
-          <Atoms.Tooltip title="Search" placement="bottom">
+          <Atoms.Tooltip
+            title={t('searchbar.tooltip') as string}
+            placement="bottom"
+          >
             <Atoms.IconButton
               size="medium"
               onClick={handleToggleSearchbarDisplay}
@@ -77,7 +84,7 @@ export const SearchbarPresenter: FC<SearchbarPresenterProps> = ({
               autoFocus
               fullWidth
               disableUnderline
-              placeholder="Search…"
+              placeholder={t('searchbar.placeholder') as string}
               startAdornment={
                 <Atoms.InputAdornment position="start">
                   <Atoms.SearchIcon fontSize="medium" />
@@ -90,7 +97,7 @@ export const SearchbarPresenter: FC<SearchbarPresenterProps> = ({
               onClick={handleCloseSearchbarDisplay}
               css={searchbarButtonStyle}
             >
-              Search
+              {t('searchbar.button')}
             </Atoms.Button>
           </Atoms.Box>
         </Slide>

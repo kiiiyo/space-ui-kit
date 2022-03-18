@@ -2,6 +2,7 @@ import { FC, useState, useCallback } from 'react'
 import { css, Theme } from '@emotion/react'
 import { blue } from '@mui/material/colors'
 import Fade from '@mui/material/Fade'
+import { useTranslation } from 'react-i18next'
 //
 import { Atoms } from '@/components'
 
@@ -71,9 +72,12 @@ export const NotificationMenuPresenter: FC<NotificationMenuPresenterProps> = ({
   state: { isMenuOpen, anchorEl },
   actions: { onShowMenuClick, onHideMenuClick }
 }) => {
+  const { t } = useTranslation('translation', {
+    keyPrefix: 'common.dashboardHeaderBar.NotificationMenu'
+  })
   return (
     <>
-      <Atoms.Tooltip title="Notifications" placement="bottom">
+      <Atoms.Tooltip title={t('tooltip') as string} placement="bottom">
         <Atoms.IconButton
           size="large"
           aria-controls={isMenuOpen ? 'fade-menu' : undefined}
@@ -95,7 +99,7 @@ export const NotificationMenuPresenter: FC<NotificationMenuPresenterProps> = ({
         <Atoms.Box css={innerStyle}>
           <Atoms.Box css={headerStyle}>
             <Atoms.Typography css={headerTextStyle} component="h6">
-              3 New Notifications
+              {t('recently')}
             </Atoms.Typography>
           </Atoms.Box>
           <Atoms.Divider />
@@ -128,7 +132,7 @@ export const NotificationMenuPresenter: FC<NotificationMenuPresenterProps> = ({
           <Atoms.Divider />
           <Atoms.Box css={footerStyle}>
             <Atoms.Typography css={linkTextStyle} component="a" href="#">
-              Show all notifications
+              {t('showAll')}
             </Atoms.Typography>
           </Atoms.Box>
         </Atoms.Box>

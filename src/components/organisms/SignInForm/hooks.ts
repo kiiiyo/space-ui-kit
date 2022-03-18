@@ -5,6 +5,7 @@ import { useForm } from 'react-hook-form'
 import type { UseFormReturn } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup'
 import * as yup from 'yup'
+import { useTranslation } from 'react-i18next'
 
 //
 import { Hooks } from '@/features'
@@ -21,17 +22,18 @@ export type TUseSignInFormProps = {
   }
 }
 
-const REQUIRED_MESSAGE = '必須入力項目です'
-
 export const useSignInForm = () => {
+  const { t } = useTranslation('translation', {
+    keyPrefix: 'page.signIn'
+  })
   const navigate = useNavigate()
   const {
     state: { locale }
   } = Hooks.Locale.useLocale()
 
   const validationSchema = yup.object().shape({
-    id: yup.string().required(REQUIRED_MESSAGE),
-    password: yup.string().required(REQUIRED_MESSAGE)
+    id: yup.string().required(t('validateRequiredMessage')),
+    password: yup.string().required(t('validateRequiredMessage'))
   })
 
   const useFormMethods = useForm<TSignInFormValues>({

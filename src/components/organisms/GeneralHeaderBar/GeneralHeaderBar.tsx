@@ -1,6 +1,7 @@
 import { FC, useCallback } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { css, Theme } from '@emotion/react'
+import { useTranslation } from 'react-i18next'
 //
 import { Constant } from '@/configs'
 import { Hooks } from '@/features'
@@ -45,6 +46,9 @@ const buttonStyle = () =>
 export const GeneralHeaderBarPresenter: FC<TGeneralHeaderBarPresenterProps> = ({
   actions: { onSignInClick }
 }) => {
+  const { t } = useTranslation('translation', {
+    keyPrefix: 'common.generalHeaderBar'
+  })
   return (
     <Atoms.AppBar css={appBarStyle} position="static">
       <Atoms.Container>
@@ -64,7 +68,7 @@ export const GeneralHeaderBarPresenter: FC<TGeneralHeaderBarPresenterProps> = ({
               css={buttonStyle}
               onClick={onSignInClick}
             >
-              Sign in
+              {t('signInButtonLabel')}
             </Atoms.Button>
           </Atoms.Box>
         </Atoms.Box>
@@ -81,7 +85,7 @@ export const GeneralHeaderBar: FC = () => {
   } = Hooks.Locale.useLocale()
 
   const onSignInClick = useCallback(() => {
-    navigate(`/${locale}/auth/login`)
+    navigate(`/${locale}/auth/sign-in`)
   }, [navigate, locale])
 
   return <GeneralHeaderBarPresenter actions={{ onSignInClick }} />
