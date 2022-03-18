@@ -73,7 +73,7 @@ export const SettingPanelPresenter: FC<SettingPanelPresenterProps> = ({
         >
           <Atoms.Box css={panelContainerStyle}>
             <Atoms.Box css={panelHeaderStyle}>
-              <Atoms.Typography component="h6">Settings</Atoms.Typography>
+              <Atoms.Typography component="h5">Settings</Atoms.Typography>
               <Atoms.Box>
                 {/*
                 <Atoms.IconButton size="small">

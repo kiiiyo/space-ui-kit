@@ -47,7 +47,7 @@ export const GeneralHeaderBarPresenter: FC<TGeneralHeaderBarPresenterProps> = ({
   actions: { onSignInClick }
 }) => {
   const { t } = useTranslation('translation', {
-    keyPrefix: 'common'
+    keyPrefix: 'common.generalHeaderBar'
   })
   return (
     <Atoms.AppBar css={appBarStyle} position="static">

@@ -1,6 +1,3 @@
-// Site
-export const SITE_DESCRIPTION = 'Site Description Text'
-
 // UI_KIT version
 export const UI_KIT_VERSION = '0.0.1'
 
