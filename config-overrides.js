@@ -2,7 +2,8 @@ const {
   override,
   addWebpackResolve,
   addBabelPresets,
-  addBabelPlugins
+  addBabelPlugins,
+  addDecoratorsLegacy
 } = require('customize-cra')
 const path = require('path')
 
@@ -16,5 +17,6 @@ module.exports = override(
     alias: {
       '@': path.resolve(__dirname, './src/')
     }
-  })
+  }),
+  addDecoratorsLegacy()
 )

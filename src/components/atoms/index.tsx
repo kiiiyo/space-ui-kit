@@ -36,7 +36,8 @@ export {
   CardActionArea,
   ButtonGroup,
   ToggleButtonGroup,
-  ToggleButton
+  ToggleButton,
+  Collapse
 } from '@mui/material'
 
 // Icons
@@ -51,7 +52,11 @@ import {
   Replay as ReplayIcon,
   Close as CloseIcon,
   LightMode as LightModeIcon,
-  DarkMode as DarkModeIcon
+  DarkMode as DarkModeIcon,
+  StarBorder as StarBorderIcon,
+  ExpandLess as ExpandLessIcon,
+  ExpandMore as ExpandMoreIcon,
+  Web as WebIcon
 } from '@mui/icons-material'
 
 // Origin
@@ -74,5 +79,9 @@ export {
   ReplayIcon,
   CloseIcon,
   LightModeIcon,
-  DarkModeIcon
+  DarkModeIcon,
+  StarBorderIcon,
+  ExpandLessIcon,
+  ExpandMoreIcon,
+  WebIcon
 }

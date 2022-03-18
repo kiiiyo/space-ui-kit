@@ -34,10 +34,10 @@ const wrapperStyle = (theme: Theme) =>
 
 const mainStyle = (theme: Theme) =>
   css({
-    paddingTop: 64,
+    paddingTop: 88,
     paddingBottom: 64,
     [theme.breakpoints.up('md')]: {
-      paddingTop: 88,
+      paddingTop: 116,
       paddingBottom: 88
     }
   })

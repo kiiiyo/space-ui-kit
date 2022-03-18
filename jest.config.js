@@ -6,7 +6,8 @@ module.exports = {
     // Aliasの設定
     '^@/(.+)': '<rootDir>/src/$1',
     // Jest で svgファイルを扱えるようにする
-    '^.+\\.svg$': 'jest-svg-transformer'
+    '^.+\\.svg$': 'jest-svg-transformer',
+    '\\.(css|scss)$': '<rootDir>/node_modules/jest-css-modules'
   },
   roots: ['.'],
   testEnvironment: 'jsdom',

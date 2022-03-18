@@ -1,20 +1,19 @@
 import { FC, useEffect } from 'react'
 import { Outlet, Navigate, useParams } from 'react-router-dom'
-import { useTranslation } from 'react-i18next'
 //
 import { TLocale } from '@/types/locale'
 import { Context } from '@/features'
 import { findLocale } from '@/utils/locale'
+import i18n from '@/utils/i18n'
 
 const LocaleContainer: FC = () => {
   const { locale } = useParams()
-  const { i18n } = useTranslation()
 
   useEffect(() => {
     if (findLocale(locale) !== undefined) {
-      i18n.changeLanguage(locale)
+      i18n.changeLanguage(locale as string)
     }
-  }, [i18n, locale])
+  }, [locale])
 
   return findLocale(locale) === undefined ? (
     <Navigate to="/404" replace={false} />
@@ -24,4 +23,5 @@ const LocaleContainer: FC = () => {
     </Context.LocaleContext.Provider>
   )
 }
+
 export default LocaleContainer
