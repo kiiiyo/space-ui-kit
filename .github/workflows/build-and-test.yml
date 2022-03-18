@@ -1,0 +1,22 @@
+#
+name: Build-and-Test
+#
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+#
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      # checkout source code
+      - uses: actions/checkout@v2
+      # setup node version 14
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+      - run: npm install
+      - run: npm test
+      - run: npm build
