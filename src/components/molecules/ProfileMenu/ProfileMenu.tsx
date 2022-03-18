@@ -2,6 +2,7 @@ import { FC, useState, useCallback } from 'react'
 import { css, Theme } from '@emotion/react'
 import Fade from '@mui/material/Fade'
 import { useNavigate } from 'react-router-dom'
+import { useTranslation } from 'react-i18next'
 //
 import { Hooks } from '@/features'
 import { Atoms } from '@/components'
@@ -48,9 +49,12 @@ export const ProfileMenuPresenter: FC<TProfileMenuPresenterProps> = ({
   state: { isMenuOpen, anchorEl },
   actions: { onShowMenuClick, onHideMenuClick, onSignOutClick }
 }) => {
+  const { t } = useTranslation('translation', {
+    keyPrefix: 'common.dashboardHeaderBar.ProfileMenu'
+  })
   return (
     <>
-      <Atoms.Tooltip title="Profile" placement="bottom">
+      <Atoms.Tooltip title={t('tooltip') as string} placement="bottom">
         <Atoms.IconButton
           size="large"
           aria-controls={isMenuOpen ? 'fade-menu' : undefined}
@@ -80,7 +84,7 @@ export const ProfileMenuPresenter: FC<TProfileMenuPresenterProps> = ({
           <Atoms.ListItemIcon>
             <Atoms.LogoutIcon fontSize="small" />
           </Atoms.ListItemIcon>
-          <Atoms.ListItemText>Sign out</Atoms.ListItemText>
+          <Atoms.ListItemText>{t('SignOut')}</Atoms.ListItemText>
         </Atoms.MenuItem>
       </Atoms.Menu>
     </>

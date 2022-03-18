@@ -1,15 +1,16 @@
 import i18n from 'i18next'
 import { initReactI18next } from 'react-i18next'
 //
-import { EN, JA } from '@/locales'
+import enJson from '@/locales/en.json'
+import jaJson from '@/locales/ja.json'
 
 i18n.use(initReactI18next).init({
   resources: {
     en: {
-      translation: EN
+      translation: enJson
     },
     ja: {
-      translation: JA
+      translation: jaJson
     }
   },
   lng: 'en',
