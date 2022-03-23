@@ -24,6 +24,7 @@ export type TDashboardTemplateProps = {
 //  Style
 const containerStyle = (theme: Theme) =>
   css({
+    backgroundColor: theme.palette.background.default,
     [theme.breakpoints.up('md')]: {
       display: 'flex',
       minHeight: '100%',

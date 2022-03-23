@@ -61,6 +61,13 @@ export const ja: TLanguage = {
         remember: 'サインインを維持',
         forgotPassword: 'パスワードを忘れた',
         signInButtonLabel: 'サインイン'
+      },
+      blankSinglePage: {
+        title: '雛形固定ページ',
+        breadcrumbs: {
+          dashboard: 'ダッシュボード',
+          blankSingle: '雛形固定ページ'
+        }
       }
     }
   }

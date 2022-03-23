@@ -1,6 +1,6 @@
 import { FC } from 'react'
 //
-import { Template, Atoms } from '@/components'
+import { Template, Molecules, Atoms } from '@/components'
 
 // Interface
 
@@ -13,8 +13,34 @@ export const BlankSinglePage: FC = () => {
     <Template.DashboardTemplate
       state={{ currentMenu: 'PAGES', currentNestMenu: 'PAGES_BLANK_SINGLE' }}
     >
-      <Atoms.Box sx={{ height: 960, background: '#ddd' }}>
-        BlankSinglePage
+      <Molecules.DashboardPageHeader
+        state={{
+          breadcrumbs: [
+            {
+              localeKeyPrefix: 'breadcrumbs.dashboard',
+              path: '/dashboard'
+            },
+            {
+              localeKeyPrefix: 'breadcrumbs.blankSingle',
+              path: '/dashboard/pages/blank-single',
+              current: true
+            }
+          ]
+        }}
+      />
+
+      <Atoms.Box component="section">
+        <Atoms.Paper elevation={3}>
+          <Atoms.Box sx={{ padding: 3 }}>
+            <Atoms.Typography component="h3" variant="h6">
+              Empty Section Header
+            </Atoms.Typography>
+          </Atoms.Box>
+          <Atoms.Divider />
+          <Atoms.Box sx={{ padding: 3 }}>Empty Section Body</Atoms.Box>
+          <Atoms.Divider />
+          <Atoms.Box sx={{ padding: 3 }}>Empty Section Footer</Atoms.Box>
+        </Atoms.Paper>
       </Atoms.Box>
     </Template.DashboardTemplate>
   )

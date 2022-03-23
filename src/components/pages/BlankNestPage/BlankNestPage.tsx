@@ -1,6 +1,6 @@
 import { FC } from 'react'
 //
-import { Template, Atoms } from '@/components'
+import { Template, Molecules } from '@/components'
 
 // Interface
 
@@ -13,9 +13,20 @@ export const BlankNestPage: FC = () => {
     <Template.DashboardTemplate
       state={{ currentMenu: 'PAGES', currentNestMenu: 'PAGES_BLANK_NEST' }}
     >
-      <Atoms.Box sx={{ height: 960, background: '#ddd' }}>
-        BlankNestPage
-      </Atoms.Box>
+      <Molecules.DashboardPageHeader
+        state={{
+          breadcrumbs: [
+            {
+              localeKeyPrefix: 'dashboard',
+              path: '/dashboard'
+            },
+            {
+              localeKeyPrefix: 'blankNest',
+              path: '/dashboard/pages/blank-nest'
+            }
+          ]
+        }}
+      />
     </Template.DashboardTemplate>
   )
 }
