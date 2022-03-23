@@ -1,6 +1,7 @@
-import { FC, ReactNode } from 'react'
+import { FC } from 'react'
 import { css, Theme } from '@emotion/react'
 //
+import type { TMenuGroupKey, TNestMenuKey } from '@/types/dashboard-menu'
 import { Hooks } from '@/features'
 import { Organisms, Atoms } from '@/components'
 
@@ -8,11 +9,16 @@ import { Organisms, Atoms } from '@/components'
 export type DashboardTemplatePresenterProps = {
   state: {
     isMobile: boolean
+    currentMenu: TMenuGroupKey
+    currentNestMenu?: string
   }
 }
 
 export type TDashboardTemplateProps = {
-  headerBar?: ReactNode
+  state: {
+    currentMenu: TMenuGroupKey
+    currentNestMenu?: TNestMenuKey
+  }
 }
 
 //  Style
@@ -34,22 +40,26 @@ const wrapperStyle = (theme: Theme) =>
 
 const mainStyle = (theme: Theme) =>
   css({
-    paddingTop: 64,
+    paddingTop: 88,
     paddingBottom: 64,
     [theme.breakpoints.up('md')]: {
-      paddingTop: 88,
+      paddingTop: 116,
       paddingBottom: 88
     }
   })
 
 export const DashboardTemplatePresenter: FC<
   DashboardTemplatePresenterProps
-> = ({ children, state: { isMobile } }) => {
+> = ({ children, state: { isMobile, currentMenu, currentNestMenu } }) => {
   return (
     <Atoms.Box css={containerStyle}>
       <Organisms.DashboardHeaderBar />
-      {!isMobile && <Organisms.DashboardSidebar />}
-      {isMobile && <Organisms.DashboardDrawer />}
+      {!isMobile && (
+        <Organisms.DashboardSidebar state={{ currentMenu, currentNestMenu }} />
+      )}
+      {isMobile && (
+        <Organisms.DashboardDrawer state={{ currentMenu, currentNestMenu }} />
+      )}
       <Organisms.SettingPanel />
       <Atoms.Box css={wrapperStyle} component="div">
         <Atoms.Box css={mainStyle} component="main">
@@ -62,6 +72,7 @@ export const DashboardTemplatePresenter: FC<
 
 // Container
 export const DashboardTemplate: FC<TDashboardTemplateProps> = ({
+  state: { currentMenu, currentNestMenu },
   children
 }) => {
   const {
@@ -69,7 +80,9 @@ export const DashboardTemplate: FC<TDashboardTemplateProps> = ({
   } = Hooks.App.useApp()
 
   return (
-    <DashboardTemplatePresenter state={{ isMobile }}>
+    <DashboardTemplatePresenter
+      state={{ isMobile, currentMenu, currentNestMenu }}
+    >
       {children}
     </DashboardTemplatePresenter>
   )

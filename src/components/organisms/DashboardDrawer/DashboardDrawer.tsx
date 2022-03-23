@@ -3,15 +3,25 @@ import { alpha } from '@mui/material/styles'
 import { css, Theme } from '@emotion/react'
 import SimpleBarReact from 'simplebar-react'
 //
+import type { TMenuGroup, TMenuGroupKey } from '@/types/dashboard-menu'
 import { Constant } from '@/configs'
 import { Hooks } from '@/features'
-import { Atoms } from '@/components'
+import { Molecules, Atoms } from '@/components'
 
 // Interface
+export type DashboardDrawerProps = {
+  state: {
+    currentMenu: TMenuGroupKey
+    currentNestMenu?: string
+  }
+}
 
 export type DashboardDrawerPresenterProps = {
   state: {
     isDrawerDisplayOpen: boolean
+    currentMenu: TMenuGroupKey
+    currentNestMenu?: string
+    menuGroup: Array<TMenuGroup>
   }
   actions: {
     onDrawrCloseClick: () => void
@@ -19,7 +29,6 @@ export type DashboardDrawerPresenterProps = {
 }
 
 //  Style
-
 const scrollbarStyle = () =>
   css({
     height: '100%',
@@ -49,8 +58,6 @@ const simpleBarStyle = (theme: Theme) =>
     }
   })
 
-const innerStyle = () => css({})
-
 const brandLogoStyle = (theme: Theme) =>
   css({
     paddingTop: theme.spacing(3),
@@ -59,10 +66,38 @@ const brandLogoStyle = (theme: Theme) =>
     paddingRight: theme.spacing(2)
   })
 
-// Presenter
+// Container
+export const DashboardDrawer: FC<DashboardDrawerProps> = ({
+  state: { currentMenu, currentNestMenu }
+}) => {
+  const menuGroup = Constant.DASHBOARD_MENU
 
+  const {
+    state: { dashboardDrawerDisplayMode },
+    actions: { handleSetDashboardDrawerDisplay }
+  } = Hooks.App.useApp()
+
+  const onDrawrCloseClick = useCallback(() => {
+    handleSetDashboardDrawerDisplay('hide')
+  }, [handleSetDashboardDrawerDisplay])
+
+  return (
+    <DashboardDrawerPresenter
+      state={{
+        currentMenu,
+        currentNestMenu,
+        menuGroup,
+        isDrawerDisplayOpen:
+          dashboardDrawerDisplayMode === 'show' ? true : false
+      }}
+      actions={{ onDrawrCloseClick }}
+    />
+  )
+}
+
+// Presenter
 export const DashboardDrawerPresenter: FC<DashboardDrawerPresenterProps> = ({
-  state: { isDrawerDisplayOpen },
+  state: { currentMenu, currentNestMenu, menuGroup, isDrawerDisplayOpen },
   actions: { onDrawrCloseClick }
 }) => {
   return (
@@ -78,7 +113,7 @@ export const DashboardDrawerPresenter: FC<DashboardDrawerPresenterProps> = ({
     >
       <Atoms.Box component="div" css={scrollbarStyle}>
         <SimpleBarReact css={simpleBarStyle}>
-          <Atoms.Box component="div" css={innerStyle}>
+          <Atoms.Box component="div">
             {/* BrandLogo */}
             <Atoms.Box css={brandLogoStyle}>
               <Atoms.BrandLogo
@@ -88,46 +123,12 @@ export const DashboardDrawerPresenter: FC<DashboardDrawerPresenterProps> = ({
                 }}
               />
             </Atoms.Box>
-            <Atoms.List
-              disablePadding
-              component="nav"
-              subheader={
-                <Atoms.ListSubheader component="div">Menue</Atoms.ListSubheader>
-              }
-            >
-              <Atoms.ListItemButton selected={true}>
-                <Atoms.ListItemIcon>
-                  <Atoms.LoginIcon />
-                </Atoms.ListItemIcon>
-                <Atoms.ListItemText primary="Inbox" />
-              </Atoms.ListItemButton>
-            </Atoms.List>
+            <Molecules.DashboardMenu
+              state={{ currentMenu, currentNestMenu, menuGroup }}
+            />
           </Atoms.Box>
         </SimpleBarReact>
       </Atoms.Box>
     </Atoms.Drawer>
-  )
-}
-
-// Container
-export const DashboardDrawer: FC = () => {
-  const {
-    state: { dashboardDrawerDisplayMode },
-    actions: { handleSetDashboardDrawerDisplay }
-  } = Hooks.App.useApp()
-
-  const onDrawrCloseClick = useCallback(() => {
-    handleSetDashboardDrawerDisplay('hide')
-  }, [handleSetDashboardDrawerDisplay])
-  // //
-
-  return (
-    <DashboardDrawerPresenter
-      state={{
-        isDrawerDisplayOpen:
-          dashboardDrawerDisplayMode === 'show' ? true : false
-      }}
-      actions={{ onDrawrCloseClick }}
-    />
   )
 }

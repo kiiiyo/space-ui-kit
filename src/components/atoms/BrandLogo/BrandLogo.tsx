@@ -23,6 +23,7 @@ const brandLogoSymbolStyle = (theme: Theme) =>
 
 const brandLogoTypeStyle = () =>
   css({
+    fontSize: '1.5rem',
     fontWeight: 'bold'
   })
 
@@ -31,12 +32,8 @@ export const BrandLogo: FC<TBrandLogoProps> = ({
 }) => {
   return (
     <Atoms.Box display="flex" alignItems="center">
-      <Atoms.Typography css={brandLogoSymbolStyle} component="div">
-        {symbol}
-      </Atoms.Typography>
-      <Atoms.Typography css={brandLogoTypeStyle} variant="h6" component="div">
-        {typography}
-      </Atoms.Typography>
+      <Atoms.Typography css={brandLogoSymbolStyle}>{symbol}</Atoms.Typography>
+      <Atoms.Typography css={brandLogoTypeStyle}>{typography}</Atoms.Typography>
     </Atoms.Box>
   )
 }
