@@ -13,9 +13,6 @@ import {
 } from './style'
 
 // Interface
-
-//currentMenu
-
 export type TDashboardSidebarProps = {
   state: {
     currentMenu: TMenuGroupKey
@@ -29,6 +26,22 @@ export type TDashboardSidebarPresenterProps = {
     currentNestMenu?: string
     menuGroup: Array<TMenuGroup>
   }
+}
+
+// Container
+export const DashboardSidebar: FC<TDashboardSidebarProps> = ({
+  state: { currentMenu, currentNestMenu }
+}) => {
+  const menuGroup = Constant.DASHBOARD_MENU
+  return (
+    <DashboardSidebarPresenter
+      state={{
+        currentMenu,
+        currentNestMenu,
+        menuGroup
+      }}
+    />
+  )
 }
 
 // Presenter
@@ -68,23 +81,5 @@ export const DashboardSidebarPresenter: FC<TDashboardSidebarPresenterProps> = ({
         </Atoms.Box>
       </Atoms.Drawer>
     </Atoms.Box>
-  )
-}
-
-// Container
-export const DashboardSidebar: FC<TDashboardSidebarProps> = ({
-  state: { currentMenu, currentNestMenu }
-}) => {
-  //const [open] = useState(true)
-
-  const menuGroup = Constant.DASHBOARD_MENU
-  return (
-    <DashboardSidebarPresenter
-      state={{
-        currentMenu,
-        currentNestMenu,
-        menuGroup
-      }}
-    />
   )
 }

@@ -57,7 +57,9 @@ export const DashboardTemplatePresenter: FC<
       {!isMobile && (
         <Organisms.DashboardSidebar state={{ currentMenu, currentNestMenu }} />
       )}
-      {isMobile && <Organisms.DashboardDrawer />}
+      {isMobile && (
+        <Organisms.DashboardDrawer state={{ currentMenu, currentNestMenu }} />
+      )}
       <Organisms.SettingPanel />
       <Atoms.Box css={wrapperStyle} component="div">
         <Atoms.Box css={mainStyle} component="main">
