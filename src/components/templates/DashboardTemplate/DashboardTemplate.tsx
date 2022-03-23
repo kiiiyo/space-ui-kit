@@ -1,6 +1,7 @@
-import { FC, ReactNode } from 'react'
+import { FC } from 'react'
 import { css, Theme } from '@emotion/react'
 //
+import type { TMenuGroupKey, TNestMenuKey } from '@/types/dashboard-menu'
 import { Hooks } from '@/features'
 import { Organisms, Atoms } from '@/components'
 
@@ -8,11 +9,16 @@ import { Organisms, Atoms } from '@/components'
 export type DashboardTemplatePresenterProps = {
   state: {
     isMobile: boolean
+    currentMenu: TMenuGroupKey
+    currentNestMenu?: string
   }
 }
 
 export type TDashboardTemplateProps = {
-  headerBar?: ReactNode
+  state: {
+    currentMenu: TMenuGroupKey
+    currentNestMenu?: TNestMenuKey
+  }
 }
 
 //  Style
@@ -44,11 +50,13 @@ const mainStyle = (theme: Theme) =>
 
 export const DashboardTemplatePresenter: FC<
   DashboardTemplatePresenterProps
-> = ({ children, state: { isMobile } }) => {
+> = ({ children, state: { isMobile, currentMenu, currentNestMenu } }) => {
   return (
     <Atoms.Box css={containerStyle}>
       <Organisms.DashboardHeaderBar />
-      {!isMobile && <Organisms.DashboardSidebar />}
+      {!isMobile && (
+        <Organisms.DashboardSidebar state={{ currentMenu, currentNestMenu }} />
+      )}
       {isMobile && <Organisms.DashboardDrawer />}
       <Organisms.SettingPanel />
       <Atoms.Box css={wrapperStyle} component="div">
@@ -62,6 +70,7 @@ export const DashboardTemplatePresenter: FC<
 
 // Container
 export const DashboardTemplate: FC<TDashboardTemplateProps> = ({
+  state: { currentMenu, currentNestMenu },
   children
 }) => {
   const {
@@ -69,7 +78,9 @@ export const DashboardTemplate: FC<TDashboardTemplateProps> = ({
   } = Hooks.App.useApp()
 
   return (
-    <DashboardTemplatePresenter state={{ isMobile }}>
+    <DashboardTemplatePresenter
+      state={{ isMobile, currentMenu, currentNestMenu }}
+    >
       {children}
     </DashboardTemplatePresenter>
   )

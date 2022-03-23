@@ -3,8 +3,9 @@ import { initReactI18next } from 'react-i18next'
 import Backend from 'i18next-http-backend'
 import LanguageDetector from 'i18next-browser-languagedetector'
 //
-import enJson from '@/locales/en.json'
-import jaJson from '@/locales/ja.json'
+
+import { en } from '@/locales/en'
+import { ja } from '@/locales/ja'
 
 i18n
   .use(Backend)
@@ -12,12 +13,8 @@ i18n
   .use(initReactI18next)
   .init({
     resources: {
-      en: {
-        translation: enJson
-      },
-      ja: {
-        translation: jaJson
-      }
+      en,
+      ja
     },
     debug: false, //
     lng: 'en',

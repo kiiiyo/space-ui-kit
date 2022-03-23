@@ -56,6 +56,7 @@ import {
   StarBorder as StarBorderIcon,
   ExpandLess as ExpandLessIcon,
   ExpandMore as ExpandMoreIcon,
+  Dashboard as DashboardIcon,
   Web as WebIcon
 } from '@mui/icons-material'
 
@@ -83,5 +84,6 @@ export {
   StarBorderIcon,
   ExpandLessIcon,
   ExpandMoreIcon,
-  WebIcon
+  WebIcon,
+  DashboardIcon
 }

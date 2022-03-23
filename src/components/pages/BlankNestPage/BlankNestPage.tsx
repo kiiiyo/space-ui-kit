@@ -8,11 +8,13 @@ import { Template, Atoms } from '@/components'
 
 // Presenter
 
-export const DashboardPage: FC = () => {
+export const BlankNestPage: FC = () => {
   return (
-    <Template.DashboardTemplate state={{ currentMenu: 'DASHBOARD' }}>
+    <Template.DashboardTemplate
+      state={{ currentMenu: 'PAGES', currentNestMenu: 'PAGES_BLANK_NEST' }}
+    >
       <Atoms.Box sx={{ height: 960, background: '#ddd' }}>
-        DashboardPage
+        BlankNestPage
       </Atoms.Box>
     </Template.DashboardTemplate>
   )

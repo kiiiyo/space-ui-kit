@@ -1,65 +1,40 @@
 import { FC } from 'react'
-import { alpha } from '@mui/material/styles'
-import { css, Theme } from '@emotion/react'
 import SimpleBarReact from 'simplebar-react'
 //
+import type { TMenuGroup, TMenuGroupKey } from '@/types/dashboard-menu'
 import { Constant } from '@/configs'
-import { Atoms } from '@/components'
+import { Molecules, Atoms } from '@/components'
+//
+import {
+  containerStyle,
+  scrollbarStyle,
+  simpleBarStyle,
+  brandLogoStyle
+} from './style'
 
 // Interface
 
-//  Style
+//currentMenu
 
-const containerStyle = (theme: Theme) =>
-  css({
-    [theme.breakpoints.up('md')]: {
-      flexShrink: 1,
-      width: Constant.DASHBOARD_SIDEBAR_WIDTH
-    }
-  })
+export type TDashboardSidebarProps = {
+  state: {
+    currentMenu: TMenuGroupKey
+    currentNestMenu?: string
+  }
+}
 
-const scrollbarStyle = () =>
-  css({
-    height: '100%',
-    overflow: 'hidden'
-  })
-
-const simpleBarStyle = (theme: Theme) =>
-  css({
-    maxHeight: '100%',
-
-    '& .simplebar-scrollbar': {
-      '&:before': {
-        backgroundColor: alpha(theme.palette.grey[600], 0.48)
-      },
-      '&.simplebar-visible:before': {
-        opacity: 1
-      }
-    },
-    '& .simplebar-track.simplebar-vertical': {
-      width: 10
-    },
-    '& .simplebar-track.simplebar-horizontal .simplebar-scrollbar': {
-      height: 6
-    },
-    '& .simplebar-mask': {
-      zIndex: 'inherit'
-    }
-  })
-
-const innerStyle = () => css({})
-
-const brandLogoStyle = (theme: Theme) =>
-  css({
-    paddingTop: theme.spacing(3),
-    paddingBottom: theme.spacing(3),
-    paddingLeft: theme.spacing(2),
-    paddingRight: theme.spacing(2)
-  })
+export type TDashboardSidebarPresenterProps = {
+  state: {
+    currentMenu: TMenuGroupKey
+    currentNestMenu?: string
+    menuGroup: Array<TMenuGroup>
+  }
+}
 
 // Presenter
-
-export const DashboardSidebarPresenter: FC = () => {
+export const DashboardSidebarPresenter: FC<TDashboardSidebarPresenterProps> = ({
+  state: { currentMenu, currentNestMenu, menuGroup }
+}) => {
   return (
     <Atoms.Box component="div" css={containerStyle}>
       <Atoms.Drawer
@@ -75,7 +50,7 @@ export const DashboardSidebarPresenter: FC = () => {
       >
         <Atoms.Box component="div" css={scrollbarStyle}>
           <SimpleBarReact css={simpleBarStyle}>
-            <Atoms.Box component="div" css={innerStyle}>
+            <Atoms.Box component="div">
               {/* BrandLogo */}
               <Atoms.Box css={brandLogoStyle}>
                 <Atoms.BrandLogo
@@ -85,22 +60,9 @@ export const DashboardSidebarPresenter: FC = () => {
                   }}
                 />
               </Atoms.Box>
-              <Atoms.List
-                disablePadding
-                component="nav"
-                subheader={
-                  <Atoms.ListSubheader component="div">
-                    Menue
-                  </Atoms.ListSubheader>
-                }
-              >
-                <Atoms.ListItemButton selected={true}>
-                  <Atoms.ListItemIcon>
-                    <Atoms.LoginIcon />
-                  </Atoms.ListItemIcon>
-                  <Atoms.ListItemText primary="Inbox" />
-                </Atoms.ListItemButton>
-              </Atoms.List>
+              <Molecules.DashboardMenu
+                state={{ currentMenu, currentNestMenu, menuGroup }}
+              />
             </Atoms.Box>
           </SimpleBarReact>
         </Atoms.Box>
@@ -110,6 +72,19 @@ export const DashboardSidebarPresenter: FC = () => {
 }
 
 // Container
-export const DashboardSidebar: FC = () => {
-  return <DashboardSidebarPresenter />
+export const DashboardSidebar: FC<TDashboardSidebarProps> = ({
+  state: { currentMenu, currentNestMenu }
+}) => {
+  //const [open] = useState(true)
+
+  const menuGroup = Constant.DASHBOARD_MENU
+  return (
+    <DashboardSidebarPresenter
+      state={{
+        currentMenu,
+        currentNestMenu,
+        menuGroup
+      }}
+    />
+  )
 }
