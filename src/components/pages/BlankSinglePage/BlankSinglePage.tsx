@@ -13,22 +13,24 @@ export const BlankSinglePage: FC = () => {
     <Template.DashboardTemplate
       state={{ currentMenu: 'PAGES', currentNestMenu: 'PAGES_BLANK_SINGLE' }}
     >
-      <Molecules.DashboardPageHeader
-        state={{
-          breadcrumbs: [
-            {
-              localeKeyPrefix: 'breadcrumbs.dashboard',
-              path: '/dashboard'
-            },
-            {
-              localeKeyPrefix: 'breadcrumbs.blankSingle',
-              path: '/dashboard/pages/blank-single',
-              current: true
-            }
-          ]
-        }}
-      />
-
+      <Atoms.Box sx={{ marginBottom: 5 }}>
+        <Molecules.DashboardPageHeader
+          state={{
+            pageLocaleKey: 'page.blankSinglePage',
+            breadcrumbs: [
+              {
+                localeKeyPrefix: 'breadcrumbs.dashboard',
+                path: '/dashboard'
+              },
+              {
+                localeKeyPrefix: 'breadcrumbs.blankSingle',
+                path: '/dashboard/pages/blank-single',
+                current: true
+              }
+            ]
+          }}
+        />
+      </Atoms.Box>
       <Atoms.Box component="section">
         <Atoms.Paper elevation={3}>
           <Atoms.Box sx={{ padding: 3 }}>

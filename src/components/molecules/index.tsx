@@ -5,6 +5,7 @@ import DashboardMenu from './DashboardMenu'
 import DashboardNestMenu from './DashboardNestMenu'
 //
 import DashboardPageHeader from './DashboardPageHeader'
+import GeneralTabs from './GeneralTabs'
 
 export {
   ProfileMenu,
@@ -13,5 +14,6 @@ export {
   DashboardMenu,
   DashboardNestMenu,
   //
-  DashboardPageHeader
+  DashboardPageHeader,
+  GeneralTabs
 }

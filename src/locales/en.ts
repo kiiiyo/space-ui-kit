@@ -68,6 +68,13 @@ export const en: TLanguage = {
           dashboard: 'Dashboard',
           blankSingle: 'Blank Single Page'
         }
+      },
+      blankNestPage: {
+        title: 'Blank Nest Page',
+        breadcrumbs: {
+          dashboard: 'Dashboard',
+          blankNest: 'Blank Nest Page'
+        }
       }
     }
   }

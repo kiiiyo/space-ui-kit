@@ -68,6 +68,13 @@ export const ja: TLanguage = {
           dashboard: 'ダッシュボード',
           blankSingle: '雛形固定ページ'
         }
+      },
+      blankNestPage: {
+        title: '雛形階層ページ',
+        breadcrumbs: {
+          dashboard: 'ダッシュボード',
+          blankNest: '雛形階層ページ'
+        }
       }
     }
   }

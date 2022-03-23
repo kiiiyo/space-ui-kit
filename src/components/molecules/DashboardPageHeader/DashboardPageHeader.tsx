@@ -20,21 +20,19 @@ export type TBreadcrumb = {
 
 export type TDashboardPageHeaderProps = {
   state: {
+    pageLocaleKey: string
     breadcrumbs?: Array<TBreadcrumb>
   }
 }
 
 export type TDashboardPageHeaderPresenterProps = {
   state: {
+    pageLocaleKey: string
     breadcrumbs?: Array<TBreadcrumb>
   }
 }
 
 // Style
-const containerStyle = (theme: Theme) =>
-  css({
-    marginBottom: theme.spacing(5)
-  })
 
 const titleStyle = (theme: Theme) =>
   css({
@@ -52,61 +50,23 @@ const breadcrumbsStyle = (theme: Theme) =>
     fontSize: '0.875rem'
   })
 
-// const accountNameStyle = () =>
-//   css({
-//     lineHeight: 1.5,
-//     fontSize: '0.875rem'
-//   })
-
-// const accountDescriptionStyle = (theme: Theme) =>
-//   css({
-//     lineHeight: 1.5,
-//     fontSize: '0.875rem',
-//     color: theme.palette.grey['500']
-//   })
-
 // Container
 export const DashboardPageHeader: FC<TDashboardPageHeaderProps> = ({
-  state: { breadcrumbs }
+  state: { pageLocaleKey, breadcrumbs }
 }) => {
-  // const navigate = useNavigate()
-  // const {
-  //   state: { locale }
-  // } = Hooks.Locale.useLocale()
-
-  // const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null)
-  // const isMenuOpen = Boolean(anchorEl)
-
-  // const onShowMenuClick = useCallback(
-  //   (event: React.MouseEvent<HTMLElement>) => {
-  //     setAnchorEl(event.currentTarget)
-  //   },
-  //   [setAnchorEl]
-  // )
-  // const onHideMenuClick = useCallback(() => {
-  //   setAnchorEl(null)
-  // }, [setAnchorEl])
-
-  // const onSignOutClick = useCallback(() => {
-  //   navigate(`/${locale}/`)
-  // }, [locale, navigate])
-
-  return <DashboardPageHeaderPresenter state={{ breadcrumbs }} />
+  return <DashboardPageHeaderPresenter state={{ pageLocaleKey, breadcrumbs }} />
 }
 
 // Presenter
 export const DashboardPageHeaderPresenter: FC<
   TDashboardPageHeaderPresenterProps
-> = ({ state: { breadcrumbs } }) => {
-  // const { t } = useTranslation('translation', {
-  //   keyPrefix: 'common.dashboardHeaderBar.ProfileMenu'
-  // })
+> = ({ state: { pageLocaleKey, breadcrumbs } }) => {
   const { t } = useTranslation('translation', {
-    keyPrefix: 'page.blankSinglePage'
+    keyPrefix: pageLocaleKey
   })
-  console.log(breadcrumbs)
+
   return (
-    <Atoms.Box css={containerStyle}>
+    <>
       <Atoms.Box component="header">
         <Atoms.Typography component="h2" css={titleStyle}>
           {t('title')}
@@ -128,6 +88,6 @@ export const DashboardPageHeaderPresenter: FC<
           )
         })}
       </Atoms.Breadcrumbs>
-    </Atoms.Box>
+    </>
   )
 }

@@ -38,7 +38,9 @@ export {
   ToggleButtonGroup,
   ToggleButton,
   Collapse,
-  Breadcrumbs
+  Breadcrumbs,
+  Tabs,
+  Tab
 } from '@mui/material'
 
 // Icons

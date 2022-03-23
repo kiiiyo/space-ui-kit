@@ -69,6 +69,13 @@ export type TLanguage = {
           blankSingle: string
         }
       }
+      blankNestPage: {
+        title: string
+        breadcrumbs: {
+          dashboard: string
+          blankNest: string
+        }
+      }
     }
   }
 }
