@@ -7,7 +7,6 @@ import { useTranslation } from 'react-i18next'
 import { Atoms } from '@/components'
 
 // Interface
-
 export type SearchbarPresenterProps = {
   state: {
     isSearchbarDisplay: boolean
@@ -18,10 +17,10 @@ export type SearchbarPresenterProps = {
   }
 }
 
-const SEARCH_BAR_MOBILE = 64
-const SEARCH_BAR_DESKTOP = 92
-
 //  Style
+const SEARCH_BAR_MOBILE = 64
+
+const SEARCH_BAR_DESKTOP = 92
 
 const searchbarStyle = (theme: Theme) =>
   css({

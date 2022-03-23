@@ -61,6 +61,20 @@ export const en: TLanguage = {
         remember: 'Remember me',
         forgotPassword: 'Forgot password?',
         signInButtonLabel: 'Sign in'
+      },
+      blankSinglePage: {
+        title: 'Blank Single Page',
+        breadcrumbs: {
+          dashboard: 'Dashboard',
+          blankSingle: 'Blank Single Page'
+        }
+      },
+      blankNestPage: {
+        title: 'Blank Nest Page',
+        breadcrumbs: {
+          dashboard: 'Dashboard',
+          blankNest: 'Blank Nest Page'
+        }
       }
     }
   }

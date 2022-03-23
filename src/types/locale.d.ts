@@ -62,6 +62,21 @@ export type TLanguage = {
         forgotPassword: string
         signInButtonLabel: string
       }
+      blankSinglePage: {
+        title: string
+        breadcrumbs: {
+          dashboard: string
+          blankSingle: string
+        }
+      }
+      blankNestPage: {
+        title: string
+        breadcrumbs: {
+          dashboard: string
+          blankNest: string
+        }
+      }
     }
   }
 }
+//breadcrumbs
