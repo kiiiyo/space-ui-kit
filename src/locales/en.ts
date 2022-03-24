@@ -75,6 +75,13 @@ export const en: TLanguage = {
           dashboard: 'Dashboard',
           blankNest: 'Blank Nest Page'
         }
+      },
+      errorNotFoundPage: {
+        title: 'Sorry, page not found!',
+        description:
+          // eslint-disable-next-line quotes
+          "Sorry, we couldn't find the page you're looking for. Perhaps you'vemistyped the URL?",
+        buttonLabel: 'Go To Home'
       }
     }
   }

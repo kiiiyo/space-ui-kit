@@ -76,6 +76,11 @@ export type TLanguage = {
           blankNest: string
         }
       }
+      errorNotFoundPage: {
+        title: string
+        description: string
+        buttonLabel: string
+      }
     }
   }
 }

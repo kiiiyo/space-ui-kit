@@ -25,12 +25,12 @@ export const getDesignTokens = (mode: 'light' | 'dark'): ThemeOptions => ({
               primary: '#fff',
               secondary: grey[500]
             },
-            background: {
-              default: '#010101',
-              paper: '#010101'
-            },
             palette: {
-              primary: grey
+              primary: grey[50],
+              background: {
+                default: '#010101',
+                paper: '#010101'
+              }
             }
           }
         : // Light mode

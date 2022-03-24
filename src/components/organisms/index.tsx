@@ -8,6 +8,7 @@ import DashboardHeaderBar from './DashboardHeaderBar'
 import DashboardSidebar from './DashboardSidebar'
 import DashboardDrawer from './DashboardDrawer'
 //
+import NotFoundSection from './NotFoundSection'
 
 export {
   GeneralHeaderBar,
@@ -19,5 +20,7 @@ export {
   // Dashboard
   DashboardHeaderBar,
   DashboardSidebar,
-  DashboardDrawer
+  DashboardDrawer,
+  //
+  NotFoundSection
 }
