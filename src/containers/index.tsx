@@ -6,6 +6,8 @@ import SignInContainer from './SignInContainer'
 import DashboardContainer from './DashboardContainer'
 import BlankSingleContainer from './BlankSingleContainer'
 import BlankNestContainer from './BlankNestContainer'
+// Error
+import NotfoundErrorContainer from './NotfoundErrorContainer'
 
 export {
   RouteContainer,
@@ -14,5 +16,7 @@ export {
   SignInContainer,
   DashboardContainer,
   BlankSingleContainer,
-  BlankNestContainer
+  BlankNestContainer,
+  // Error
+  NotfoundErrorContainer
 }

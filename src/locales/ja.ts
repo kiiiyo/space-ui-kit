@@ -75,6 +75,12 @@ export const ja: TLanguage = {
           dashboard: 'ダッシュボード',
           blankNest: '雛形階層ページ'
         }
+      },
+      errorNotFoundPage: {
+        title: 'お探しのページがみつかりませんでした。',
+        description:
+          '申し訳ありません。お探しのページは見つかりませんでした。URLがお間違えないかご確認ください。',
+        buttonLabel: 'ホームに戻る'
       }
     }
   }

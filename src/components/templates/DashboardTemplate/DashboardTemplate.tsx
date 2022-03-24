@@ -49,6 +49,25 @@ const mainStyle = (theme: Theme) =>
     }
   })
 
+// Container
+export const DashboardTemplate: FC<TDashboardTemplateProps> = ({
+  state: { currentMenu, currentNestMenu },
+  children
+}) => {
+  const {
+    state: { isMobile }
+  } = Hooks.App.useApp()
+
+  return (
+    <DashboardTemplatePresenter
+      state={{ isMobile, currentMenu, currentNestMenu }}
+    >
+      {children}
+    </DashboardTemplatePresenter>
+  )
+}
+
+// Presenter
 export const DashboardTemplatePresenter: FC<
   DashboardTemplatePresenterProps
 > = ({ children, state: { isMobile, currentMenu, currentNestMenu } }) => {
@@ -68,23 +87,5 @@ export const DashboardTemplatePresenter: FC<
         </Atoms.Box>
       </Atoms.Box>
     </Atoms.Box>
-  )
-}
-
-// Container
-export const DashboardTemplate: FC<TDashboardTemplateProps> = ({
-  state: { currentMenu, currentNestMenu },
-  children
-}) => {
-  const {
-    state: { isMobile }
-  } = Hooks.App.useApp()
-
-  return (
-    <DashboardTemplatePresenter
-      state={{ isMobile, currentMenu, currentNestMenu }}
-    >
-      {children}
-    </DashboardTemplatePresenter>
   )
 }

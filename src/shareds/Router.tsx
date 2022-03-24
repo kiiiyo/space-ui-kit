@@ -8,7 +8,8 @@ import {
   SignInContainer,
   DashboardContainer,
   BlankSingleContainer,
-  BlankNestContainer
+  BlankNestContainer,
+  NotfoundErrorContainer
 } from '@/containers'
 
 export const Router: FC = () => {
@@ -27,8 +28,9 @@ export const Router: FC = () => {
           path="/:locale/dashboard/pages/blank-nest"
           element={<BlankNestContainer />}
         />
+        <Route path="/:locale/404" element={<NotfoundErrorContainer />} />
       </Route>
-      <Route path="/404" element={<div>Not Found</div>} />
+      <Route path="/404" element={<NotfoundErrorContainer />} />
       <Route path="*" element={<div>Not Found</div>} />
     </Routes>
   )
