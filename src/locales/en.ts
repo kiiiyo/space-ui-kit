@@ -76,11 +76,16 @@ export const en: TLanguage = {
           blankNest: 'Blank Nest Page'
         }
       },
-      errorNotFoundPage: {
+      notFoundErrorPage: {
         title: 'Sorry, page not found!',
         description:
           // eslint-disable-next-line quotes
           "Sorry, we couldn't find the page you're looking for. Perhaps you'vemistyped the URL?",
+        buttonLabel: 'Go To Home'
+      },
+      systemErrorPage: {
+        title: 'Internal Server Error',
+        description: 'There was an error, please try again later.',
         buttonLabel: 'Go To Home'
       }
     }

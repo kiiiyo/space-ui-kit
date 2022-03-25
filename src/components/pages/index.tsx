@@ -4,6 +4,8 @@ import DashboardPage from './DashboardPage'
 import BlankSinglePage from './BlankSinglePage'
 import BlankNestPage from './BlankNestPage'
 import NotFoundErrorPage from './NotFoundErrorPage'
+import SystemErrorPage from './SystemErrorPage'
+
 //
 export {
   HomePage,
@@ -11,5 +13,7 @@ export {
   DashboardPage,
   BlankSinglePage,
   BlankNestPage,
-  NotFoundErrorPage
+  //
+  NotFoundErrorPage,
+  SystemErrorPage
 }

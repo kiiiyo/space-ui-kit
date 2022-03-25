@@ -2,7 +2,8 @@ import { FC } from 'react'
 //
 import { Page } from '@/components'
 
-const NotfoundErrorContainer: FC = () => {
+const NotFoundErrorContainer: FC = () => {
   return <Page.NotFoundErrorPage />
 }
-export default NotfoundErrorContainer
+
+export default NotFoundErrorContainer

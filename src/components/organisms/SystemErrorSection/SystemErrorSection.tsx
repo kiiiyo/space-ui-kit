@@ -47,9 +47,9 @@ const imageStyle = () =>
     height: '100%'
   })
 
-export const NotFoundSection: FC = () => {
+export const SystemErrorSection: FC = () => {
   const { t } = useTranslation('translation', {
-    keyPrefix: 'page.notFoundErrorPage'
+    keyPrefix: 'page.systemErrorPage'
   })
 
   return (
@@ -61,7 +61,7 @@ export const NotFoundSection: FC = () => {
         {t('description')}
       </Atoms.Typography>
       <Atoms.Box css={imageContainerStyle}>
-        <img css={imageStyle} src="/assets/error-not-found.svg" />
+        <img css={imageStyle} src="/assets/error-system.svg" />
       </Atoms.Box>
       <Atoms.Box sx={{ textAlign: 'center' }}>
         <Atoms.Button
