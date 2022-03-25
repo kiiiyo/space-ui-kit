@@ -1,2 +1,3 @@
-import NotfoundErrorContainer from './NotfoundErrorContainer'
-export default NotfoundErrorContainer
+import NotFoundErrorContainer from './NotFoundErrorContainer'
+
+export default NotFoundErrorContainer

@@ -76,10 +76,15 @@ export const ja: TLanguage = {
           blankNest: '雛形階層ページ'
         }
       },
-      errorNotFoundPage: {
+      notFoundErrorPage: {
         title: 'お探しのページがみつかりませんでした。',
         description:
           '申し訳ありません。お探しのページは見つかりませんでした。URLがお間違えないかご確認ください。',
+        buttonLabel: 'ホームに戻る'
+      },
+      systemErrorPage: {
+        title: 'このページは動作していません。',
+        description: 'エラーが発生しました。後でもう一度お試しください。',
         buttonLabel: 'ホームに戻る'
       }
     }
