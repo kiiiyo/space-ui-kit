@@ -7,7 +7,7 @@ import DashboardContainer from './DashboardContainer'
 import BlankSingleContainer from './BlankSingleContainer'
 import BlankNestContainer from './BlankNestContainer'
 // Error
-import NotFoundErrorContainer from './NotFoundErrorContainer'
+import NotFoundContainer from './NotFoundContainer'
 import SystemErrorContainer from './SystemErrorContainer'
 
 export {
@@ -19,6 +19,6 @@ export {
   BlankSingleContainer,
   BlankNestContainer,
   // Error
-  NotFoundErrorContainer,
+  NotFoundContainer,
   SystemErrorContainer
 }
