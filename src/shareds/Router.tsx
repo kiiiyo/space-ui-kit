@@ -9,7 +9,7 @@ import {
   DashboardContainer,
   BlankSingleContainer,
   BlankNestContainer,
-  NotFoundErrorContainer,
+  NotFoundContainer,
   SystemErrorContainer
 } from '@/containers'
 
@@ -29,10 +29,10 @@ export const Router: FC = () => {
           path="/:locale/dashboard/pages/blank-nest"
           element={<BlankNestContainer />}
         />
-        <Route path="/:locale/404" element={<NotFoundErrorContainer />} />
+        <Route path="/:locale/404" element={<NotFoundContainer />} />
         <Route path="/:locale/500" element={<SystemErrorContainer />} />
       </Route>
-      <Route path="/404" element={<NotFoundErrorContainer />} />
+      <Route path="/404" element={<NotFoundContainer />} />
       <Route path="/500" element={<SystemErrorContainer />} />
       <Route path="*" element={<div>Not Found</div>} />
     </Routes>
