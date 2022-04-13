@@ -10,7 +10,7 @@ import { Template, Atoms } from '@/components'
 
 export const DashboardPage: FC = () => {
   return (
-    <Template.DashboardTemplate>
+    <Template.DashboardTemplate state={{ currentMenu: 'DASHBOARD' }}>
       <Atoms.Box sx={{ height: 960, background: '#ddd' }}>
         DashboardPage
       </Atoms.Box>

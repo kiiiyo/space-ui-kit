@@ -7,6 +7,9 @@ import SettingPanel from './SettingPanel'
 import DashboardHeaderBar from './DashboardHeaderBar'
 import DashboardSidebar from './DashboardSidebar'
 import DashboardDrawer from './DashboardDrawer'
+//
+import NotFoundSection from './NotFoundSection'
+import SystemErrorSection from './SystemErrorSection'
 
 export {
   GeneralHeaderBar,
@@ -18,5 +21,8 @@ export {
   // Dashboard
   DashboardHeaderBar,
   DashboardSidebar,
-  DashboardDrawer
+  DashboardDrawer,
+  //
+  NotFoundSection,
+  SystemErrorSection
 }
