@@ -1,5 +1,5 @@
 // UI_KIT version
-export const UI_KIT_VERSION = '0.0.1'
+export const UI_KIT_VERSION = '0.0.2'
 
 // Brand
 export const BRAND_SYMBOL = '🚀'
