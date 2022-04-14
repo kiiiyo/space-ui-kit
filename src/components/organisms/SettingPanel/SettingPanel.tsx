@@ -8,6 +8,7 @@ import type { TLocale } from '@/types/locale'
 import { Atoms } from '@/components'
 //
 import {
+  typographyStyle,
   posStyle,
   buttonStyle,
   panelContainerStyle,
@@ -73,7 +74,9 @@ export const SettingPanelPresenter: FC<SettingPanelPresenterProps> = ({
         >
           <Atoms.Box css={panelContainerStyle}>
             <Atoms.Box css={panelHeaderStyle}>
-              <Atoms.Typography component="h5">Settings</Atoms.Typography>
+              <Atoms.Typography css={typographyStyle} component="h5">
+                Settings
+              </Atoms.Typography>
               <Atoms.Box>
                 {/*
                 <Atoms.IconButton size="small">
@@ -92,7 +95,9 @@ export const SettingPanelPresenter: FC<SettingPanelPresenterProps> = ({
             <Atoms.Box css={panelBodyStyle}>
               {/* Color Mode Block  */}
               <Atoms.Box>
-                <Atoms.Typography component="h6">Mode</Atoms.Typography>
+                <Atoms.Typography css={typographyStyle} component="h6">
+                  Mode
+                </Atoms.Typography>
                 <Atoms.Box css={panelSectionStyle}>
                   <Atoms.Box css={panelRowStyle}>
                     <Atoms.Box css={panelRowItemStyle}>
@@ -121,7 +126,9 @@ export const SettingPanelPresenter: FC<SettingPanelPresenterProps> = ({
               {/* Color Mode Block */}
               {/* Language Block */}
               <Atoms.Box sx={{ marginTop: '16px' }}>
-                <Atoms.Typography component="h6">Language</Atoms.Typography>
+                <Atoms.Typography css={typographyStyle} component="h6">
+                  Language
+                </Atoms.Typography>
                 <Atoms.Box css={panelSectionStyle}>
                   <Atoms.ToggleButtonGroup
                     value={language}

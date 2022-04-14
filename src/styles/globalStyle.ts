@@ -75,6 +75,13 @@ export function applyGlobalStyle() {
         text-decoration: underline;
       }
     }
+
+    @media (prefers-color-scheme: dark) {
+     body {
+      background-color: #121212;
+      }
+    }
+
     #root{
       width: 100%;
       height: 100%;
