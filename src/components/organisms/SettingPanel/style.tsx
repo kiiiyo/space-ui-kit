@@ -1,6 +1,14 @@
 import { css, Theme } from '@emotion/react'
 import { alpha } from '@mui/material'
 
+export const typographyStyle = (theme: Theme) =>
+  css({
+    color:
+      theme.palette.mode === 'light'
+        ? theme.palette.grey[800]
+        : theme.palette.grey[100]
+  })
+
 export const posStyle = (theme: Theme) =>
   css({
     position: 'fixed',
