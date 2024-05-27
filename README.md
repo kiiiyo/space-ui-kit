@@ -1,1 +1,1 @@
-# space-ui-kit
+# Space UI Kit
