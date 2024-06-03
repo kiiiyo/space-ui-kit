@@ -30,7 +30,14 @@ export default [
 
   /* Ignores */
   {
-    ignores: ['dist', 'eslint.config.js', 'eslint-configs/*'],
+    ignores: [
+      'dist',
+      'eslint-configs/*',
+      'eslint.config.js',
+      'prettier.config.js',
+      'lint-staged.config.cjs',
+      'vite.config.ts',
+    ],
   },
 
   js.configs.recommended,
