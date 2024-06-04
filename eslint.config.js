@@ -39,6 +39,7 @@ export default [
       'commitlint.config.cjs',
       'postcss.config.js',
       'tailwind.config.js',
+      'stylelint.config.mjs',
       'vite.config.ts',
     ],
   },
