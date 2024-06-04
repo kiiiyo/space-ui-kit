@@ -9,7 +9,8 @@
     "preview": "vite preview",
     "prepare": "husky",
     "lint": "  prettier -c './**/*.{js,cjs,ts,tsx,md}';    eslint './**/*.{js,cjs,ts,tsx} --ext ts,tsx --report-unused-disable-directives --max-warnings 0';",
-    "format": "prettier -c './**/*.{js,cjs,ts,tsx,md}' -w; eslint './**/*.{js,cjs,ts,tsx}' --fix;"
+    "format": "prettier -c './**/*.{js,cjs,ts,tsx,md}' -w; eslint './**/*.{js,cjs,ts,tsx}' --fix;",
+    "commitlint": "commitlint -e $GIT_PARAMS"
   },
   "dependencies": {
     "react": "^18.2.0",
