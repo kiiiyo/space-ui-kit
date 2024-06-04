@@ -36,6 +36,7 @@ export default [
       'eslint.config.js',
       'prettier.config.js',
       'lint-staged.config.cjs',
+      'commitlint.config.cjs',
       'vite.config.ts',
     ],
   },
