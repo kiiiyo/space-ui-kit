@@ -8,8 +8,8 @@
     "build": "tsc && vite build",
     "preview": "vite preview",
     "prepare": "husky",
-    "lint": "  prettier -c './**/*.{js,cjs,ts,tsx,md}';    stylelint './**/*.{ts,tsx}';       eslint './**/*.{js,cjs,ts,tsx}' --report-unused-disable-directives;",
-    "format": "prettier -c './**/*.{js,cjs,ts,tsx,md}' -w; stylelint './**/*.{ts,tsx}' --fix; eslint './**/*.{js,cjs,ts,tsx}' --fix;",
+    "lint": "  prettier -c './**/*.{js,cjs,ts,tsx,md}';    eslint './**/*.{js,cjs,ts,tsx}' --report-unused-disable-directives;",
+    "format": "prettier -c './**/*.{js,cjs,ts,tsx,md}' -w; eslint './**/*.{js,cjs,ts,tsx}' --fix;",
     "commitlint": "commitlint -e $GIT_PARAMS"
   },
   "dependencies": {
@@ -40,10 +40,7 @@
     "husky": "^9.0.11",
     "lint-staged": "^15.2.5",
     "postcss": "^8.4.38",
-    "postcss-lit": "^1.1.1",
     "prettier": "^3.3.0",
-    "stylelint": "^16.6.1",
-    "stylelint-config-standard": "^36.0.0",
     "tailwindcss": "^3.4.3",
     "typescript": "^5.2.2",
     "vite": "^5.2.0"
