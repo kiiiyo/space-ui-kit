@@ -37,6 +37,8 @@ export default [
       'prettier.config.js',
       'lint-staged.config.cjs',
       'commitlint.config.cjs',
+      'postcss.config.js',
+      'tailwind.config.js',
       'vite.config.ts',
     ],
   },
