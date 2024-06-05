@@ -11,6 +11,9 @@ import esLintPluginReact from 'eslint-plugin-react';
 import esLintPluginReactRefresh from 'eslint-plugin-react-refresh';
 import esLintPluginReactHooks from 'eslint-plugin-react-hooks';
 
+/* FIXME: Move eslint-configs directory */
+import esLintPluginTailwindCss from 'eslint-plugin-tailwindcss';
+
 export default [
   {
     languageOptions: {
@@ -44,6 +47,7 @@ export default [
     ],
   },
 
+  /* ESLint */
   js.configs.recommended,
 
   /* Typescript */
@@ -66,4 +70,7 @@ export default [
       'react-refresh/only-export-components': ['warn', { allowConstantExport: true }],
     },
   },
+
+  /* Tailwind CSS */
+  ...esLintPluginTailwindCss.configs['flat/recommended'],
 ];
