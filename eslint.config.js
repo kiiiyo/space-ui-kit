@@ -43,6 +43,7 @@ export default [
       'postcss.config.js',
       'tailwind.config.js',
       'stylelint.config.mjs',
+      '.storybook/*',
       'vite.config.ts',
     ],
   },
