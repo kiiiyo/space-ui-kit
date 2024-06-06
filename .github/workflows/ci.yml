@@ -1,0 +1,19 @@
+# Perform necessary checks on Pull Request merge.
+#
+# (Start) ─┬─ lint ────────────┬─ (Done)
+#          ├─ TBD ─────────────┤
+#          └─ TBD ─────────────┘
+
+name: CI
+
+on: [pull_request]
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Initialize
+        uses: ./.github/actions/restore-node-js-and-npm
+      - name: Run Lint
+        run: pnpm lint
