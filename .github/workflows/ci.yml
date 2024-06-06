@@ -1,0 +1,46 @@
+# Perform necessary checks on Pull Request merge.
+#
+# (Start) ─┬─ lint ─────────────┬─ (Done)
+#          ├─ 🚧 test ──────────┤
+#          ├─ build ────────────┤
+#          └─ build:storybook ──┘
+
+name: CI
+
+on: [pull_request]
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Setup Node.js
+        uses: ./.github/actions/setup-node
+      - name: Run Lint
+        run: pnpm lint
+  # FIXME: WIP Test flow
+  # test:
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - uses: actions/checkout@v4
+  #     - name: Initialize
+  #       uses: ./.github/actions/setup-node
+  #     - name: Test
+  #       run: pnpm test
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Setup Node.js
+        uses: ./.github/actions/setup-node
+      - name: Run Build
+        run: pnpm build
+
+  build-storybook:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Setup Node.js
+        uses: ./.github/actions/setup-node
+      - name: Run Build Storybook
+        run: pnpm build:storybook

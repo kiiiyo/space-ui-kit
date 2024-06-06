@@ -6,13 +6,13 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
+    "build:storybook": "storybook build",
     "preview": "vite preview",
     "prepare": "husky",
     "lint": "  prettier -c './**/*.{js,cjs,ts,tsx,md}';    eslint './**/*.{js,cjs,ts,tsx}' --report-unused-disable-directives;",
     "format": "prettier -c './**/*.{js,cjs,ts,tsx,md}' -w; eslint './**/*.{js,cjs,ts,tsx}' --fix;",
     "commitlint": "commitlint -e $GIT_PARAMS",
-    "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "storybook": "storybook dev -p 6006"
   },
   "dependencies": {
     "@radix-ui/react-slot": "^1.0.2",
