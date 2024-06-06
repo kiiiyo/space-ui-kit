@@ -1,0 +1,23 @@
+name: Restore Node.js and NPM
+
+runs:
+  using: 'composite'
+  steps:
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version-file: '.tool-versions'
+
+    - name: Setup pnpm
+      uses: pnpm/action-setup@v4.0.0
+
+    - name: Restore cache node_modules
+      uses: actions/cache@v3
+      with:
+        path: |
+          ./node_modules
+        key: node-${{ hashFiles('**/pnpm-lock.yaml') }}
+
+    - name: Install dependencies
+      shell: bash
+      run: pnpm install --frozen-lockfile
