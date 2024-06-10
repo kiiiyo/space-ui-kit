@@ -1,12 +1,11 @@
 import { useRoutes } from 'react-router-dom';
 
-import { HomePage } from '@/components/page';
+import { HomePage } from '@/pages';
 
 export function Router() {
   const routes = useRoutes([
     {
       path: '/',
-      index: true,
       element: <HomePage />,
     },
   ]);
