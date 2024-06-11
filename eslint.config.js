@@ -1,4 +1,10 @@
-import { generalESLintConfig, typescriptConfig, reactConfig, tailwindCssConfig } from './eslint-configs/index.js';
+import {
+  generalESLintConfig,
+  typescriptConfig,
+  reactConfig,
+  tailwindCssConfig,
+  storybookConfig,
+} from './eslint-configs/index.js';
 
 export default [
   /* Ignores */
@@ -30,4 +36,7 @@ export default [
 
   /* Tailwind CSS */
   ...tailwindCssConfig,
+
+  /* Storybook */
+  ...storybookConfig,
 ];
