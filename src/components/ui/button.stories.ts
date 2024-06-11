@@ -3,12 +3,14 @@ import { fn } from '@storybook/test';
 import { Button } from '@/components/ui/button';
 
 const meta = {
-  title: 'UI/Button',
   component: Button,
   args: { onClick: fn() },
 } satisfies Meta<typeof Button>;
 
-export default meta;
+export default {
+  titl: 'UI/Button',
+  ...meta,
+};
 
 type Story = StoryObj<typeof meta>;
 
