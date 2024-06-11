@@ -46,6 +46,7 @@
     "@typescript-eslint/parser": "^7.2.0",
     "@vitejs/plugin-react": "^4.2.1",
     "autoprefixer": "^10.4.19",
+    "confusing-browser-globals": "^1.0.11",
     "cspell": "^8.8.4",
     "eslint": "^8.57.0",
     "eslint-import-resolver-typescript": "^3.6.1",
