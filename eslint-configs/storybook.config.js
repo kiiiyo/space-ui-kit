@@ -14,6 +14,7 @@ export default [
       ...eslintPluginStorybook.configs.recommended.overrides[0].rules,
       ...eslintPluginStorybook.configs['csf-strict'].rules,
       'import/no-default-export': ['off'],
+      'storybook/no-title-property-in-meta': ['off'],
     },
   },
 

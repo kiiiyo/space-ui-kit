@@ -1,12 +1,12 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { fn } from '@storybook/test';
-import { Button } from '@/components/ui/button';
+import { FloatingNavigationBar } from './floating-navigation-bar.component';
 
 const meta = {
-  title: 'UI/Button',
-  component: Button,
+  title: 'UI/FloatingNavigationBar',
+  component: FloatingNavigationBar,
   args: { onClick: fn() },
-} satisfies Meta<typeof Button>;
+} satisfies Meta<typeof FloatingNavigationBar>;
 
 export default meta;
 

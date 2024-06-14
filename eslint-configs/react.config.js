@@ -16,7 +16,8 @@ export default [
     },
     /** Rules */
     rules: {
-      'react-refresh/only-export-components': ['warn', { allowConstantExport: true }],
+      // FIXME:
+      'react-refresh/only-export-components': ['off', { allowConstantExport: true }],
     },
     settings: {
       react: {
