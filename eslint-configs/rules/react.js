@@ -544,8 +544,8 @@ export default {
       'warn',
       {
         html: 'enforce',
-        custom: 'enforce',
-        explicitSpread: 'ignore',
+        custom: 'ignore',
+        explicitSpread: 'enforce',
         exceptions: [],
       },
     ],
