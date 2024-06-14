@@ -1,1 +1,9 @@
-export { HomeIcon, GitHubIcon, SunIcon, MoonIcon, ComputerDesktopIcon } from './icon.component';
+export {
+  HomeIcon,
+  GitHubIcon,
+  SunIcon,
+  MoonIcon,
+  ComputerDesktopIcon,
+  UserIcon,
+  ArrowRightEndOnRectangleIcon,
+} from './icon.component';
