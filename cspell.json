@@ -1,4 +1,4 @@
 {
   "ignorePaths": ["**/node_modules/**", "**/dist/**", "**/public/**", "./src/assets/**", "./pnpm-lock.yaml"],
-  "words": ["clsx", "tailwindcss"]
+  "words": ["clsx", "tailwindcss", "Navigations", "setstate"]
 }
