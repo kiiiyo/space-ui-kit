@@ -6,6 +6,7 @@ export {
   ComputerDesktopIcon,
   UserIcon,
   ArrowRightEndOnRectangleIcon,
+  ArrowRightStartOnRectangleIcon,
   BarsIcon,
   DocumentIcon,
   XMarkIcon,

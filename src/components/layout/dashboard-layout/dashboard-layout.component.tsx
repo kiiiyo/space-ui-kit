@@ -9,7 +9,7 @@ import {
   SunIcon,
   UserIcon,
   BarsIcon,
-  ArrowRightEndOnRectangleIcon,
+  ArrowRightStartOnRectangleIcon,
   XMarkIcon,
   MoonIcon,
   ComputerDesktopIcon,
@@ -124,9 +124,9 @@ export function DashboardLayout({ children }: DashboardLayoutProps) {
                       </button>
                     </DropdownMenuTrigger>
                     <DropdownMenuContent align="end" alignOffset={-16}>
-                      <DropdownMenuItem className="">
-                        <ArrowRightEndOnRectangleIcon className="size-6" />
-                        <span>Sign In</span>
+                      <DropdownMenuItem className="gap-2">
+                        <ArrowRightStartOnRectangleIcon className="size-5" />
+                        <span>Sign Out</span>
                       </DropdownMenuItem>
                     </DropdownMenuContent>
                   </DropdownMenu>
