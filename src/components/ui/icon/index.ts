@@ -6,4 +6,8 @@ export {
   ComputerDesktopIcon,
   UserIcon,
   ArrowRightEndOnRectangleIcon,
+  ArrowRightStartOnRectangleIcon,
+  BarsIcon,
+  DocumentIcon,
+  XMarkIcon,
 } from './icon.component';
