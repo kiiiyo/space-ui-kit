@@ -1,4 +1,5 @@
 import { FloatingNavigationBar } from '@/components/ui/floating-navigation-bar';
+import { MarketingHero } from '@/components/ui/marketing-hero';
 import { containerStyle, headerContainerStyle } from './home-page.style';
 
 export function HomePageComponent() {
@@ -16,7 +17,7 @@ export function HomePageComponent() {
           </div>
         </header>
         <main className="flex-1">
-          <div className="container flex-1">Home Page</div>
+          <MarketingHero />
         </main>
         <footer className="border-t py-6">
           <div className="container flex flex-col items-center justify-between gap-4 md:flex-row">
