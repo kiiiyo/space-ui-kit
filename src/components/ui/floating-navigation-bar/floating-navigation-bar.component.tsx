@@ -1,6 +1,5 @@
 import {
   HomeIcon,
-  GitHubIcon,
   SunIcon,
   MoonIcon,
   ComputerDesktopIcon,
@@ -26,10 +25,6 @@ export function FloatingNavigationBar() {
         <a href="/" className={navigationItemStyle}>
           <HomeIcon className="size-6" />
           <span className="sr-only">Home</span>
-        </a>
-        <a target="_blank" rel="noreferrer" href="https://github.com/kiiiyo/" className={navigationItemStyle}>
-          <GitHubIcon className="size-5" />
-          <span className="sr-only">Github</span>
         </a>
         {/**
          * FIXME: Refactoring Theme DropdownMen
