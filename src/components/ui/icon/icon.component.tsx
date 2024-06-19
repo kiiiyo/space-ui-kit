@@ -1,4 +1,10 @@
+/**
+ * Use icons from the Heroicons library
+ * @link https://heroicons.com/
+ */
+
 /* eslint-disable react/jsx-props-no-spreading */
+
 type IconProps = React.SVGProps<SVGSVGElement>;
 
 export function HomeIcon(props: IconProps) {
