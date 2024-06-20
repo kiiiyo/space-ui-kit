@@ -36,6 +36,10 @@ export interface ButtonProps
   asChild?: boolean;
 }
 
+/**
+ * Use buttons from the shadcn/ui component library
+ * @link https://ui.shadcn.com/docs/components/button
+ */
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
   ({ className, variant, size, asChild = false, ...props }, ref) => {
     const Comp = asChild ? Slot : 'button';
