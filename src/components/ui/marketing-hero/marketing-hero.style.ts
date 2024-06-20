@@ -50,7 +50,7 @@ export const buttonGroupStyle = cn(
   'flex-col',
   'items-center',
   'justify-center',
-  'gap-y-4',
+  'gap-y-6',
   'md:flex',
   'md:flex-row',
   'md:gap-x-4',
@@ -60,7 +60,7 @@ export const buttonGroupStyle = cn(
 
 export const buttonStyle = cn(
   buttonVariants(),
-  'w-4/5',
+  'w-2/5',
   'bg-white',
   'hover:bg-white/80',
   'text-gray-800',
