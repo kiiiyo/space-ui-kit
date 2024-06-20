@@ -6,7 +6,6 @@ import {
   UserIcon,
   ArrowRightEndOnRectangleIcon,
 } from '@/components/ui/icon';
-import { useTheme } from '@/providers';
 
 import {
   DropdownMenu,
@@ -15,10 +14,12 @@ import {
   DropdownMenuItem,
 } from '@/components/ui/dropdown-menu';
 
+import { useFloatingNavigationBarPresenter } from './floating-navigation-bar.presenter';
+
 import { containerStyle, innerStyle, navigationItemStyle } from './floating-navigation-bar.style';
 
 export function FloatingNavigationBar() {
-  const { onSetTheme } = useTheme();
+  const { onSelectThemeStyle, onClickSignIn } = useFloatingNavigationBarPresenter();
   return (
     <div className={containerStyle}>
       <div className={innerStyle}>
@@ -39,8 +40,8 @@ export function FloatingNavigationBar() {
           <DropdownMenuContent side="bottom" sideOffset={12}>
             <DropdownMenuItem
               className="gap-2"
-              onClick={() => {
-                onSetTheme('light');
+              onSelect={() => {
+                onSelectThemeStyle('light');
               }}
             >
               <SunIcon className="size-4" />
@@ -48,8 +49,8 @@ export function FloatingNavigationBar() {
             </DropdownMenuItem>
             <DropdownMenuItem
               className="gap-2"
-              onClick={() => {
-                onSetTheme('dark');
+              onSelect={() => {
+                onSelectThemeStyle('dark');
               }}
             >
               <MoonIcon className="size-4" />
@@ -57,8 +58,8 @@ export function FloatingNavigationBar() {
             </DropdownMenuItem>
             <DropdownMenuItem
               className="gap-2"
-              onClick={() => {
-                onSetTheme('system');
+              onSelect={() => {
+                onSelectThemeStyle('system');
               }}
             >
               <ComputerDesktopIcon className="size-4" />
@@ -77,7 +78,7 @@ export function FloatingNavigationBar() {
             </button>
           </DropdownMenuTrigger>
           <DropdownMenuContent side="bottom" sideOffset={12}>
-            <DropdownMenuItem className="">
+            <DropdownMenuItem onSelect={onClickSignIn}>
               <ArrowRightEndOnRectangleIcon className="size-6" />
               <span>Sign In</span>
             </DropdownMenuItem>

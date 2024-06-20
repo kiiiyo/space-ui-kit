@@ -1,16 +1,16 @@
 import { createContext, useState, useEffect, useCallback, useMemo, useContext } from 'react';
 
-type Theme = 'dark' | 'light' | 'system';
+export type ThemeKind = 'dark' | 'light' | 'system';
 
 type ThemeProviderProps = {
   children: React.ReactNode;
-  defaultTheme: Theme;
+  defaultTheme: ThemeKind;
   storageKey: string;
 };
 
 type ThemeProviderState = {
-  theme: Theme;
-  onSetTheme: (theme: Theme) => void;
+  theme: ThemeKind;
+  onSetTheme: (theme: ThemeKind) => void;
 };
 
 const initialState: ThemeProviderState = {
@@ -26,11 +26,11 @@ export function ThemeProvider({
   storageKey = 'space-ui-kit-theme',
 }: ThemeProviderProps) {
   // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
-  const initialThemeState = (localStorage.getItem(storageKey) as Theme) || defaultTheme;
-  const [theme, setTheme] = useState<Theme>(initialThemeState);
+  const initialThemeState = (localStorage.getItem(storageKey) as ThemeKind) || defaultTheme;
+  const [theme, setTheme] = useState<ThemeKind>(initialThemeState);
 
   const onSetTheme = useCallback(
-    (newTheme: Theme) => {
+    (newTheme: ThemeKind) => {
       localStorage.setItem(storageKey, newTheme);
       setTheme(newTheme);
     },
