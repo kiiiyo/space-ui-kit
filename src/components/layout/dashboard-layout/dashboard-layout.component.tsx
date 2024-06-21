@@ -145,12 +145,12 @@ export function DashboardLayout({ children }: DashboardLayoutProps) {
                   title="Overview"
                   pageNavigations={[
                     {
-                      link: '/',
+                      link: '/dashboard/overview',
                       text: 'Dashboard',
                       current: true,
                     },
                     {
-                      link: '/',
+                      link: '/dashboard/analytics',
                       text: 'Analytics',
                       current: false,
                     },
@@ -160,17 +160,17 @@ export function DashboardLayout({ children }: DashboardLayoutProps) {
                   title="Management"
                   pageNavigations={[
                     {
-                      link: '/',
+                      link: '/dashboard/users',
                       text: 'Users',
                       current: false,
                     },
                     {
-                      link: '/',
+                      link: '/dashboard/issues',
                       text: 'Issues',
                       current: false,
                     },
                     {
-                      link: '/',
+                      link: '/dashboard/settings',
                       text: 'Settings',
                       current: false,
                     },

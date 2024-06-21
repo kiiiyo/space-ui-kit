@@ -1,6 +1,6 @@
 import { useRoutes } from 'react-router-dom';
 
-import { HomePage, SignInPage, DashboardOverviewPage } from '@/pages';
+import { HomePage, SignInPage, DashboardOverviewPage, DashboardAnalyticsPage } from '@/pages';
 
 export function Router() {
   const routes = useRoutes([
@@ -15,6 +15,14 @@ export function Router() {
     {
       path: '/dashboard',
       element: <DashboardOverviewPage />,
+    },
+    {
+      path: '/dashboard/overview',
+      element: <DashboardOverviewPage />,
+    },
+    {
+      path: '/dashboard/analytics',
+      element: <DashboardAnalyticsPage />,
     },
   ]);
 

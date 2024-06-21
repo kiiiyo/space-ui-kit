@@ -5,7 +5,7 @@ export function DashboardOverviewPage() {
   return (
     <>
       <Helmet>
-        <title>DashboardOverviewPage | Space UI Kit</title>
+        <title>Overview | Dashboard - Space UI Kit</title>
       </Helmet>
       <DashboardOverviewPageComponent />
     </>
