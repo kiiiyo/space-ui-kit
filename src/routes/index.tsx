@@ -9,6 +9,10 @@ import {
   DashboardUsersDetailPage,
   DashboardUsersCreatePage,
   DashboardUsersEditPage,
+  DashboardIssuesListPage,
+  DashboardIssuesDetailPage,
+  DashboardIssuesCreatePage,
+  DashboardIssuesEditPage,
   DashboardSettingsAccountPage,
 } from '@/pages';
 
@@ -52,6 +56,22 @@ export function Router() {
       element: <DashboardUsersEditPage />,
     },
     // Issues
+    {
+      path: '/dashboard/issues/list',
+      element: <DashboardIssuesListPage />,
+    },
+    {
+      path: '/dashboard/issues/detail',
+      element: <DashboardIssuesDetailPage />,
+    },
+    {
+      path: '/dashboard/issues/create',
+      element: <DashboardIssuesCreatePage />,
+    },
+    {
+      path: '/dashboard/issues/edit',
+      element: <DashboardIssuesEditPage />,
+    },
     // Settings
     {
       path: '/dashboard/settings',
