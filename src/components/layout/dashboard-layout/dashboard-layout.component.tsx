@@ -51,9 +51,11 @@ export function DashboardLayout({ children }: DashboardLayoutProps) {
   const {
     isShowDashboardLayoutNavigationDisplay,
     isMobileDevice,
+    currentPageGroup,
     onToggleDashboardLayoutNavigationDisplay,
     onSetDashboardLayoutNavigationDisplay,
     onSetTheme,
+    isCurrentPath,
   } = useDashboardLayoutPresenter();
 
   return (
@@ -157,7 +159,7 @@ export function DashboardLayout({ children }: DashboardLayoutProps) {
                   <PageNavigationListItem>
                     <PageNavigationLink
                       iconElement={<DocumentIcon className="size-5" />}
-                      current={false}
+                      current={isCurrentPath('/dashboard/overview')}
                       link="/dashboard/overview"
                     >
                       Dashboard
@@ -166,7 +168,7 @@ export function DashboardLayout({ children }: DashboardLayoutProps) {
                   <PageNavigationListItem>
                     <PageNavigationLink
                       iconElement={<DocumentIcon className="size-5" />}
-                      current={false}
+                      current={isCurrentPath('/dashboard/analytics')}
                       link="/dashboard/analytics"
                     >
                       Analytics
@@ -176,46 +178,68 @@ export function DashboardLayout({ children }: DashboardLayoutProps) {
 
                 <PageNavigationTitle>Management</PageNavigationTitle>
                 <div className="flex flex-col gap-y-2">
-                  <PageNavigationAccordion type="single" collapsible>
+                  <PageNavigationAccordion type="single" defaultValue={currentPageGroup} collapsible>
                     <PageNavigationAccordionItem value="users">
                       <PageNavigationAccordionTrigger iconElement={<DocumentIcon className="size-5" />} text="Users" />
                       <PageNavigationAccordionContent>
-                        <PageNavigationLink current={false} link="/dashboard/users/list">
+                        <PageNavigationLink
+                          current={isCurrentPath('/dashboard/users/list')}
+                          link="/dashboard/users/list"
+                        >
                           List
                         </PageNavigationLink>
-                        <PageNavigationLink current={false} link="/dashboard/users/detail">
+                        <PageNavigationLink
+                          current={isCurrentPath('/dashboard/users/detail')}
+                          link="/dashboard/users/detail"
+                        >
                           Detail
                         </PageNavigationLink>
-                        <PageNavigationLink current={false} link="/dashboard/users/create">
+                        <PageNavigationLink
+                          current={isCurrentPath('/dashboard/users/create')}
+                          link="/dashboard/users/create"
+                        >
                           Create
                         </PageNavigationLink>
-                        <PageNavigationLink current={false} link="/dashboard/users/edit">
+                        <PageNavigationLink
+                          current={isCurrentPath('/dashboard/users/edit')}
+                          link="/dashboard/users/edit"
+                        >
                           Edit
                         </PageNavigationLink>
                       </PageNavigationAccordionContent>
                     </PageNavigationAccordionItem>
-                  </PageNavigationAccordion>
-                  <PageNavigationAccordion type="single" collapsible>
-                    <PageNavigationAccordionItem value="settings">
+                    <PageNavigationAccordionItem value="issues">
                       <PageNavigationAccordionTrigger iconElement={<DocumentIcon className="size-5" />} text="Issues" />
                       <PageNavigationAccordionContent>
-                        <PageNavigationLink current={false} link="/dashboard/issues/list">
+                        <PageNavigationLink
+                          current={isCurrentPath('/dashboard/issues/list')}
+                          link="/dashboard/issues/list"
+                        >
                           List
                         </PageNavigationLink>
-                        <PageNavigationLink current={false} link="/dashboard/issues/detail">
+                        <PageNavigationLink
+                          current={isCurrentPath('/dashboard/issues/detail')}
+                          link="/dashboard/issues/detail"
+                        >
                           Detail
                         </PageNavigationLink>
-                        <PageNavigationLink current={false} link="/dashboard/issues/create">
+                        <PageNavigationLink
+                          current={isCurrentPath('/dashboard/issues/create')}
+                          link="/dashboard/issues/create"
+                        >
                           Create
                         </PageNavigationLink>
-                        <PageNavigationLink current={false} link="/dashboard/issues/edit">
+                        <PageNavigationLink
+                          current={isCurrentPath('/dashboard/issues/edit')}
+                          link="/dashboard/issues/edit"
+                        >
                           Edit
                         </PageNavigationLink>
                       </PageNavigationAccordionContent>
                     </PageNavigationAccordionItem>
                   </PageNavigationAccordion>
                   <PageNavigationLink
-                    current={false}
+                    current={isCurrentPath('/dashboard/settings')}
                     iconElement={<DocumentIcon className="size-5" />}
                     link="/dashboard/settings"
                   >
