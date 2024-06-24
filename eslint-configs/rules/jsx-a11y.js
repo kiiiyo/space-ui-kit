@@ -131,7 +131,7 @@ export default {
         labelComponents: [],
         labelAttributes: [],
         controlComponents: [],
-        assert: 'both',
+        assert: 'either',
         depth: 25,
       },
     ],
