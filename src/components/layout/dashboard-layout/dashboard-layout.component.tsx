@@ -189,7 +189,7 @@ export function DashboardLayout({ children }: DashboardLayoutProps) {
                         <PageNavigationLink current={false} link="/dashboard/users/create">
                           Create
                         </PageNavigationLink>
-                        <PageNavigationLink current={false} link="/dashboard/settings">
+                        <PageNavigationLink current={false} link="/dashboard/users/edit">
                           Edit
                         </PageNavigationLink>
                       </PageNavigationAccordionContent>
