@@ -142,9 +142,9 @@ export function DashboardIssuesCreatePageComponent() {
                           </DropdownMenuItem>
                         </DropdownMenuContent>
                       </DropdownMenu>
-                      <div>
+                      <div className="flex flex-row flex-wrap">
                         {singleLabel !== '' ? (
-                          <span className="flex items-center rounded-md border px-2.5 py-0.5 text-xs font-semibold text-foreground transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2">
+                          <span className="inline-flex items-center rounded-md bg-zinc-100 px-1.5 py-0.5 text-sm/5 font-medium group-data-[hover]:bg-zinc-200 sm:text-xs/5 forced-colors:outline">
                             {singleLabel}
                           </span>
                         ) : (
@@ -184,12 +184,12 @@ export function DashboardIssuesCreatePageComponent() {
                           </ToggleGroup>
                         </PopoverContent>
                       </Popover>
-                      <div className="flex flex-col gap-y-2">
+                      <div className="flex flex-row flex-wrap gap-2">
                         {multipleLabels.length > 0 ? (
                           multipleLabels.map((label) => (
                             <span
                               key={label}
-                              className="flex items-center rounded-md border px-2.5 py-0.5 text-xs font-semibold text-foreground transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2"
+                              className="inline-flex items-center rounded-md bg-zinc-100 px-1.5 py-0.5 text-sm/5 font-medium group-data-[hover]:bg-zinc-200 sm:text-xs/5 forced-colors:outline"
                             >
                               {label}
                             </span>
