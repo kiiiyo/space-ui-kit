@@ -199,3 +199,117 @@ export function XMarkIcon(props: IconProps) {
     </svg>
   );
 }
+
+export function DotsHorizontalIcon({ ...rest }: IconProps) {
+  return (
+    <svg
+      {...rest}
+      aria-hidden="true"
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      fill="none"
+      viewBox="0 0 24 24"
+    >
+      <path stroke="currentColor" strokeLinecap="round" strokeWidth="2" d="M6 12h.01m6 0h.01m5.99 0h.01" />
+    </svg>
+  );
+}
+
+export function ChevronSortIcon({ ...rest }: IconProps) {
+  return (
+    <svg
+      {...rest}
+      aria-hidden="true"
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      fill="none"
+      viewBox="0 0 24 24"
+    >
+      <path
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="2"
+        d="m8 15 4 4 4-4m0-6-4-4-4 4"
+      />
+    </svg>
+  );
+}
+
+export function ArrowUpIcon({ ...rest }: IconProps) {
+  return (
+    <svg
+      {...rest}
+      aria-hidden="true"
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      fill="none"
+      viewBox="0 0 24 24"
+    >
+      <path
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="2"
+        d="M12 6v13m0-13 4 4m-4-4-4 4"
+      />
+    </svg>
+  );
+}
+
+export function ArrowDownIcon({ ...rest }: IconProps) {
+  return (
+    <svg
+      {...rest}
+      aria-hidden="true"
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      fill="none"
+      viewBox="0 0 24 24"
+    >
+      <path
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="2"
+        d="M12 19V5m0 14-4-4m4 4 4-4"
+      />
+    </svg>
+  );
+}
+
+export function AngleLeftIcon({ ...rest }: IconProps) {
+  return (
+    <svg
+      {...rest}
+      aria-hidden="true"
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      fill="none"
+      viewBox="0 0 24 24"
+    >
+      <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m15 19-7-7 7-7" />
+    </svg>
+  );
+}
+
+export function AngleRightIcon({ ...rest }: IconProps) {
+  return (
+    <svg
+      {...rest}
+      aria-hidden="true"
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      fill="none"
+      viewBox="0 0 24 24"
+    >
+      <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m9 5 7 7-7 7" />
+    </svg>
+  );
+}

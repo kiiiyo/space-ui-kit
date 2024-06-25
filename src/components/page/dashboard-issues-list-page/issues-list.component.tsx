@@ -27,11 +27,17 @@ import {
   labelStyle,
 } from './issues-list.style';
 
-import { issuesListMock } from './issues-list.mock';
 import { useIssuesListPresenter } from './issues-list.presenter';
 
-export function IssuesList() {
+import type { Issue } from './issues-list.type';
+
+type IssuesListProps = {
+  issues: Issue[];
+};
+
+export function IssuesList({ issues }: IssuesListProps) {
   const { onClickNavigateToDetail, onClickNavigateToEdit } = useIssuesListPresenter();
+
   return (
     <>
       <div className="mt-4 rounded-md border">
@@ -114,7 +120,7 @@ export function IssuesList() {
               </tr>
             </thead>
             <tbody className={bodyStyle}>
-              {issuesListMock.map(({ id, title, date }) => (
+              {issues.map(({ id, title, date }) => (
                 <tr key={id} className={bodyTableRowStyle}>
                   <td className="p-2 align-middle">
                     <label htmlFor={`select-${id}`}>

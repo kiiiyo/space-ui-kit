@@ -10,4 +10,11 @@ export {
   BarsIcon,
   DocumentIcon,
   XMarkIcon,
+  //
+  DotsHorizontalIcon,
+  ChevronSortIcon,
+  ArrowUpIcon,
+  ArrowDownIcon,
+  AngleLeftIcon,
+  AngleRightIcon,
 } from './icon.component';
