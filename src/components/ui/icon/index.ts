@@ -17,4 +17,5 @@ export {
   ArrowDownIcon,
   AngleLeftIcon,
   AngleRightIcon,
+  CogIcon,
 } from './icon.component';
