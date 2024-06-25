@@ -195,7 +195,7 @@ export function DashboardLayout({ children }: DashboardLayoutProps) {
                           Detail
                         </PageNavigationLink>
                         <PageNavigationLink
-                          current={isCurrentPath('/dashboard/users/create')}
+                          current={isCurrentPath('/dashboard/users/new')}
                           link="/dashboard/users/create"
                         >
                           Create
@@ -224,8 +224,8 @@ export function DashboardLayout({ children }: DashboardLayoutProps) {
                           Detail
                         </PageNavigationLink>
                         <PageNavigationLink
-                          current={isCurrentPath('/dashboard/issues/create')}
-                          link="/dashboard/issues/create"
+                          current={isCurrentPath('/dashboard/issues/new')}
+                          link="/dashboard/issues/new"
                         >
                           Create
                         </PageNavigationLink>

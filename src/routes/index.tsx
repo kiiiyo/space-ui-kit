@@ -48,7 +48,7 @@ export function Router() {
       element: <DashboardUsersDetailPage />,
     },
     {
-      path: '/dashboard/users/create',
+      path: '/dashboard/users/new',
       element: <DashboardUsersCreatePage />,
     },
     {
@@ -65,7 +65,7 @@ export function Router() {
       element: <DashboardIssuesDetailPage />,
     },
     {
-      path: '/dashboard/issues/create',
+      path: '/dashboard/issues/new',
       element: <DashboardIssuesCreatePage />,
     },
     {
