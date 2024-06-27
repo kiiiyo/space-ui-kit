@@ -70,6 +70,16 @@ export const buttonStyle = cn(
 
 export const availableContainerStyle = cn('flex', 'flex-col', 'gap-y-4');
 
-export const availableTitleStyle = cn('text-center', 'text-sm', 'font-bold', 'text-white');
+export const availableTitleStyle = cn(
+  'text-center',
+  'text-sm',
+  'font-bold',
+  'text-white',
+);
 
-export const availableGroupStyle = cn('flex', 'flex-row', 'items-center', 'gap-6');
+export const availableGroupStyle = cn(
+  'flex',
+  'flex-row',
+  'items-center',
+  'gap-6',
+);
