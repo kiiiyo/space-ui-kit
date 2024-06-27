@@ -1,6 +1,12 @@
 import clsx from 'clsx';
 
-export const containerStyle = clsx('relative', 'flex', 'flex-col', 'min-h-screen', 'bg-background');
+export const containerStyle = clsx(
+  'relative',
+  'flex',
+  'flex-col',
+  'min-h-screen',
+  'bg-background',
+);
 
 export const headerContainerStyle = clsx(
   'sticky',

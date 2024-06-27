@@ -2,7 +2,11 @@ import { cn } from '@/lib/utils';
 
 export const pageNavigationTitleStyle = cn('pt-4', 'px-2', 'pb-2');
 
-export const pageNavigationTitleTextStyle = cn('text-sm', 'font-bold', 'text-gray-400');
+export const pageNavigationTitleTextStyle = cn(
+  'text-sm',
+  'font-bold',
+  'text-gray-400',
+);
 
 export const pageNavigationGroupStyle = cn('w-full');
 
@@ -28,9 +32,20 @@ export const pageNavigationDefaultAnchorStyle = cn(
   'hover:bg-zinc-100',
 );
 
-export const pageNavigationCurrentAnchorStyle = cn('inline-flex', 'font-bold', 'bg-zinc-100', 'hover:bg-zinc-200');
+export const pageNavigationCurrentAnchorStyle = cn(
+  'inline-flex',
+  'font-bold',
+  'bg-zinc-100',
+  'hover:bg-zinc-200',
+);
 
-export const pageNavigationAnchorIconStyle = cn('size-6', 'inline-flex', 'shrink-0', 'items-center', 'justify-center');
+export const pageNavigationAnchorIconStyle = cn(
+  'size-6',
+  'inline-flex',
+  'shrink-0',
+  'items-center',
+  'justify-center',
+);
 
 export const pageNavigationAnchorTextStyle = cn('text-sm', 'flex-auto');
 

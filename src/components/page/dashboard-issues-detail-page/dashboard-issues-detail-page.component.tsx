@@ -5,8 +5,13 @@ import { DashboardLayout } from '@/components/layout';
 import { useDashboardIssuesDetailPagePresenter } from './dashboard-issues-detail-page.presenter';
 
 export function DashboardIssuesDetailPageComponent() {
-  /* prettier-ignore */
-  const { title, singleLabel, multipleLabels, generatedDescriptionEditor, onClickNavigateToEdit } = useDashboardIssuesDetailPagePresenter();
+  const {
+    title,
+    singleLabel,
+    multipleLabels,
+    generatedDescriptionEditor,
+    onClickNavigateToEdit,
+  } = useDashboardIssuesDetailPagePresenter();
 
   return (
     <DashboardLayout>
@@ -17,7 +22,11 @@ export function DashboardIssuesDetailPageComponent() {
             <h2 className="text-2xl font-bold tracking-tight">{title}</h2>
           </div>
           <div>
-            <Button type="button" variant="secondary" onClick={onClickNavigateToEdit}>
+            <Button
+              type="button"
+              variant="secondary"
+              onClick={onClickNavigateToEdit}
+            >
               Edit
             </Button>
           </div>
@@ -26,7 +35,10 @@ export function DashboardIssuesDetailPageComponent() {
           <div className="flex flex-col justify-between gap-x-0 gap-y-6 lg:flex-row lg:gap-x-6 lg:gap-y-0">
             <div className="flex w-full flex-col gap-y-6">
               <div>
-                <EditorContent className="editor-view-body" editor={generatedDescriptionEditor} />
+                <EditorContent
+                  className="editor-view-body"
+                  editor={generatedDescriptionEditor}
+                />
               </div>
             </div>
             <div className="w-full lg:max-w-64">

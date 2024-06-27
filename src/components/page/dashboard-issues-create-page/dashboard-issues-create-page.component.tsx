@@ -3,11 +3,22 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
 
-import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form';
+import {
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+} from '@/components/ui/form';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
-import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover';
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from '@/components/ui/popover';
 import { CogIcon } from '@/components/ui/icon';
 
 import { DashboardLayout } from '@/components/layout';
@@ -53,7 +64,9 @@ export function DashboardIssuesCreatePageComponent() {
         {/* Page Header */}
         <div className="flex items-center justify-between space-y-2">
           <div>
-            <h2 className="text-2xl font-bold tracking-tight">Create a new issue</h2>
+            <h2 className="text-2xl font-bold tracking-tight">
+              Create a new issue
+            </h2>
           </div>
         </div>
         <div className="mt-6">
@@ -66,7 +79,9 @@ export function DashboardIssuesCreatePageComponent() {
                     name="title"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel className="text-base font-bold">Add a title</FormLabel>
+                        <FormLabel className="text-base font-bold">
+                          Add a title
+                        </FormLabel>
                         <FormControl>
                           <Input placeholder="Title" {...field} />
                         </FormControl>
@@ -79,9 +94,15 @@ export function DashboardIssuesCreatePageComponent() {
                     name="description"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel className="text-base font-bold">Add a description</FormLabel>
+                        <FormLabel className="text-base font-bold">
+                          Add a description
+                        </FormLabel>
                         <FormControl>
-                          <Textarea className="min-h-64" placeholder="Description" {...field} />
+                          <Textarea
+                            className="min-h-64"
+                            placeholder="Description"
+                            {...field}
+                          />
                         </FormControl>
                         <FormMessage />
                       </FormItem>
@@ -100,7 +121,9 @@ export function DashboardIssuesCreatePageComponent() {
                             className="mb-2 inline-flex w-full justify-between rounded-none px-0 transition-none hover:bg-inherit"
                             variant="ghost"
                           >
-                            <span className="text-sm font-medium">Single Label</span>
+                            <span className="text-sm font-medium">
+                              Single Label
+                            </span>
                             <CogIcon className="ml-1 size-4" />
                           </Button>
                         </DropdownMenuTrigger>
@@ -159,7 +182,9 @@ export function DashboardIssuesCreatePageComponent() {
                             className="mb-2 inline-flex w-full justify-between rounded-none px-0 transition-none hover:bg-inherit"
                             variant="ghost"
                           >
-                            <span className="text-sm font-medium">Multiple Label</span>
+                            <span className="text-sm font-medium">
+                              Multiple Label
+                            </span>
                             <CogIcon className="ml-1 size-4" />
                           </Button>
                         </PopoverTrigger>
@@ -172,13 +197,22 @@ export function DashboardIssuesCreatePageComponent() {
                               form.setValue('multipleLabels', value);
                             }}
                           >
-                            <ToggleGroupItem value="multipleLabelA" className="flex w-full justify-start">
+                            <ToggleGroupItem
+                              value="multipleLabelA"
+                              className="flex w-full justify-start"
+                            >
                               Multiple Label A
                             </ToggleGroupItem>
-                            <ToggleGroupItem value="multipleLabelB" className="flex w-full justify-start">
+                            <ToggleGroupItem
+                              value="multipleLabelB"
+                              className="flex w-full justify-start"
+                            >
                               Multiple Label B
                             </ToggleGroupItem>
-                            <ToggleGroupItem value="multipleLabelC" className="flex w-full justify-start">
+                            <ToggleGroupItem
+                              value="multipleLabelC"
+                              className="flex w-full justify-start"
+                            >
                               Multiple Label C
                             </ToggleGroupItem>
                           </ToggleGroup>

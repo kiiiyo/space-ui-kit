@@ -15,20 +15,29 @@ type AuthorizeLayoutProps = {
   children: React.ReactNode;
 };
 
-export function AuthorizeLayout({ authorizeHeroElement, children }: AuthorizeLayoutProps) {
+export function AuthorizeLayout({
+  authorizeHeroElement,
+  children,
+}: AuthorizeLayoutProps) {
   return (
     <div className={containerStyle}>
       <header className={headerStyle}>
         <div className={headerInnerStyle}>
           <a className="flex items-center" href="/">
-            <span className="inline-flex size-8 items-center justify-center text-2xl">🚀</span>
-            <span className="text-xl font-extrabold tracking-tighter text-gray-800 lg:text-white">Space UI Kit</span>
+            <span className="inline-flex size-8 items-center justify-center text-2xl">
+              🚀
+            </span>
+            <span className="text-xl font-extrabold tracking-tighter text-gray-800 lg:text-white">
+              Space UI Kit
+            </span>
           </a>
         </div>
       </header>
       <main className={mainStyle}>
         <SpaceCover className={heroStyle}>
-          <div className={heroInnerStyle}>{authorizeHeroElement ?? authorizeHeroElement}</div>
+          <div className={heroInnerStyle}>
+            {authorizeHeroElement ?? authorizeHeroElement}
+          </div>
         </SpaceCover>
         <div className={contentStyle}>{children}</div>
       </main>

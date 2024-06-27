@@ -2,7 +2,14 @@ import { cn } from '@/lib/utils';
 
 export const containerStyle = cn('flex', 'flex-auto', 'flex-col', 'min-h-full');
 
-export const headerStyle = cn('flex', 'w-full', 'items-center', 'top-0', 'left-0', 'lg:fixed');
+export const headerStyle = cn(
+  'flex',
+  'w-full',
+  'items-center',
+  'top-0',
+  'left-0',
+  'lg:fixed',
+);
 
 export const headerInnerStyle = cn(
   'flex',
@@ -16,7 +23,13 @@ export const headerInnerStyle = cn(
   'lg:h-20',
 );
 
-export const mainStyle = cn('flex', 'h-full', 'flex-auto', 'flex-col', 'md:flex-row');
+export const mainStyle = cn(
+  'flex',
+  'h-full',
+  'flex-auto',
+  'flex-col',
+  'md:flex-row',
+);
 
 export const heroStyle = cn(
   'hidden',
@@ -29,7 +42,13 @@ export const heroStyle = cn(
   'lg:flex',
 );
 
-export const heroInnerStyle = cn('flex', 'h-svh', 'flex-col', 'items-center', 'justify-center');
+export const heroInnerStyle = cn(
+  'flex',
+  'h-svh',
+  'flex-col',
+  'items-center',
+  'justify-center',
+);
 
 export const contentStyle = cn(
   'flex',

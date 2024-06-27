@@ -31,7 +31,10 @@ export function useDashboardLayoutPresenter() {
     };
   }, [formattedQuery, setMatch, onSetDashboardLayoutNavigationDisplay]);
 
-  const isCurrentPath = useCallback((currentPath: string) => currentPath === pathname, [pathname]);
+  const isCurrentPath = useCallback(
+    (currentPath: string) => currentPath === pathname,
+    [pathname],
+  );
 
   return {
     isMobileDevice: match,
