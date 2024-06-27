@@ -9,6 +9,8 @@ body,
   height: 100%;
 }
 
+@import './editor.scss';
+
 @layer base {
   :root {
     --background: 0 0% 100%;
