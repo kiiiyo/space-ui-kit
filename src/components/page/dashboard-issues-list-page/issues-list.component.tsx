@@ -1,6 +1,10 @@
 import { Button } from '@/components/ui/button';
 import { Checkbox } from '@/components/ui/checkbox';
-import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover';
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from '@/components/ui/popover';
 import {
   DotsHorizontalIcon,
   ChevronSortIcon,
@@ -35,6 +39,7 @@ type IssuesListProps = {
 };
 
 export function IssuesList({ issues }: IssuesListProps) {
+  /* prettier-ignore */
   const { onClickNavigateToDetail, onClickNavigateToEdit } = useIssuesListPresenter();
 
   return (
@@ -62,11 +67,17 @@ export function IssuesList({ issues }: IssuesListProps) {
                       </Button>
                     </PopoverTrigger>
                     <PopoverContent className="flex w-[64] flex-col justify-start p-0">
-                      <Button variant="ghost" className="inline-flex flex-row justify-start">
+                      <Button
+                        variant="ghost"
+                        className="inline-flex flex-row justify-start"
+                      >
                         <ArrowUpIcon className="size-4" />
                         <span>Asc</span>
                       </Button>
-                      <Button variant="ghost" className="inline-flex flex-row justify-start">
+                      <Button
+                        variant="ghost"
+                        className="inline-flex flex-row justify-start"
+                      >
                         <ArrowDownIcon className="size-4" />
                         <span>Desc</span>
                       </Button>
@@ -82,11 +93,17 @@ export function IssuesList({ issues }: IssuesListProps) {
                       </Button>
                     </PopoverTrigger>
                     <PopoverContent className="flex w-24 flex-col justify-between p-0">
-                      <Button variant="ghost" className="inline-flex flex-row justify-start px-2">
+                      <Button
+                        variant="ghost"
+                        className="inline-flex flex-row justify-start px-2"
+                      >
                         <ArrowUpIcon className="mr-1 size-5" />
                         <span>Asc</span>
                       </Button>
-                      <Button variant="ghost" className="inline-flex flex-row justify-start px-2">
+                      <Button
+                        variant="ghost"
+                        className="inline-flex flex-row justify-start px-2"
+                      >
                         <ArrowDownIcon className="mr-1 size-5" />
                         <span>Desc</span>
                       </Button>
@@ -102,11 +119,17 @@ export function IssuesList({ issues }: IssuesListProps) {
                       </Button>
                     </PopoverTrigger>
                     <PopoverContent className="flex w-24 flex-col justify-between p-0">
-                      <Button variant="ghost" className="inline-flex flex-row justify-start px-2">
+                      <Button
+                        variant="ghost"
+                        className="inline-flex flex-row justify-start px-2"
+                      >
                         <ArrowUpIcon className="mr-1 size-5" />
                         <span>Asc</span>
                       </Button>
-                      <Button variant="ghost" className="inline-flex flex-row justify-start px-2">
+                      <Button
+                        variant="ghost"
+                        className="inline-flex flex-row justify-start px-2"
+                      >
                         <ArrowDownIcon className="mr-1 size-5" />
                         <span>Desc</span>
                       </Button>
@@ -132,7 +155,9 @@ export function IssuesList({ issues }: IssuesListProps) {
                   </td>
                   <td className="p-2 align-middle">
                     <div className="flex space-x-2">
-                      <span className="max-w-[500px] truncate font-medium">{title}</span>
+                      <span className="max-w-[500px] truncate font-medium">
+                        {title}
+                      </span>
                     </div>
                   </td>
                   <td className="p-2 align-middle">
@@ -194,28 +219,53 @@ export function IssuesList({ issues }: IssuesListProps) {
                   <ChevronSortIcon className="size-4" />
                 </Button>
               </PopoverTrigger>
-              <PopoverContent side="top" className="flex w-32 flex-col justify-start p-0">
-                <Button variant="ghost" className="inline-flex flex-row justify-start">
+              <PopoverContent
+                side="top"
+                className="flex w-32 flex-col justify-start p-0"
+              >
+                <Button
+                  variant="ghost"
+                  className="inline-flex flex-row justify-start"
+                >
                   <span>10</span>
                 </Button>
-                <Button variant="ghost" className="inline-flex flex-row justify-start">
+                <Button
+                  variant="ghost"
+                  className="inline-flex flex-row justify-start"
+                >
                   <span>20</span>
                 </Button>
-                <Button variant="ghost" className="inline-flex flex-row justify-start">
+                <Button
+                  variant="ghost"
+                  className="inline-flex flex-row justify-start"
+                >
                   <span>30</span>
                 </Button>
-                <Button variant="ghost" className="inline-flex flex-row justify-start">
+                <Button
+                  variant="ghost"
+                  className="inline-flex flex-row justify-start"
+                >
                   <span>40</span>
                 </Button>
-                <Button variant="ghost" className="inline-flex flex-row justify-start">
+                <Button
+                  variant="ghost"
+                  className="inline-flex flex-row justify-start"
+                >
                   <span>50</span>
                 </Button>
               </PopoverContent>
             </Popover>
           </div>
-          <div className="flex w-[100px] items-center justify-center text-sm font-medium">Page 1 of 2</div>
+          <div className="flex w-[100px] items-center justify-center text-sm font-medium">
+            Page 1 of 2
+          </div>
           <div className="flex items-center gap-x-2">
-            <Button variant="outline" type="button" disabled className="size-8 p-0">
+            <Button
+              variant="outline"
+              type="button"
+              disabled
+              className="size-8 p-0"
+            >
               <AngleLeftIcon className="size-4" />
             </Button>
             <Button variant="outline" type="button" className="size-8 p-0">
