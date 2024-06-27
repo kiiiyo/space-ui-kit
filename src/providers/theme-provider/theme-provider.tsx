@@ -1,4 +1,11 @@
-import { createContext, useState, useEffect, useCallback, useMemo, useContext } from 'react';
+import {
+  createContext,
+  useState,
+  useEffect,
+  useCallback,
+  useMemo,
+  useContext,
+} from 'react';
 
 export type ThemeKind = 'dark' | 'light' | 'system';
 
@@ -17,7 +24,7 @@ const initialState: ThemeProviderState = {
   theme: 'system',
   onSetTheme: () => null,
 };
-
+/* prettier-ignore */
 export const ThemeProviderContext = createContext<ThemeProviderState>(initialState);
 
 export function ThemeProvider({
@@ -25,6 +32,7 @@ export function ThemeProvider({
   defaultTheme = 'system',
   storageKey = 'space-ui-kit-theme',
 }: ThemeProviderProps) {
+  /* prettier-ignore */
   // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
   const initialThemeState = (localStorage.getItem(storageKey) as ThemeKind) || defaultTheme;
   const [theme, setTheme] = useState<ThemeKind>(initialThemeState);
@@ -41,7 +49,10 @@ export function ThemeProvider({
     const root = window.document.documentElement;
     root.classList.remove('light', 'dark');
     if (theme === 'system') {
-      const systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      const systemTheme = window.matchMedia('(prefers-color-scheme: dark)')
+        .matches
+        ? 'dark'
+        : 'light';
       root.classList.add(systemTheme);
     }
 
@@ -56,7 +67,11 @@ export function ThemeProvider({
     [theme, onSetTheme],
   );
 
-  return <ThemeProviderContext.Provider value={value}>{children}</ThemeProviderContext.Provider>;
+  return (
+    <ThemeProviderContext.Provider value={value}>
+      {children}
+    </ThemeProviderContext.Provider>
+  );
 }
 
 export const useTheme = () => {
