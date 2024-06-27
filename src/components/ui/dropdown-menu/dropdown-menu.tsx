@@ -36,6 +36,7 @@ const DropdownMenuSubTrigger = React.forwardRef<
     <ChevronRight className="ml-auto size-4" />
   </DropdownMenuPrimitive.SubTrigger>
 ));
+/* prettier-ignore */
 DropdownMenuSubTrigger.displayName = DropdownMenuPrimitive.SubTrigger.displayName;
 
 const DropdownMenuSubContent = React.forwardRef<
@@ -53,6 +54,8 @@ const DropdownMenuSubContent = React.forwardRef<
     {...props}
   />
 ));
+
+/* prettier-ignore */
 DropdownMenuSubContent.displayName = DropdownMenuPrimitive.SubContent.displayName;
 
 const DropdownMenuContent = React.forwardRef<
@@ -119,6 +122,8 @@ const DropdownMenuCheckboxItem = React.forwardRef<
     {children}
   </DropdownMenuPrimitive.CheckboxItem>
 ));
+
+/* prettier-ignore */
 DropdownMenuCheckboxItem.displayName = DropdownMenuPrimitive.CheckboxItem.displayName;
 
 const DropdownMenuRadioItem = React.forwardRef<
@@ -154,7 +159,11 @@ const DropdownMenuLabel = React.forwardRef<
 >(({ className, inset, ...props }, ref) => (
   <DropdownMenuPrimitive.Label
     ref={ref}
-    className={cn('px-2 py-1.5 text-sm font-semibold', inset && 'pl-8', className)}
+    className={cn(
+      'px-2 py-1.5 text-sm font-semibold',
+      inset && 'pl-8',
+      className,
+    )}
     {...props}
   />
 ));
@@ -162,16 +171,30 @@ DropdownMenuLabel.displayName = DropdownMenuPrimitive.Label.displayName;
 
 const DropdownMenuSeparator = React.forwardRef<
   React.ElementRef<typeof DropdownMenuPrimitive.Separator>,
-  React.ComponentPropsWithoutRef<typeof DropdownMenuPrimitive.Separator> & { className?: string }
+  React.ComponentPropsWithoutRef<typeof DropdownMenuPrimitive.Separator> & {
+    className?: string;
+  }
 >(({ className, ...props }, ref) => (
-  <DropdownMenuPrimitive.Separator ref={ref} className={cn('-mx-1 my-1 h-px bg-muted', className)} {...props} />
+  <DropdownMenuPrimitive.Separator
+    ref={ref}
+    className={cn('-mx-1 my-1 h-px bg-muted', className)}
+    {...props}
+  />
 ));
 DropdownMenuSeparator.displayName = DropdownMenuPrimitive.Separator.displayName;
 
-function DropdownMenuShortcut({ className, ...props }: React.HTMLAttributes<HTMLSpanElement> & { className?: string }) {
+function DropdownMenuShortcut({
+  className,
+  ...props
+}: React.HTMLAttributes<HTMLSpanElement> & { className?: string }) {
   // FIXME: Remove eslint-disable-line
   // eslint-disable-next-line react/jsx-props-no-spreading
-  return <span className={cn('ml-auto text-xs tracking-widest opacity-60', className)} {...props} />;
+  return (
+    <span
+      className={cn('ml-auto text-xs tracking-widest opacity-60', className)}
+      {...props}
+    />
+  );
 }
 DropdownMenuShortcut.displayName = 'DropdownMenuShortcut';
 
