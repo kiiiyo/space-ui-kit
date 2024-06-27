@@ -19,7 +19,10 @@ const initialState: AppProviderValue = {
 export const AppProviderContext = createContext<AppProviderValue>(initialState);
 
 export const useAppProvider = (): AppProviderValue => {
-  const [isShowDashboardLayoutNavigationDisplay, setIsShowDashboardLayoutNavigationDisplay] = useState<boolean>(false);
+  const [
+    isShowDashboardLayoutNavigationDisplay,
+    setIsShowDashboardLayoutNavigationDisplay,
+  ] = useState<boolean>(false);
 
   const onToggleDashboardLayoutNavigationDisplay = useCallback(() => {
     setIsShowDashboardLayoutNavigationDisplay((prev) => !prev);
@@ -58,7 +61,11 @@ export function AppProvider({ children }: AppProviderProps) {
       onSetDashboardLayoutNavigationDisplay,
     ],
   );
-  return <AppProviderContext.Provider value={value}>{children}</AppProviderContext.Provider>;
+  return (
+    <AppProviderContext.Provider value={value}>
+      {children}
+    </AppProviderContext.Provider>
+  );
 }
 
 export const { Consumer } = AppProviderContext;

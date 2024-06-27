@@ -17,7 +17,10 @@ export default [
     /** Rules */
     rules: {
       // FIXME:
-      'react-refresh/only-export-components': ['off', { allowConstantExport: true }],
+      'react-refresh/only-export-components': [
+        'off',
+        { allowConstantExport: true },
+      ],
     },
     settings: {
       react: {

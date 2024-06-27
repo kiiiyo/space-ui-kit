@@ -6,7 +6,7 @@ import { HelmetProvider } from 'react-helmet-async';
 import { ThemeProvider, AppProvider } from '@/providers';
 
 import App from './App';
-import './globals.css';
+import './styles/globals.scss';
 
 const root = createRoot(document.getElementById('app') as HTMLElement);
 

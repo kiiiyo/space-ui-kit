@@ -105,7 +105,10 @@ export default {
 
     // Limit maximum of props on a single line in JSX
     // https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/jsx-max-props-per-line.md
-    'react/jsx-max-props-per-line': ['error', { maximum: 1, when: 'multiline' }],
+    'react/jsx-max-props-per-line': [
+      'error',
+      { maximum: 1, when: 'multiline' },
+    ],
 
     // Prevent usage of .bind() in JSX props
     // https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/jsx-no-bind.md
@@ -239,7 +242,10 @@ export default {
 
     // Require stateless functions when not using lifecycle methods, setState or ref
     // https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/prefer-stateless-function.md
-    'react/prefer-stateless-function': ['error', { ignorePureComponents: true }],
+    'react/prefer-stateless-function': [
+      'error',
+      { ignorePureComponents: true },
+    ],
 
     // Prevent missing props validation in a React component definition
     // https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/prop-types.md
@@ -443,7 +449,10 @@ export default {
 
     // Enforce all defaultProps have a corresponding non-required PropType
     // https://github.com/jsx-eslint/eslint-plugin-react/blob/9e13ae2c51e44872b45cc15bf1ac3a72105bdd0e/docs/rules/default-props-match-prop-types.md
-    'react/default-props-match-prop-types': ['error', { allowRequiredDefaults: false }],
+    'react/default-props-match-prop-types': [
+      'error',
+      { allowRequiredDefaults: false },
+    ],
 
     // Prevent usage of shouldComponentUpdate when extending React.PureComponent
     // https://github.com/jsx-eslint/eslint-plugin-react/blob/9e13ae2c51e44872b45cc15bf1ac3a72105bdd0e/docs/rules/no-redundant-should-component-update.md
@@ -470,7 +479,10 @@ export default {
 
     // Enforce curly braces or disallow unnecessary curly braces in JSX props and/or children
     // https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/jsx-curly-brace-presence.md
-    'react/jsx-curly-brace-presence': ['error', { props: 'never', children: 'never' }],
+    'react/jsx-curly-brace-presence': [
+      'error',
+      { props: 'never', children: 'never' },
+    ],
 
     // One JSX Element Per Line
     // https://github.com/jsx-eslint/eslint-plugin-react/blob/843d71a432baf0f01f598d7cf1eea75ad6896e4b/docs/rules/jsx-one-expression-per-line.md

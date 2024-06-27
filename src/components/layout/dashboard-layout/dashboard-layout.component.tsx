@@ -63,9 +63,15 @@ export function DashboardLayout({ children }: DashboardLayoutProps) {
       <div className={containerStyle}>
         <header className={headerStyle}>
           <div className={headerInnerStyle}>
-            <a aria-label="Home" href="/dashboard" className={cn(headerSiteLogoStyle, 'hidden', 'lg:flex')}>
+            <a
+              aria-label="Home"
+              href="/dashboard"
+              className={cn(headerSiteLogoStyle, 'hidden', 'lg:flex')}
+            >
               <span className={headerSiteLogoIconStyle}>🚀</span>
-              <span className={headerSiteLogoTypographyStyle}>Space UI Kit</span>
+              <span className={headerSiteLogoTypographyStyle}>
+                Space UI Kit
+              </span>
             </a>
             <div className={navigationBarStyle}>
               <div className="flex items-center gap-2 lg:hidden">
@@ -81,9 +87,15 @@ export function DashboardLayout({ children }: DashboardLayoutProps) {
                     <BarsIcon className="size-5" />
                   )}
                 </button>
-                <a aria-label="Home" href="/dashboard" className={cn(headerSiteLogoStyle, 'flex', 'lg:hidden')}>
+                <a
+                  aria-label="Home"
+                  href="/dashboard"
+                  className={cn(headerSiteLogoStyle, 'flex', 'lg:hidden')}
+                >
                   <span className={headerSiteLogoIconStyle}>🚀</span>
-                  <span className={headerSiteLogoTypographyStyle}>Space UI Kit</span>
+                  <span className={headerSiteLogoTypographyStyle}>
+                    Space UI Kit
+                  </span>
                 </a>
               </div>
               <div className="ml-auto flex items-center gap-2">
@@ -93,7 +105,11 @@ export function DashboardLayout({ children }: DashboardLayoutProps) {
                 <div className="flex gap-4">
                   <DropdownMenu>
                     <DropdownMenuTrigger asChild>
-                      <button type="button" className={buttonStyle} aria-label="Switch theme">
+                      <button
+                        type="button"
+                        className={buttonStyle}
+                        aria-label="Switch theme"
+                      >
                         <SunIcon className="size-5" />
                       </button>
                     </DropdownMenuTrigger>
@@ -132,7 +148,11 @@ export function DashboardLayout({ children }: DashboardLayoutProps) {
                    */}
                   <DropdownMenu>
                     <DropdownMenuTrigger asChild>
-                      <button type="button" className={buttonStyle} aria-label="User profile">
+                      <button
+                        type="button"
+                        className={buttonStyle}
+                        aria-label="User profile"
+                      >
                         <UserIcon className="size-5" />
                       </button>
                     </DropdownMenuTrigger>
@@ -149,8 +169,12 @@ export function DashboardLayout({ children }: DashboardLayoutProps) {
 
             <div
               className={cn(
-                isMobileDevice ? pageNavigationMobileDeviceLayoutStyle : pageNavigationDesktopDeviceLayoutStyle,
-                isMobileDevice && isShowDashboardLayoutNavigationDisplay ? 'left-0' : 'left-[-24rem]',
+                isMobileDevice
+                  ? pageNavigationMobileDeviceLayoutStyle
+                  : pageNavigationDesktopDeviceLayoutStyle,
+                isMobileDevice && isShowDashboardLayoutNavigationDisplay
+                  ? 'left-0'
+                  : 'left-[-24rem]',
               )}
             >
               <nav>
@@ -178,9 +202,16 @@ export function DashboardLayout({ children }: DashboardLayoutProps) {
 
                 <PageNavigationTitle>Management</PageNavigationTitle>
                 <div className="flex flex-col gap-y-2">
-                  <PageNavigationAccordion type="single" defaultValue={currentPageGroup} collapsible>
+                  <PageNavigationAccordion
+                    type="single"
+                    defaultValue={currentPageGroup}
+                    collapsible
+                  >
                     <PageNavigationAccordionItem value="users">
-                      <PageNavigationAccordionTrigger iconElement={<DocumentIcon className="size-5" />} text="Users" />
+                      <PageNavigationAccordionTrigger
+                        iconElement={<DocumentIcon className="size-5" />}
+                        text="Users"
+                      />
                       <PageNavigationAccordionContent>
                         <PageNavigationLink
                           current={isCurrentPath('/dashboard/users/list')}
@@ -209,7 +240,10 @@ export function DashboardLayout({ children }: DashboardLayoutProps) {
                       </PageNavigationAccordionContent>
                     </PageNavigationAccordionItem>
                     <PageNavigationAccordionItem value="issues">
-                      <PageNavigationAccordionTrigger iconElement={<DocumentIcon className="size-5" />} text="Issues" />
+                      <PageNavigationAccordionTrigger
+                        iconElement={<DocumentIcon className="size-5" />}
+                        text="Issues"
+                      />
                       <PageNavigationAccordionContent>
                         <PageNavigationLink
                           current={isCurrentPath('/dashboard/issues/list')}
@@ -250,7 +284,9 @@ export function DashboardLayout({ children }: DashboardLayoutProps) {
             </div>
           </div>
         </header>
-        <div className="relative flex h-full flex-col px-4 pt-14 sm:px-6 lg:px-8">{children}</div>
+        <div className="relative flex h-full flex-col px-4 pt-14 sm:px-6 lg:px-8">
+          {children}
+        </div>
       </div>
       {isShowDashboardLayoutNavigationDisplay && (
         <div

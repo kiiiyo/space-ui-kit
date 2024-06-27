@@ -412,7 +412,10 @@ export default {
 
     // disallow usage of configurable warning terms in comments: e.g. todo
     // https://eslint.org/docs/rules/no-warning-comments
-    'no-warning-comments': ['off', { terms: ['todo', 'fixme', 'xxx'], location: 'start' }],
+    'no-warning-comments': [
+      'off',
+      { terms: ['todo', 'fixme', 'xxx'], location: 'start' },
+    ],
 
     // disallow use of the with statement
     // https://eslint.org/docs/rules/no-with

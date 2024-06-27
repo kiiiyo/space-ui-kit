@@ -2,7 +2,14 @@ import { cn } from '@/lib/utils';
 
 export const containerStyle = cn('h-full', 'lg:ml-72', 'xl:ml-80');
 
-export const headerStyle = cn('contents', 'lg:pointer-events-none', 'lg:fixed', 'lg:inset-0', 'lg:z-40', 'lg:flex');
+export const headerStyle = cn(
+  'contents',
+  'lg:pointer-events-none',
+  'lg:fixed',
+  'lg:inset-0',
+  'lg:z-40',
+  'lg:flex',
+);
 
 export const headerInnerStyle = cn(
   'contents',
@@ -21,7 +28,13 @@ export const headerInnerStyle = cn(
 
 export const headerSiteLogoStyle = cn('gap-x-2', 'items-center');
 
-export const headerSiteLogoIconStyle = cn('flex', 'size-6', 'justify-center', 'items-center', 'text-lg');
+export const headerSiteLogoIconStyle = cn(
+  'flex',
+  'size-6',
+  'justify-center',
+  'items-center',
+  'text-lg',
+);
 
 export const headerSiteLogoTypographyStyle = cn(
   'self-center',

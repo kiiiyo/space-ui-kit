@@ -1,6 +1,13 @@
 import { AuthorizeLayout } from '@/components/layout';
 import { Button } from '@/components/ui/button';
-import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form';
+import {
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+} from '@/components/ui/form';
 import { Input } from '@/components/ui/input';
 
 import { useSignInPagePresenter } from './sign-in-page.presenter';
@@ -27,7 +34,11 @@ export function SignInPageComponent() {
         </div>
       </div>
       <Form {...form}>
-        <form onSubmit={onSubmitSignIn} autoComplete="off" className="mt-6 flex w-full max-w-md flex-col">
+        <form
+          onSubmit={onSubmitSignIn}
+          autoComplete="off"
+          className="mt-6 flex w-full max-w-md flex-col"
+        >
           <div className="flex flex-col gap-y-6">
             <div>
               <FormField
@@ -52,7 +63,11 @@ export function SignInPageComponent() {
                   <FormItem>
                     <FormLabel>Password</FormLabel>
                     <FormControl>
-                      <Input type="password" placeholder="Password" {...field} />
+                      <Input
+                        type="password"
+                        placeholder="Password"
+                        {...field}
+                      />
                     </FormControl>
                     <FormMessage />
                   </FormItem>

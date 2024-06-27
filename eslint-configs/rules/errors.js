@@ -167,7 +167,10 @@ export default {
 
     // disallow use of optional chaining in contexts where the undefined value is not allowed
     // https://eslint.org/docs/rules/no-unsafe-optional-chaining
-    'no-unsafe-optional-chaining': ['error', { disallowArithmeticOperators: true }],
+    'no-unsafe-optional-chaining': [
+      'error',
+      { disallowArithmeticOperators: true },
+    ],
 
     // Disallow Unused Private Class Members
     // https://eslint.org/docs/rules/no-unused-private-class-members

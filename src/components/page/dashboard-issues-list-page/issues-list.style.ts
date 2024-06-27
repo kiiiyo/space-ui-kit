@@ -5,9 +5,17 @@ import { cn } from '@/lib/utils';
 // w-full caption-bottom text-sm
 export const containerStyle = cn('w-full', 'caption-bottom', 'text-sm');
 
-export const headStyle = cn('border-b', 'transition-colors', 'hover:bg-muted/50');
+export const headStyle = cn(
+  'border-b',
+  'transition-colors',
+  'hover:bg-muted/50',
+);
 
-export const headTableRowStyle = cn('border-b', 'transition-colors', 'hover:bg-muted/50');
+export const headTableRowStyle = cn(
+  'border-b',
+  'transition-colors',
+  'hover:bg-muted/50',
+);
 
 export const headTableHeaderStyle = cn(
   'h-10',
@@ -20,7 +28,11 @@ export const headTableHeaderStyle = cn(
 
 export const bodyStyle = cn('[&_tr:last-child]:border-0');
 
-export const bodyTableRowStyle = cn('border-b', 'transition-colors', 'hover:bg-muted/50');
+export const bodyTableRowStyle = cn(
+  'border-b',
+  'transition-colors',
+  'hover:bg-muted/50',
+);
 
 export const labelStyle = cn(
   'inline-flex',

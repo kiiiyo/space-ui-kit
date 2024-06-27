@@ -80,7 +80,8 @@ module.exports = {
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
-        'slide-in-bottom': 'slide-in-bottom 0.5s ease var(--slide-in-delay, 0) forwards',
+        'slide-in-bottom':
+          'slide-in-bottom 0.5s ease var(--slide-in-delay, 0) forwards',
       },
     },
   },

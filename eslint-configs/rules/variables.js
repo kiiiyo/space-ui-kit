@@ -25,11 +25,13 @@ export default {
       'error',
       {
         name: 'isFinite',
-        message: 'Use Number.isFinite instead https://github.com/airbnb/javascript#standard-library--isfinite',
+        message:
+          'Use Number.isFinite instead https://github.com/airbnb/javascript#standard-library--isfinite',
       },
       {
         name: 'isNaN',
-        message: 'Use Number.isNaN instead https://github.com/airbnb/javascript#standard-library--isnan',
+        message:
+          'Use Number.isNaN instead https://github.com/airbnb/javascript#standard-library--isnan',
       },
     ].concat(
       confusingBrowserGlobals.map((g) => ({
@@ -56,9 +58,15 @@ export default {
     'no-undefined': 'off',
 
     // disallow declaration of variables that are not used in the code
-    'no-unused-vars': ['error', { vars: 'all', args: 'after-used', ignoreRestSiblings: true }],
+    'no-unused-vars': [
+      'error',
+      { vars: 'all', args: 'after-used', ignoreRestSiblings: true },
+    ],
 
     // disallow use of variables before they are defined
-    'no-use-before-define': ['error', { functions: true, classes: true, variables: true }],
+    'no-use-before-define': [
+      'error',
+      { functions: true, classes: true, variables: true },
+    ],
   },
 };

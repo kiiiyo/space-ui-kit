@@ -18,16 +18,19 @@ export default {
     // https://typescript-eslint.io/rules/no-unused-expressions/
     // Replace 'no-unused-expressions' rule with '@typescript-eslint' version
     'no-unused-expressions': 'off',
-    '@typescript-eslint/no-unused-expressions': bestPractices.rules['no-unused-expressions'],
+    '@typescript-eslint/no-unused-expressions':
+      bestPractices.rules['no-unused-expressions'],
 
     // https://typescript-eslint.io/rules/prefer-promise-reject-errors/
     // require using Error objects as Promise rejection reasons
-    '@typescript-eslint/prefer-promise-reject-errors': bestPractices.rules['prefer-promise-reject-errors'],
+    '@typescript-eslint/prefer-promise-reject-errors':
+      bestPractices.rules['prefer-promise-reject-errors'],
 
     // Disallow throwing literals as exceptions.
     // https://typescript-eslint.io/rules/no-throw-literal/
     // Replace 'no-throw-literal' rule with '@typescript-eslint' version
-    '@typescript-eslint/no-throw-literal': bestPractices.rules['no-throw-literal'],
+    '@typescript-eslint/no-throw-literal':
+      bestPractices.rules['no-throw-literal'],
 
     // Enforce naming conventions for everything across a codebase.
     // https://typescript-eslint.io/rules/naming-convention/
@@ -55,7 +58,8 @@ export default {
     // https://typescript-eslint.io/rules/no-use-before-define/
     // Replace 'no-use-before-define' rule with '@typescript-eslint' version.
     'no-use-before-define': ['off'],
-    '@typescript-eslint/no-use-before-define': variables.rules['no-use-before-define'],
+    '@typescript-eslint/no-use-before-define':
+      variables.rules['no-use-before-define'],
 
     // Enforce type definitions to consistently use either `interface` or `type`.
     // https://typescript-eslint.io/rules/consistent-type-definitions/

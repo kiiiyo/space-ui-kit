@@ -161,7 +161,11 @@ export function BarsIcon(props: IconProps) {
       stroke="currentColor"
       {...props}
     >
-      <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+      />
     </svg>
   );
 }
@@ -195,7 +199,11 @@ export function XMarkIcon(props: IconProps) {
       stroke="currentColor"
       {...props}
     >
-      <path strokeLinecap="round" strokeLinejoin="round" d="M6 18 18 6M6 6l12 12" />
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        d="M6 18 18 6M6 6l12 12"
+      />
     </svg>
   );
 }
@@ -211,7 +219,12 @@ export function DotsHorizontalIcon({ ...rest }: IconProps) {
       fill="none"
       viewBox="0 0 24 24"
     >
-      <path stroke="currentColor" strokeLinecap="round" strokeWidth="2" d="M6 12h.01m6 0h.01m5.99 0h.01" />
+      <path
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeWidth="2"
+        d="M6 12h.01m6 0h.01m5.99 0h.01"
+      />
     </svg>
   );
 }
@@ -293,7 +306,13 @@ export function AngleLeftIcon({ ...rest }: IconProps) {
       fill="none"
       viewBox="0 0 24 24"
     >
-      <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m15 19-7-7 7-7" />
+      <path
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="2"
+        d="m15 19-7-7 7-7"
+      />
     </svg>
   );
 }
@@ -309,7 +328,13 @@ export function AngleRightIcon({ ...rest }: IconProps) {
       fill="none"
       viewBox="0 0 24 24"
     >
-      <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m9 5 7 7-7 7" />
+      <path
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="2"
+        d="m9 5 7 7-7 7"
+      />
     </svg>
   );
 }

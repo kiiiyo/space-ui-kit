@@ -1,4 +1,15 @@
 {
   "ignorePaths": ["**/node_modules/**", "**/dist/**", "**/public/**", "./src/assets/**", "./pnpm-lock.yaml"],
-  "words": ["clsx", "tailwindcss", "Navigations", "setstate", "shadcn", "Heroicons", "commitlint", "hookform", "lucide"]
+  "words": [
+    "clsx",
+    "tailwindcss",
+    "Navigations",
+    "setstate",
+    "shadcn",
+    "Heroicons",
+    "commitlint",
+    "hookform",
+    "lucide",
+    "tiptap"
+  ]
 }

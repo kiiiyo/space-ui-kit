@@ -6,4 +6,10 @@ import reactConfig from './react.config.js';
 import tailwindCssConfig from './tailwindcss.config.js';
 import storybookConfig from './storybook.config.js';
 
-export { generalESLintConfig, typescriptConfig, reactConfig, tailwindCssConfig, storybookConfig };
+export {
+  generalESLintConfig,
+  typescriptConfig,
+  reactConfig,
+  tailwindCssConfig,
+  storybookConfig,
+};

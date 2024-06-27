@@ -16,9 +16,14 @@ import {
 
 import { useFloatingNavigationBarPresenter } from './floating-navigation-bar.presenter';
 
-import { containerStyle, innerStyle, navigationItemStyle } from './floating-navigation-bar.style';
+import {
+  containerStyle,
+  innerStyle,
+  navigationItemStyle,
+} from './floating-navigation-bar.style';
 
 export function FloatingNavigationBar() {
+  /* prettier-ignore */
   const { onSelectThemeStyle, onClickSignIn } = useFloatingNavigationBarPresenter();
   return (
     <div className={containerStyle}>
