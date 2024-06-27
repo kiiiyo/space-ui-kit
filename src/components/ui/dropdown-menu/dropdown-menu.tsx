@@ -187,8 +187,6 @@ function DropdownMenuShortcut({
   className,
   ...props
 }: React.HTMLAttributes<HTMLSpanElement> & { className?: string }) {
-  // FIXME: Remove eslint-disable-line
-  // eslint-disable-next-line react/jsx-props-no-spreading
   return (
     <span
       className={cn('ml-auto text-xs tracking-widest opacity-60', className)}
