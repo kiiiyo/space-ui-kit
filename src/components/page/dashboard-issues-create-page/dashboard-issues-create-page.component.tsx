@@ -1,5 +1,5 @@
 import { useCallback } from 'react';
-import { useEditor, type JSONContent } from '@tiptap/react';
+import { type JSONContent } from '@tiptap/react';
 
 import StarterKit from '@tiptap/starter-kit';
 import { zodResolver } from '@hookform/resolvers/zod';
@@ -59,31 +59,17 @@ export function DashboardIssuesCreatePageComponent() {
   });
 
   const { watch, setValue, handleSubmit } = form;
-
   const { multipleLabels, singleLabel } = watch();
-
-  const editorInstance = useEditor({
-    extensions: [StarterKit],
-    content: '',
-    editorProps: {
-      attributes: {
-        class:
-          'editor-view-body prose prose-base focus:outline-none text-left min-h-[200px]',
-      },
+  const onChangeDescriptionContent = useCallback(
+    (content: JSONContent) => {
+      setValue('description', content);
     },
-    onUpdate: ({ editor }) => {
-      const json = editor.getJSON();
-      setValue('description', json);
-    },
-  });
+    [setValue],
+  );
 
   const onSubmit = useCallback((data: z.infer<typeof formSchema>) => {
     console.log('submit', data);
   }, []);
-
-  if (!editorInstance) {
-    return null;
-  }
 
   return (
     <DashboardLayout>
@@ -116,7 +102,14 @@ export function DashboardIssuesCreatePageComponent() {
                       </FormItem>
                     )}
                   />
-                  <WYSIWYGEditor editor={editorInstance} />
+                  <WYSIWYGEditor
+                    extensions={[StarterKit]}
+                    defaultContent={{
+                      type: 'doc',
+                      content: [],
+                    }}
+                    onChangeContent={onChangeDescriptionContent}
+                  />
                   <div className="hidden justify-end lg:flex">
                     <Button type="submit">Create Issue</Button>
                   </div>

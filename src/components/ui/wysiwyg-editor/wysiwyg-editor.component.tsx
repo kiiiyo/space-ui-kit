@@ -1,21 +1,40 @@
-import { type Editor, EditorContent } from '@tiptap/react';
+import {
+  type Extensions,
+  type JSONContent,
+  EditorContent,
+} from '@tiptap/react';
 import {
   ListIcon,
   OrderedListIcon,
   LinkIcon,
-  TextSizeIcon,
   LetterBoldIcon,
   QuoteIcon,
   RulerCombinedIcon,
 } from '@/components/ui/icon';
 
+import { useWYSIWYGEditorPresenter } from './wysiwyg-editor.presenter';
 import { containerStyle, toolbarStyle } from './wysiwyg-editor.style';
 
 type WYSIWYGEditorProps = {
-  editor: Editor;
+  extensions: Extensions;
+  defaultContent: JSONContent;
+  onChangeContent?: (content: JSONContent) => void;
 };
 
-export function WYSIWYGEditor({ editor }: WYSIWYGEditorProps) {
+export function WYSIWYGEditor({
+  extensions,
+  defaultContent,
+  onChangeContent,
+}: WYSIWYGEditorProps) {
+  const { editor } = useWYSIWYGEditorPresenter({
+    extensions,
+    content: defaultContent,
+    onChangeContent,
+  });
+
+  if (!editor) {
+    return null;
+  }
   return (
     <div className={containerStyle}>
       {/* Toolbar */}
@@ -27,20 +46,18 @@ export function WYSIWYGEditor({ editor }: WYSIWYGEditorProps) {
               onClick={() => {
                 editor.chain().focus().toggleHeading({ level: 2 }).run();
               }}
-              className="cursor-pointer rounded p-2 text-gray-500 hover:bg-gray-100 hover:text-gray-900 dark:text-gray-400 dark:hover:bg-gray-600 dark:hover:text-white"
+              className="inline-flex cursor-pointer items-center rounded p-2 text-gray-500 hover:bg-gray-100 hover:text-gray-900 dark:text-gray-400 dark:hover:bg-gray-600 dark:hover:text-white"
             >
-              <TextSizeIcon className="size-5" />
-              <span className="sr-only">Heading</span>
+              <span className="text-sm font-bold">H2</span>
             </button>
             <button
               type="button"
               onClick={() => {
                 editor.chain().focus().toggleHeading({ level: 3 }).run();
               }}
-              className="cursor-pointer rounded p-2 text-gray-500 hover:bg-gray-100 hover:text-gray-900 dark:text-gray-400 dark:hover:bg-gray-600 dark:hover:text-white"
+              className="inline-flex cursor-pointer items-center rounded p-2 text-gray-500 hover:bg-gray-100 hover:text-gray-900 dark:text-gray-400 dark:hover:bg-gray-600 dark:hover:text-white"
             >
-              <TextSizeIcon className="size-5" />
-              <span className="sr-only">Subheading</span>
+              <span className="text-sm font-bold">H3</span>
             </button>
             <button
               type="button"
