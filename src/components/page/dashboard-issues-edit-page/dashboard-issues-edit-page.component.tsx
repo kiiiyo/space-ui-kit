@@ -2,7 +2,8 @@ import { useCallback } from 'react';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
-
+import StarterKit from '@tiptap/starter-kit';
+import { type JSONContent } from '@tiptap/react';
 import {
   Form,
   FormControl,
@@ -13,7 +14,6 @@ import {
 } from '@/components/ui/form';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
-import { Textarea } from '@/components/ui/textarea';
 import {
   Popover,
   PopoverContent,
@@ -31,11 +31,12 @@ import {
 } from '@/components/ui/dropdown-menu';
 import { ToggleGroup, ToggleGroupItem } from '@/components/ui/toggle-group';
 
+import { WYSIWYGEditor } from '@/components/ui/wysiwyg-editor';
 import { generateMockEditIssue } from './dashboard-issues-edit-page.mock';
 
 const formSchema = z.object({
   title: z.string(),
-  description: z.string(),
+  description: z.record(z.any()).transform((v) => v as JSONContent),
   singleLabel: z.string(),
   multipleLabels: z.array(z.string()),
 });
@@ -51,8 +52,14 @@ export function DashboardIssuesEditPageComponent() {
   });
 
   const { watch, setValue, handleSubmit } = form;
-
   const { multipleLabels, singleLabel } = watch();
+
+  const onChangeDescriptionContent = useCallback(
+    (content: JSONContent) => {
+      setValue('description', content);
+    },
+    [setValue],
+  );
 
   const onSubmit = useCallback((data: FormSchemaType) => {
     console.log('submit', data);
@@ -87,25 +94,18 @@ export function DashboardIssuesEditPageComponent() {
                       </FormItem>
                     )}
                   />
-                  <FormField
-                    control={form.control}
-                    name="description"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel className="text-base font-bold">
-                          Add a description
-                        </FormLabel>
-                        <FormControl>
-                          <Textarea
-                            className="min-h-64"
-                            placeholder="Description"
-                            {...field}
-                          />
-                        </FormControl>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
+                  <div>
+                    <FormLabel className="text-base font-bold">
+                      Add a description
+                    </FormLabel>
+                    <div className="mt-2">
+                      <WYSIWYGEditor
+                        extensions={[StarterKit]}
+                        defaultContent={generateMockEditIssue().description}
+                        onChangeContent={onChangeDescriptionContent}
+                      />
+                    </div>
+                  </div>
                   <div className="hidden justify-end lg:flex">
                     <Button type="submit">Update Issue</Button>
                   </div>

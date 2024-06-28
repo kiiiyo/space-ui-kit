@@ -102,14 +102,21 @@ export function DashboardIssuesCreatePageComponent() {
                       </FormItem>
                     )}
                   />
-                  <WYSIWYGEditor
-                    extensions={[StarterKit]}
-                    defaultContent={{
-                      type: 'doc',
-                      content: [],
-                    }}
-                    onChangeContent={onChangeDescriptionContent}
-                  />
+                  <div>
+                    <FormLabel className="text-base font-bold">
+                      Add a description
+                    </FormLabel>
+                    <div className="mt-2">
+                      <WYSIWYGEditor
+                        extensions={[StarterKit]}
+                        defaultContent={{
+                          type: 'doc',
+                          content: [],
+                        }}
+                        onChangeContent={onChangeDescriptionContent}
+                      />
+                    </div>
+                  </div>
                   <div className="hidden justify-end lg:flex">
                     <Button type="submit">Create Issue</Button>
                   </div>
