@@ -1,4 +1,7 @@
 import { useCallback } from 'react';
+import { type JSONContent } from '@tiptap/react';
+
+import StarterKit from '@tiptap/starter-kit';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
@@ -13,7 +16,6 @@ import {
 } from '@/components/ui/form';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
-import { Textarea } from '@/components/ui/textarea';
 import {
   Popover,
   PopoverContent,
@@ -29,11 +31,14 @@ import {
   DropdownMenuTrigger,
   DropdownMenuItem,
 } from '@/components/ui/dropdown-menu';
+
 import { ToggleGroup, ToggleGroupItem } from '@/components/ui/toggle-group';
+
+import { WYSIWYGEditor } from '@/components/ui/wysiwyg-editor';
 
 const formSchema = z.object({
   title: z.string(),
-  description: z.string(),
+  description: z.record(z.any()).transform((v) => v as JSONContent),
   singleLabel: z.string(),
   multipleLabels: z.array(z.string()),
 });
@@ -44,15 +49,23 @@ export function DashboardIssuesCreatePageComponent() {
     resolver: zodResolver(formSchema),
     defaultValues: {
       title: '',
-      description: '',
+      description: {
+        type: 'doc',
+        content: [],
+      },
       singleLabel: '',
       multipleLabels: [],
     },
   });
 
   const { watch, setValue, handleSubmit } = form;
-
   const { multipleLabels, singleLabel } = watch();
+  const onChangeDescriptionContent = useCallback(
+    (content: JSONContent) => {
+      setValue('description', content);
+    },
+    [setValue],
+  );
 
   const onSubmit = useCallback((data: z.infer<typeof formSchema>) => {
     console.log('submit', data);
@@ -89,24 +102,13 @@ export function DashboardIssuesCreatePageComponent() {
                       </FormItem>
                     )}
                   />
-                  <FormField
-                    control={form.control}
-                    name="description"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel className="text-base font-bold">
-                          Add a description
-                        </FormLabel>
-                        <FormControl>
-                          <Textarea
-                            className="min-h-64"
-                            placeholder="Description"
-                            {...field}
-                          />
-                        </FormControl>
-                        <FormMessage />
-                      </FormItem>
-                    )}
+                  <WYSIWYGEditor
+                    extensions={[StarterKit]}
+                    defaultContent={{
+                      type: 'doc',
+                      content: [],
+                    }}
+                    onChangeContent={onChangeDescriptionContent}
                   />
                   <div className="hidden justify-end lg:flex">
                     <Button type="submit">Create Issue</Button>

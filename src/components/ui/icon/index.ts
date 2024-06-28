@@ -18,4 +18,13 @@ export {
   AngleLeftIcon,
   AngleRightIcon,
   CogIcon,
+  ListIcon,
+  OrderedListIcon,
+  LinkIcon,
+  LetterBoldIcon,
+  TextSizeIcon,
+  QuoteIcon,
+  ParagraphIcon,
+  MinusIcon,
+  RulerCombinedIcon,
 } from './icon.component';

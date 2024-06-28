@@ -1,4 +1,43 @@
-//
+// @todo: refactor this file to use css variables
+@media (prefers-color-scheme: dark) {
+  dark,
+  [data-theme='dark'] {
+    /*dark*/
+    color-scheme: dark;
+    --focus-outlineColor: #1f6feb;
+    --fgColor-default: #e6edf3;
+    --fgColor-muted: #8d96a0;
+    --fgColor-accent: #4493f8;
+    --bgColor-default: #0d1117;
+    --bgColor-muted: #161b22;
+    --bgColor-neutral-muted: #6e768166;
+    --bgColor-attention-muted: #bb800926;
+    --borderColor-default: #30363d;
+    --borderColor-muted: #30363db3;
+    --borderColor-neutral-muted: #6e768166;
+    --borderColor-accent-emphasis: #1f6feb;
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  .light,
+  [data-theme='light'] {
+    /*light*/
+    color-scheme: light;
+    --focus-outlineColor: #0969da;
+    --fgColor-default: #1f2328;
+    --fgColor-muted: #636c76;
+    --fgColor-accent: #0969da;
+    --bgColor-default: #ffffff;
+    --bgColor-muted: #f6f8fa;
+    --bgColor-neutral-muted: #afb8c133;
+    --bgColor-attention-muted: #fff8c5;
+    --borderColor-default: #d0d7de;
+    --borderColor-muted: #d0d7deb3;
+    --borderColor-neutral-muted: #afb8c133;
+    --borderColor-accent-emphasis: #0969da;
+  }
+}
 
 .editor-body,
 .editor-view-body {
@@ -8,44 +47,6 @@
   --base-text-weight-normal: 400;
   --base-text-weight-medium: 500;
   --base-text-weight-semibold: 600;
-
-  @media (prefers-color-scheme: dark) {
-    [data-theme='dark'] {
-      /*dark*/
-      color-scheme: dark;
-      --focus-outlineColor: #1f6feb;
-      --fgColor-default: #e6edf3;
-      --fgColor-muted: #8d96a0;
-      --fgColor-accent: #4493f8;
-      --bgColor-default: #0d1117;
-      --bgColor-muted: #161b22;
-      --bgColor-neutral-muted: #6e768166;
-      --bgColor-attention-muted: #bb800926;
-      --borderColor-default: #30363d;
-      --borderColor-muted: #30363db3;
-      --borderColor-neutral-muted: #6e768166;
-      --borderColor-accent-emphasis: #1f6feb;
-    }
-  }
-
-  @media (prefers-color-scheme: light) {
-    [data-theme='light'] {
-      /*light*/
-      color-scheme: light;
-      --focus-outlineColor: #0969da;
-      --fgColor-default: #1f2328;
-      --fgColor-muted: #636c76;
-      --fgColor-accent: #0969da;
-      --bgColor-default: #ffffff;
-      --bgColor-muted: #f6f8fa;
-      --bgColor-neutral-muted: #afb8c133;
-      --bgColor-attention-muted: #fff8c5;
-      --borderColor-default: #d0d7de;
-      --borderColor-muted: #d0d7deb3;
-      --borderColor-neutral-muted: #afb8c133;
-      --borderColor-accent-emphasis: #0969da;
-    }
-  }
 
   /* 
    * Reset Styles
@@ -58,15 +59,6 @@
   line-height: 1.5;
   word-wrap: break-word;
   scroll-behavior: auto;
-
-  p,
-  blockquote,
-  ul,
-  ol,
-  dl {
-    margin-top: 0;
-    margin-bottom: 16px;
-  }
 
   > *:first-child {
     margin-top: 0;
@@ -86,7 +78,7 @@
     margin-top: 24px;
     margin-bottom: 16px;
     padding: 0.45em 0;
-    font-weight: var(--base-text-weight-semibold, 600);
+    font-weight: 600;
     line-height: 1.25;
   }
 
@@ -95,7 +87,7 @@
    */
   h1,
   h2 {
-    font-weight: var(--base-text-weight-semibold, 600);
+    font-weight: 600;
     font-size: 1.25em;
     border-bottom: 1px solid #ebeef2;
   }
@@ -104,7 +96,7 @@
    * Heading Lv3 Styles
    */
   h3 {
-    font-weight: var(--base-text-weight-semibold, 600);
+    font-weight: 600;
     font-size: 1em;
     border-bottom: 1px solid #ebeef2;
   }
@@ -186,6 +178,14 @@
   /* 
    * Blockquote Styles
    */
+  blockquote {
+    margin: 0;
+    padding: 0.5em 1em;
+    color: var(--fgColor-muted);
+    border-left: 1px solid var(--borderColor-muted);
+    background-color: var(--bgColor-muted);
+  }
+
   blockquote > :first-child {
     margin-top: 0;
   }
@@ -197,6 +197,17 @@
   /* 
    * Horizontal Rule Styles
    */
+  hr {
+    box-sizing: content-box;
+    overflow: hidden;
+    background: transparent;
+    border-bottom: 1px solid var(--borderColor-muted);
+    height: 0.25em;
+    padding: 0;
+    margin: 24px 0;
+    background-color: var(--borderColor-default);
+    border: 0;
+  }
 
   /* 
    * Anchor Styles
@@ -218,7 +229,7 @@
    */
   b,
   strong {
-    font-weight: var(--base-text-weight-semibold, 600);
+    font-weight: 600; //TODO
   }
 
   /* 
@@ -231,5 +242,13 @@
 
   img[align='left'] {
     padding-right: 20px;
+  }
+
+  p,
+  blockquote,
+  ul,
+  ol {
+    margin-top: 0;
+    margin-bottom: 16px;
   }
 }
